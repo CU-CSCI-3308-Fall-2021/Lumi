@@ -1,4 +1,4 @@
-# CSCI-3308-Fall21-016-01
+# CSCI-3308-Fall21-016-01 (Team MacroHard)
 # LUMI Website Application
 
 ## Project Description
