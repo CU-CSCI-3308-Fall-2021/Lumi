@@ -5,18 +5,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
   <title>Landing Page</title>
   <link rel='icon' href='../resources/img/favicon.ico' type='image/x-icon' />
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link href="../resources/css/my_style.css" rel="stylesheet">
-</head>
-
-<body>
   <nav class="navbar navbar-expand-lg">
-    <a class="navbar-brand">LUMI</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand">LUMI</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
@@ -24,20 +19,84 @@
         <li class="nav-item active">
           <a class="nav-link" href="home.html">Home</a>
         </li>
+        <li class="nav-item"> <a class="nav-link" href="profile.html">Profile<span class="sr-only">(current)</span>
+          </a>
         <li class="nav-item">
           <a class="nav-link" href="team_stats.html">Profile<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="about.html">About Us</a>
         </li>
+        <li class="nav-item"> <a class="nav-link" href="about.html">About Us</a> </li>
       </ul>
       <div class="form-inline my-2 my-lg-0">
-        <li class="nav-item">
-          <a class="my-2 my-sm-0" href="stupid.html">Login/Registration</a>
-        </li>
+        <li class="nav-item"><a class="my-2 my-sm-0" href="loginreg.html">Login/Registration</a> </li>
       </div>
     </div>
   </nav>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h2>Welcome to LUMI</h2>
+      <p>INSERT STUFF HERE</p>
+      <h4>SLOGAN HERE</h4>
+      <hr class="my-1">
+    </div>
+    <hr class="my-4">
+    <div class="card-deck">
+      <div class="card">
+        <div class="card-header">
+          <h5>Most Fresh Snow</h5>
+        </div>
+        <img src="SNOWIMG.JPG" class="card-img-top" alt="Location w most fresh snow">
+        <div class="card-body">
+          <p class="card-text">Info about location w most fresh snow (js)</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h5>Most Famous Ski Resort Reprt</h5>
+        </div>
+        <img src="SKI RESORT.JPG(js to change most famous)" class="card-img-top" alt="Image of SKI RESORT">
+        <div class="card-body">
+          <p class="card-text">Info of most famous resort(js)</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h5>Recent News</h5>
+        </div>
+        <div class="card-body">
+          <p class="card-text">Recent News HERE</p>
+        </div>
+      </div>
+    </div>
+    <hr class="my-4">
+
+    <div class="table-responsive">
+      <table class="table table-bordered" id="weather-table">
+        <tr>
+          <th class="align-bottom" id="Location">Location</th>
+          <th class="align-bottom" id="Current Weather">Current Weather</th>
+          <th class="align-bottom" id="Snow Pack">Snow pack</th>
+          <th class="align-bottom" id="Open">Open</th>
+          <th class="align-bottom" id="Recommended">Recommended</th>
+        </tr>
+        <tr>
+          <td><span id="Location"></span>LOCAL</td>
+          <td><span id="Current Weather"></span>WEATHER OF LOCAL</td>
+          <td><span id="Snow Pack"></span>SNOW PACK OF LOCAL</td>
+          <td><span id="Open"></span>IS OPEN OF LOCAL</td>
+          <td><span id="Recommended"></span>RECOMMENDED TO USER/NON USER</td>
+        </tr>
+      </table>
+      <h1>ADD JS TO ADD ALL LOCATIONS AND ONCLICK TO CHANGE TO MAP</h1>
+    </div>
+    <footer class="footer">&copy; Copyright CSCI-3308 MacroHard Fall 2021</footer>
+  </div>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
