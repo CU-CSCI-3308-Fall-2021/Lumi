@@ -33,18 +33,49 @@
 
 .cont {
     background: rgb(255, 255, 255);
+    border-bottom: rgb(0, 0, 0) 3px;
+    
+}
+.cont1 {
+    background: rgb(255, 255, 255);
+    border-bottom: rgb(0, 0, 0) 40px;
     
 }
 .c2 {
-    max-width: 50%;
     background-color: rgb(154, 178, 197);
     float: left;
     margin-top: 20px;
     margin: 0 auto;
+    margin-right: 100px;
+}
+.c3 {
+    background-color: rgb(154, 178, 197);
+    float: right;
+    margin-top: 20px;
+    margin: 0 auto;
+}
+
+.toprightimg {
+    max-width: auto;
+    max-height: auto;
+}
+
+.topcards {
+    align-self: center;
+    padding: 1rem;
+    color: rgb(255, 255, 255);
+    background: rgb(154, 178, 198);
+    border-radius: 5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 
 .meetdev {
     text-align: center;
     padding-top: 20px;
+}
+
+.r1 {
+    padding-right: 100px;
 }
