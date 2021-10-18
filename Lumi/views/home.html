@@ -1,6 +1,7 @@
 <!-- Home Page -->
 <!doctype html>
 <html lang="en">
+<script src=../resources/js/home.js></script>
 
 <head>
   <meta charset="utf-8">
@@ -33,12 +34,12 @@
 
 </head>
 
-<body>
+<body onload="isUser();">
   <div class="container">
-    <div class="jumbotron">
+    <div class="jumbotron" style="background-color:lightcyan">
       <h2>Welcome to LUMI</h2>
-      <p>INSERT STUFF HERE</p>
-      <h4>SLOGAN HERE</h4>
+      <p>This site is used to show the current weather and snow conditions of various areas of Colorado.</p>
+      <h4 style="font-family:Papyrus">Showing the path to Snow</h4>
       <hr class="my-1">
     </div>
     <hr class="my-4">
@@ -73,23 +74,28 @@
     <hr class="my-4">
 
     <div class="table-responsive">
-      <table class="table table-bordered" id="weather-table">
-        <tr>
-          <th class="align-bottom" id="Location">Location</th>
-          <th class="align-bottom" id="Current Weather">Current Weather</th>
-          <th class="align-bottom" id="Snow Pack">Snow pack</th>
-          <th class="align-bottom" id="Open">Open</th>
-          <th class="align-bottom" id="Recommended">Recommended</th>
-        </tr>
-        <tr>
-          <td><span id="Location"></span>LOCAL</td>
-          <td><span id="Current Weather"></span>WEATHER OF LOCAL</td>
-          <td><span id="Snow Pack"></span>SNOW PACK OF LOCAL</td>
-          <td><span id="Open"></span>IS OPEN OF LOCAL</td>
-          <td><span id="Recommended"></span>RECOMMENDED TO USER/NON USER</td>
-        </tr>
+      <table class="table table-bordered table-hover table-striped" id="weather-table">
+        <thead>
+          <tr>
+            <th class="align-bottom" id="Location_h">Location</th>
+            <th class="align-bottom" id="Current Weather_h">Current Weather</th>
+            <th class="align-bottom" id="Snow Pack_h">Snow pack</th>
+            <th class="align-bottom" id="Open_h">Open</th>
+            <th class="align-bottom" id="Recommended_h">Recommended</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span id="Location"></span>LOCAL</td>
+            <td><span id="Current Weather"></span>WEATHER OF LOCAL</td>
+            <td><span id="Snow Pack"></span>SNOW PACK OF LOCAL</td>
+            <td><span id="Open"></span>IS OPEN OF LOCAL</td>
+            <td><span id="Recommended"></span>RECOMMENDED TO USER/NON USER</td>
+          </tr>
+        </tbody>
       </table>
-      <h1>ADD JS TO ADD ALL LOCATIONS AND ONCLICK TO CHANGE TO MAP</h1>
+      <a id="tablelink" onclick="toggleTable();" href="#">Toggle table/map</a>
+      <h1>ADD JS TO ADD ALL LOCATIONS</h1>
     </div>
     <footer class="footer">&copy; Copyright CSCI-3308 MacroHard Fall 2021</footer>
   </div>
