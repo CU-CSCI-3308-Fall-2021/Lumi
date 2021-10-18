@@ -1,0 +1,50 @@
+.c1 {
+   
+    float: none;
+    margin: 0 auto;
+}
+
+.jumbo1 {
+    background: url(../img/aboutProfiles/jumbobg.jpg);
+    -webkit-background-size: auto auto;
+    -moz-background-size: auto auto;
+    -o-background-size: auto auto;
+    background-size: 100% 200%
+}
+.cards {
+    align-self: center;
+    padding: 1rem;
+    max-width: 30rem;
+    color: rgb(255, 255, 255);
+    background: rgb(154, 178, 198);
+    border-radius: 5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.rounded-circle {
+    border-radius: 50%;
+    width:200px;
+    height:auto;
+}
+
+.gitflip {
+    -webkit-filter: invert(1);
+}
+
+.cont {
+    background: rgb(255, 255, 255);
+    
+}
+.c2 {
+    max-width: 50%;
+    background-color: rgb(154, 178, 197);
+    float: left;
+    margin-top: 20px;
+    margin: 0 auto;
+}
+
+
+.meetdev {
+    text-align: center;
+    padding-top: 20px;
+}
