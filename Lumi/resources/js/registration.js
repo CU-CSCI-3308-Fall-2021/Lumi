@@ -8,12 +8,11 @@ function openModal() {
     var match = document.getElementById("match");
   
     myInput.onkeyup = function () {
-      console.log("helllooo");
  
-      var lowerCaseLetters = /[a-z]/g; // : Fill in the regular experssion for lowerCaseLetters
-      var upperCaseLetters = /[A-Z]/g; // : Fill in the regular experssion for upperCaseLetters
-      var numbers = /[0-9]/g; // : Fill in the regular experssion for digits
-      var minLength = 8; // : Change the minimum length to what what it needs to be in the question
+      var lowerCaseLetters = /[a-z]/g;
+      var upperCaseLetters = /[A-Z]/g; 
+      var numbers = /[0-9]/g; 
+      var minLength = 6; 
       if (myInput.value.match(lowerCaseLetters)) {
         letter.classList.remove("invalid");
         letter.classList.add("valid");
