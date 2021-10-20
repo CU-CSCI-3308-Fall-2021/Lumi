@@ -73,5 +73,5 @@ function openModal() {
   }
   
   function onClickFunction() {
-    alert("Hey! I'm all green! Well done.");
+    window.location.href = "survey.html";
   }

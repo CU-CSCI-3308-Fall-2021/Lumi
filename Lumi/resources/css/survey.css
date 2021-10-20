@@ -1,9 +1,35 @@
 #yearsSkied{
-    width: 100px
+    width: fit-content;
 }
 #daysSeason{
-    width: 100px;
+    width: fit-content;
+}
+#inputWeight{
+    width: fit-content;
+}
+#inputHeight{
+    width: fit-content;
 }
 #inputShoe{
     width: fit-content;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 4px;
 }
+#logoImg{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+#submitBtn{
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+}
+input[type=text] {
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 4px;
+}
+body {
+    font-family: "Varela Round", sans-serif;
+}
+

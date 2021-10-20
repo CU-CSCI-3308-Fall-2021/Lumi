@@ -46,10 +46,10 @@
               <a class="nav-link" href="home.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="team_stats.html">Profile<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="profile.html">Profile<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="player_info.html">About Us</a>
+              <a class="nav-link" href="about.html">About Us</a>
             </li>
           </ul>
           <div class="form-inline my-2 my-lg-0">
@@ -62,7 +62,7 @@
 
     <br /><br /><br /><br />
     <form class="form-signin">
-        <img class="rounded-circle" src="../resources/img/lumicar.jpeg" alt="" width="72" height="72">
+        <img class="rounded-circle" src="../resources/img/lumicar.jpeg" alt="logo" width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
         <label for="inputEmail" class="sr-only">Email address</label>
         <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
@@ -149,8 +149,8 @@
                 id="my_submit_button"
                 class="btn btn-primary btn-block login-btn"
                 disabled
+                onclick="onClickFunction()"
               >
-              <a href="../views/home.html"></a>
                 Sign Up
               </button>
             </div>
