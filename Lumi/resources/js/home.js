@@ -16,7 +16,7 @@
   }
   function isUser()
   {
-    var user=true;
+    var user=false;
     if (user!=true)
     {
       show_hide_column();
