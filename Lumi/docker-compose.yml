@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  db:
+    image: "postgres:${POSTGRES_VERSION:-12}"
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "pwd"
+      POSTGRES_DB: "user_db"
+    expose:
+      - "5432"
+    volumes:
+      - lumi-sql:/var/lib/postgresql/data
+      - ./init_data:/app
+
+volumes:
+  lumi-sql: {}
