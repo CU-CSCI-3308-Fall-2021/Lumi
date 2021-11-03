@@ -1,0 +1,20 @@
+{
+  "name": "node-ejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "prestart": "npm install"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "ejs-lint": "^1.2.1",
+    "express": "^4.17.1",
+    "pg-promise": "^10.11.1"
+  },
+  "devDependencies": {
+    "@babel/code-frame": "^7.16.0"
+  }
+}
