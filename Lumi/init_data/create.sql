@@ -1,11 +1,12 @@
-DROP TABLE IF EXISTS test CASCADE;
-
-CREATE TABLE test (
-  test VARCHAR(30)
+DROP TABLE IF EXISTS users CASCADE;
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    firstName VARCHAR(40),
+    lastName VARCHAR(40),
+    email VARCHAR(40),
+    password VARCHAR(40)
 );
 
-DROP TABLE IF EXISTS test2 CASCADE;
-
-CREATE TABLE test2 (
-  test VARCHAR(30)
-);
+INSERT INTO users(firstName, lastName, email, password)
+VALUES('Rayner', 'Susanto', 'Rayner.Susanto@colorado.edu', '12345'),
+('Thor', 'Breece', 'Thor.Breece@colorado.edu', '6789');
