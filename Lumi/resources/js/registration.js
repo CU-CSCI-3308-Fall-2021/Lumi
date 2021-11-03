@@ -73,5 +73,5 @@ function openModal() {
   }
   
   function onClickFunction() {
-    window.location.href = "survey.html";
+    window.location.href = "/survey";
   }

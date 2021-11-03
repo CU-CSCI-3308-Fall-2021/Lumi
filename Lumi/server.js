@@ -69,6 +69,13 @@ app.get('/registration', function(req, res) {
 	});
 });
 
+//login registration
+app.get('/registration/login', function(req, res) {
+	res.render('pages/survey',{
+		my_title:"Login Page"
+	});
+});
+
 // Survey page
 app.get('/survey', function(req, res) {
 	res.render('pages/survey',{
