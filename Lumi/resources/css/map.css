@@ -1,0 +1,9 @@
+.c1 {
+    display: none;
+	position: relative;
+	max-width: 300px;
+    background: #30303062;
+	top:50%;
+    border-radius: 3px;
+    padding-left: 5px
+}
