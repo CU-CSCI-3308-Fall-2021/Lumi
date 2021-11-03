@@ -1,0 +1,48 @@
+services:
+  # This section defines our PostgreSQL database [2].
+  # Note that the name `db` also becomes the hostname of the postgres container.
+  # For more details see `server.js`.
+  db:
+    image: postgres
+    # Environment variables to setup postgres. Note that this is not secure, and
+    # in production (or your project), you should store these in a different
+    # file [5] or use secrets [6]. In no case should such files be uploaded to GitHub.
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: pwd
+      POSTGRES_DB: lumiApp_db
+    expose:
+      - "5432"                                  # We need only expose port `5432` internally to node (not the host)
+    volumes:
+      - labwebsite-db:/var/lib/postgresql/data  # Creates a docker managed volume to persist your data.
+      - ./init_data:/docker-entrypoint-initdb.d # Binds ./init_data to docker-entrypoint-initdb.d.
+                                                #   The postgres image will run any files in this directory on startup,
+                                                #   in our case the file `init_data/create.sql`
+
+  # ------------------------------------------- # This section defines our Node.js image [3].
+  web:
+    image: node:12
+    user: "node"                                # Use a non-root user node
+    working_dir: /home/node/app                 # with home directory /home/node/app
+    # environment:
+    #   - NODE_ENV=production                   # << Use this when deploying your application,
+    #                                           #   currently we have it off so that changes to
+    #                                           #   *.ejs are visible without restarting docker-compose.
+    depends_on:
+      - db                                      # This indicates that docker should start the database first,
+                                                # otherwise our website would have no data.
+    ports:
+        - "3000:3000"                           # Here we do need to publish the port for viewing on the host.
+    volumes:
+      - ./:/home/node/app                       # Binds the current directory (containing our source code) into the image,
+                                                #  so that changes made to the source code on the host
+                                                #  are reflected witin the container.
+    command: "npm start"                        # This is a semi-hack for this lab that runs both npm install
+                                                # and node index.js (see the prestart command in package.json)
+
+# This defines our volume(s), which will perist throughout startups.
+# If you want to get rid of a hanging volume, e.g. to test your database init,
+# run `docker-compose rm -v`. Note that this will remove ALL of your data, so
+# be extra sure you've made a stable backup somewhere.
+volumes:
+  labwebsite-db: {}

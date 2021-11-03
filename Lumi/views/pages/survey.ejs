@@ -1,0 +1,122 @@
+<!-- Registration Page -->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>Registration Survey</title>
+    <link rel='icon' href='../resources/img/favicon.ico' type='image/x-icon' />
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="../resources/css/survey.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand"><img src="../resources/img/lumilogo.png" width=75 height=auto></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="profile.html">Profile<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="maptest.html">Map<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <div class="form-inline my-2 my-lg-0">
+                <li class="nav-item">
+                    <a class="my-2 my-sm-0" href="registration.html">Login/Registration</a>
+                </li>
+            </div>
+        </div>
+    </nav>
+
+    <img src="../resources/img/lumilogo.png" class="img-fluid" alt="logo" id="logoImg">
+    <br>
+    <br>
+    <div class="container">
+        <form action="home.html">
+
+            <div class="form-group">
+                <label for="yearsSkied">How long many years have you skied?</label>
+                <input type="text" class="form-control" id="yearsSkied" placeholder="Years">
+            </div>
+            <div class="form-group">
+                <label for="daysSeason">How many days a season do you ski?</label>
+                <input type="text" class="form-control" id="daysSeason" placeholder="Days">
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <label for="inputCity">Height</label>
+                    <input type="text" class="form-control" id="inputHeight" placeholder="Ie. 70in">
+                </div>
+                <div class="col">
+                    <label for="inputCity">Weight</label>
+                    <input type="text" class="form-control" id="inputWeight" placeholder="Ie. 160lb">
+                </div>
+                <div class="col">
+                    <label for="inputShoe">Shoe Size</label>
+                    <select id="inputShoe" class="form-control">
+                        <option selected>Size</option>
+                        <option>4</option>
+                        <option>4.5</option>
+                        <option>5</option>
+                        <option>5.5</option>
+                        <option>6</option>
+                        <option>6.5</option>
+                        <option>7</option>
+                        <option>7.5</option>
+                        <option>8</option>
+                        <option>8.5</option>
+                        <option>9</option>
+                        <option>9.5</option>
+                        <option>10</option>
+                        <option>10.5</option>
+                        <option>11</option>
+                        <option>11.5</option>
+                        <option>12</option>
+                        <option>12.5</option>
+                        <option>13</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <label id="sportChoice">Are you a:</label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="isSkier" value="skier">
+                <label class="form-check-label" for="inlineRadio1">Skier</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="isSnowboarder"
+                    value="snowboarder">
+                <label class="form-check-label" for="inlineRadio2">Snowboarder</label>
+            </div>
+            <input type="submit" value="Submit" class="btn btn-primary btn-block" id="submitBtn">
+        </form>
+    </div>
+    <footer class="footer">&copy; Copyright CSCI-3308 MacroHard Fall 2021</footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
