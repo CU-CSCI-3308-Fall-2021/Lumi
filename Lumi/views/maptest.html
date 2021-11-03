@@ -2,14 +2,40 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Display a popup on click</title>
+<title>Lumi Ski Map</title>
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 <link href="https://api.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.css" rel="stylesheet">
+<link href="../resources/css/map.css" rel="stylesheet">
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.js"></script>
+
 <style>
 body { margin: 0; padding: 0; }
-#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+#map { position: absolute; top: 5%; bottom: 0; width: 100%; }
 </style>
+<nav class="navbar navbar-expand-lg" style="position: relative; padding-bottom: 10px; background-color: rgb(214, 214, 214);">
+	<a class="navbar-brand"><img src="../resources/img/lumilogo.png" width=75 height=auto></a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+	  <span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarText">
+	  <ul class="navbar-nav mr-auto">
+		<li class="nav-item active">
+		  <a class="nav-link" href="home.html">Home</a>
+		</li>
+		<li class="nav-item"> <a class="nav-link" href="profile.html">Profile<span class="sr-only">(current)</span>
+		  </a>
+		<li class="nav-item">
+		  <a class="nav-link" href="about.html">About Us<span class="sr-only">(current)</span></a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="maptest.html">Map<span class="sr-only">(current)</span></a>
+		  </li>
+	  </ul>
+	  <div class="form-inline my-2 my-lg-0">
+		<li class="nav-item"><a class="my-2 my-sm-0" href="registration.html">Login/Registration</a> </li>
+	  </div>
+	</div>
+  </nav>
 </head>
 <body>
 <style>
@@ -21,7 +47,7 @@ font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
 display: list-item;
 position: relative;
 margin: 0px ;
-width: 50%;
+width: 100%;
 height: 30px;
 border: none;
 border-radius: 3px;
@@ -34,7 +60,7 @@ background: #0b82a7;
 display: list-item;
 position: relative;
 margin: 0px ;
-width: 50%;
+width: 100%;
 height: 30px;
 border: none;
 border-radius: 3px;
@@ -47,7 +73,7 @@ background: #0b82a7;
 display: list-item;
 position: relative;
 margin: 0px ;
-width: 50%;
+width: 100%;
 height: 30px;
 border: none;
 border-radius: 3px;
@@ -60,7 +86,7 @@ background: #0b82a7;
 display: list-item;
 position: relative;
 margin: 0px ;
-width: 50%;
+width: 100%;
 height: 30px;
 border: none;
 border-radius: 3px;
@@ -73,7 +99,7 @@ background: #0b82a7;
 display: list-item;
 position: relative;
 margin: 0px ;
-width: 50%;
+width: 100%;
 height: 30px;
 border: none;
 border-radius: 3px;
@@ -86,7 +112,7 @@ background: #0b82a7;
 display: list-item;
 position: relative;
 margin: 0px ;
-width: 50%;
+width: 100%;
 height: 30px;
 border: none;
 border-radius: 3px;
@@ -99,7 +125,7 @@ background: #0b82a7;
 display: list-item;
 position: relative;
 margin: 0px;
-width: 50%;
+width: 100%;
 height: 30px;
 border: none;
 border-radius: 3px;
@@ -112,7 +138,7 @@ background: #0b82a7;
 display: list-item;
 position: relative;
 margin: 0px ;
-width: 50%;
+width: 100%;
 height: 30px;
 border: none;
 border-radius: 3px;
@@ -125,7 +151,7 @@ background: #0b82a7;
 display: list-item;
 position: relative;
 margin: 0px ;
-width: 50%;
+width: 100%;
 height: 30px;
 border: none;
 border-radius: 3px;
@@ -138,7 +164,7 @@ background: #0b82a7;
 display: list-item;
 position: relative;
 margin: 0px ;
-width: 50%;
+width: 100%;
 height: 30px;
 border: none;
 border-radius: 3px;
@@ -151,7 +177,7 @@ background: #0b82a7;
 display: list-item;
 position: relative;
 margin: 0px ;
-width: 50%;
+width: 100%;
 height: 30px;
 border: none;
 border-radius: 3px;
@@ -164,7 +190,7 @@ background: #0b82a7;
 display: list-item;
 position: relative;
 margin: 0px ;
-width: 50%;
+width: 100%;
 height: 30px;
 border: none;
 border-radius: 3px;
@@ -177,7 +203,7 @@ background: #0b82a7;
 display: list-item;
 position: relative;
 margin: 0px ;
-width: 50%;
+width: 100%;
 height: 30px;
 border: none;
 border-radius: 3px;
@@ -190,7 +216,7 @@ background: #0b82a7;
 display: list-item;
 position: relative;
 margin: 0px ;
-width: 50%;
+width: 100%;
 height: 30px;
 border: none;
 border-radius: 3px;
@@ -203,7 +229,7 @@ background: #0b82a7;
 display: list-item;
 position: relative;
 margin: 0px ;
-width: 50%;
+width: 100%;
 height: 30px;
 border: none;
 border-radius: 3px;
@@ -216,7 +242,7 @@ background: #0b82a7;
 display: list-item;
 position: relative;
 margin: 0px ;
-width: 50%;
+width: 100%;
 height: 30px;
 border: none;
 border-radius: 3px;
@@ -229,7 +255,7 @@ background: #0b82a7;
 display: list-item;
 position: relative;
 margin: 0px ;
-width: 50%;
+width: 100%;
 height: 30px;
 border: none;
 border-radius: 3px;
@@ -242,7 +268,7 @@ background: #0b82a7;
 display: list-item;
 position: relative;
 margin: 0px ;
-width: 50%;
+width: 100%;
 height: 30px;
 border: none;
 border-radius: 3px;
@@ -255,7 +281,7 @@ background: #0b82a7;
 display: list-item;
 position: relative;
 margin: 0px ;
-width: 50%;
+width: 100%;
 height: 30px;
 border: none;
 border-radius: 3px;
@@ -268,7 +294,7 @@ background: #0b82a7;
 display: list-item;
 position: relative;
 margin: 0px ;
-width: 50%;
+width: 100%;
 height: 30px;
 border: none;
 border-radius: 3px;
@@ -281,7 +307,7 @@ background: #0b82a7;
 display: list-item;
 position: relative;
 margin: 0px ;
-width: 50%;
+width: 100%;
 height: 30px;
 border: none;
 border-radius: 3px;
@@ -294,7 +320,7 @@ background: #0b82a7;
 display: list-item;
 position: relative;
 margin: 0px ;
-width: 50%;
+width: 100%;
 height: 30px;
 border: none;
 border-radius: 3px;
@@ -307,7 +333,7 @@ background: #0b82a7;
 display: list-item;
 position: relative;
 margin: 0px ;
-width: 50%;
+width: 100%;
 height: 30px;
 border: none;
 border-radius: 3px;
@@ -320,7 +346,20 @@ background: #0b82a7;
 display: list-item;
 position: relative;
 margin: 0px ;
-width: 50%;
+width: 100%;
+height: 35px;
+border: none;
+border-radius: 3px;
+font-size: 12px;
+text-align: center;
+color: #fff;
+background: #0b82a7;
+}
+#fly {
+display: list-item;
+position: relative;
+margin: 0px ;
+width: 100px;
 height: 30px;
 border: none;
 border-radius: 3px;
@@ -333,7 +372,7 @@ background: #0b82a7;
 display: block;
 position: relative;
 margin: 0px;
-width: 50%;
+width: 100%;
 height: 20px;
 border: none;
 border-radius: 3px;
@@ -343,6 +382,28 @@ color: #fff;
 background: #ff5353;
 }
 #jumps {
+display: block;
+position: relative; top:0; left:10px;
+margin: 0px;
+width: 150px;
+height: 500px;
+padding-left: 10px;
+padding-bottom: 10px;
+border: none;
+border-radius: 3px;
+font-size: 12px;
+text-align: center;
+color: #fff;
+background: #30303062;
+
+}
+#fly_locations {
+	position: relative; top: 0%;
+}
+#jumps::-webkit-scrollbar {
+	width: 10px;
+}
+#reset_fly {
 display: block;
 position: relative; top:0; left:0;
 margin: 0px;
@@ -358,9 +419,468 @@ color: #fff;
 background: #53acff00;
 }
 </style>
+<script>
+	function hideAll() {
+		var breck = document.getElementById("breck_info");
+		breck.style.display = 'none';
+		var vail = document.getElementById("vail_info");
+		vail.style.display = 'none';
+		var copper = document.getElementById("copper_info");
+		copper.style.display = 'none';
+		var keystone = document.getElementById("keystone_info");
+		keystone.style.display = 'none';
+		var abasin = document.getElementById("abasin_info");
+		abasin.style.display = 'none';
+		var love = document.getElementById("love_info");
+		love.style.display = 'none';
+		var winter = document.getElementById("winter_info");
+		winter.style.display = 'none';
+		var eldora = document.getElementById("eldora_info");
+		eldora.style.display = 'none';
+		var beaver = document.getElementById("beaver_info");
+		beaver.style.display = 'none';
+		var sun = document.getElementById("sun_info");
+		sun.style.display = 'none';
+		var powder = document.getElementById("powder_info");
+		powder.style.display = 'none';
+		var steam = document.getElementById("steam_info");
+		steam.style.display = 'none';
+		var howel = document.getElementById("howel_info");
+		howel.style.display = 'none';
+		var cooper = document.getElementById("cooper_info");
+		cooper.style.display = 'none';
+		var snow = document.getElementById("snow_info");
+		snow.style.display = 'none';
+		var ajax = document.getElementById("ajax_info");
+		ajax.style.display = 'none';
+		var high = document.getElementById("high_info");
+		high.style.display = 'none';
+		var butter = document.getElementById("butter_info");
+		butter.style.display = 'none';
+		var butte = document.getElementById("butte_info");
+		butte.style.display = 'none';
+		var monarch = document.getElementById("monarch_info");
+		monarch.style.display = 'none';
+		var wolf = document.getElementById("wolf_info");
+		wolf.style.display = 'none';
+		var purgatory = document.getElementById("purgatory_info");
+		purgatory.style.display = 'none';
+		var silverton = document.getElementById("silverton_info");
+		silverton.style.display = 'none';
+		var telluride = document.getElementById("telluride_info");
+		telluride_info.style.display = 'none';
+	}
+	function showBreck() {
+		hideAll();
+		var x = document.getElementById("breck_info");
+		if (x.style.display == "none") {
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
+	}
+
+	function showVail() {
+		hideAll();
+		var x = document.getElementById("vail_info");
+		if (x.style.display == "none") {
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
+	}
+
+	function showCopper() {
+		hideAll();
+		var x = document.getElementById("copper_info");
+		if (x.style.display == "none") {
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
+	}
+	function showKeystone() {
+		hideAll();
+		var x = document.getElementById("keystone_info");
+		if (x.style.display == "none") {
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
+	}
+	function showAbasin() {
+		hideAll();
+		var x = document.getElementById("abasin_info");
+		if (x.style.display == "none") {
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
+	}
+	function showLove() {
+		hideAll();
+		var x = document.getElementById("love_info");
+		if (x.style.display == "none") {
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
+	}
+	function showWinter() {
+		hideAll();
+		var x = document.getElementById("winter_info");
+		if (x.style.display == "none") {
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
+	}
+	function showEldora() {
+		hideAll();
+		var x = document.getElementById("eldora_info");
+		if (x.style.display == "none") {
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
+	}
+	function showBeaver() {
+		hideAll();
+		var x = document.getElementById("beaver_info");
+		if (x.style.display == "none") {
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
+	}
+	function showSun() {
+		hideAll();
+		var x = document.getElementById("sun_info");
+		if (x.style.display == "none") {
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
+	}
+	function showPowder() {
+		hideAll();
+		var x = document.getElementById("powder_info");
+		if (x.style.display == "none") {
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
+	}
+	function showSteam() {
+		hideAll();
+		var x = document.getElementById("steam_info");
+		if (x.style.display == "none") {
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
+	}
+	function showHowel() {
+		hideAll();
+		var x = document.getElementById("howel_info");
+		if (x.style.display == "none") {
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
+	}
+	function showCooper() {
+		hideAll();
+		var x = document.getElementById("cooper_info");
+		if (x.style.display == "none") {
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
+	}
+	function showSnow() {
+		hideAll();
+		var x = document.getElementById("snow_info");
+		if (x.style.display == "none") {
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
+	}
+	function showAjax() {
+		hideAll();
+		var x = document.getElementById("ajax_info");
+		if (x.style.display == "none") {
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
+	}
+	function showHigh() {
+		hideAll();
+		var x = document.getElementById("high_info");
+		if (x.style.display == "none") {
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
+	}
+	function showButter() {
+		hideAll();
+		var x = document.getElementById("butter_info");
+		if (x.style.display == "none") {
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
+	}
+	function showButte() {
+		hideAll();
+		var x = document.getElementById("butte_info");
+		if (x.style.display == "none") {
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
+	}
+	function showMonarch() {
+		hideAll();
+		var x = document.getElementById("monarch_info");
+		if (x.style.display == "none") {
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
+	}
+	function showWolf() {
+		hideAll();
+		var x = document.getElementById("wolf_info");
+		if (x.style.display == "none") {
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
+	}
+	function showPurgatory() {
+		hideAll();
+		var x = document.getElementById("purgatory_info");
+		if (x.style.display == "none") {
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
+	}
+	function showSilverton() {
+		hideAll();
+		var x = document.getElementById("silverton_info");
+		if (x.style.display == "none") {
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
+	}
+	function showTelluride() {
+		hideAll();
+		var x = document.getElementById("telluride_info");
+		if (x.style.display == "none") {
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
+	}
+</script>
+<div class="container"; id=legend style=
+"position: absolute; left:10px; bottom:10%; z-index: 100; background:#30303062; color:#fff; max-width: 300px;
+">
+	<table id="legend">
+		<tr>
+			<th>
+				<img style=" padding-bottom: 20px" src="../resources/img/map/green.png" width="50px" height="50px">
+				
+			</th>
+			<td>
+				<p> Green Runs (Easy) </p>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				<img style=" padding-bottom: 20px;" src="../resources/img/map/blue.png" width="50px" height="50px">
+			</th>
+			<td>
+				<p> Blue Runs (Intermediate) </p>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				<img style="padding-bottom: 20px" src="../resources/img/map/black.png" width="50px" height="50px">
+			</th>
+			<td>
+				<p> Black Diamonds (Advanced) </p>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				<img style="padding-bottom: 20px;" src="../resources/img/map/double_black.png" width="50px" height="50px">
+			</th>
+			<td>
+				<p> Double Black Diamonds (Expert) </p>
+			</td>
+		</tr>
+
+
+	</table>
+</div>
+<div class="container"; id="all" style=
+"position: absolute; 
+left:75%; top:50%; 
+background: #30303000;
+max-width: 300px;
+color:#fff; 
+z-index: 100;
+
+">
+	<div class="card-bg c1" id="breck_info">
+		<h3>Breckenridge Ski Resort</h3>
+		<p>
+			<a href="https://www.breckenridge.com/" target="_blank" title="Opens in a new window">Breckenrdige ski Resort</a>
+				is an alpine ski resort in the western United States, in Breckenridge, Colorado. Just west of the Continental Divide in Summit County, it is perennially one of the most visited ski resorts in the western hemisphere. <i>Source: Wikipedia</i> </p>
+				<a href="https://www.epicpass.com/"><img src="../resources/img/map/epic.png" alt="Epic Pass Logo" width="100" height="60"></a>
+
+	</div>
+	<div class="card-bg c1" id="vail_info">
+		<h3>Vail Ski Resort</h3>
+		<p><a href="https://www.vail.com/" target="_blank" title="Opens in a new window">Vail Resort</a>
+				is a major ski area in the western United States, located in northwestern Colorado at Steamboat Springs. Operated by the Steamboat Ski & Resort Corporation, it is located on Mount Werner, a mountain in the Park Range in the Routt National Forest. <i>Source: Wikipedia</i> 
+			</p><a href="https://www.epicpass.com/"><img src="../resources/img/map/epic.png" alt="Epic Pass Logo" width="100" height="60"></a>
+
+	</div>
+	<div class="card-bg c1" id="copper_info">
+		<h3>Copper Mountain</h3>
+		<p><a href="https://www.coppercolorado.com/" target="_blank" title="Opens in a new window">Copper Mountain</a> 
+			is a mountain and ski resort located in Summit County, Colorado, about 75 miles (120 km) west of Denver on Interstate 70. The resort has 2,465 acres (3.9 sq mi; 10.0 km2) of in-bounds terrain under lease from the U.S. Forest Service, White River National Forest, Dillon Ranger District. <i>Source: Wikipedia</i> 
+		</p><a href="https://www.ikonpass.com/"><img src="../resources/img/map/Ikon.png" alt="Ikon Pass Logo" width="100" height="46.133"></a>
+	</div>
+	<div class="card-bg c1" id="keystone_info">
+		<h3>Keystone Resort</h3>
+		<p><a href="https://www.keystoneresort.com/" target="_blank" title="Opens in a new window">Keystone Resort</a> 
+			is a ski resort located in Keystone, Colorado, United States. Since 1997 the resort has been owned and operated by Vail Resorts. It consists of three mountains – Dercum Mountain, North Peak, the Outback – and five Bowls offering skiing at all levels. <i>Source: Wikipedia</i> 
+		</p><a href="https://www.epicpass.com/"><img src="../resources/img/map/epic.png" alt="Epic Pass Logo" width="100" height="60"></a>
+	</div>
+	<div class="card-bg c1" id="abasin_info">
+		<h3>Arapahoe Basin</h3>
+		<p><a href="https://www.arapahoebasin.com/" target="_blank" title="Opens in a new window">Arapahoe Basin</a> 
+			often shortened to A-Basin, or simply The Basin is an alpine ski area in the Rocky Mountains of the United States, in the Arapaho National Forest of Colorado. <i>Source: Wikipedia</i> 
+		</p><a href="https://www.ikonpass.com/"><img src="../resources/img/map/Ikon.png" alt="Ikon Pass Logo" width="100" height="46.133"></a>
+	</div>
+	<div class="card-bg c1" id="love_info">
+		<h3>Loveland Ski Area</h3>
+		<p><a href="https://skiloveland.com/" target="_blank" title="Opens in a new window">Loveland Ski Area</a>
+			 is a ski area in the western United States, located near the town of Georgetown, Colorado. Located at the eastern portal of the Eisenhower Tunnel, Loveland is within the Arapahoe National Forest. <i>Source: Wikipedia</i> </p>
+	</div>
+	<div class="card-bg c1" id="winter_info">
+		<h3>Winter Park Resort</h3>
+		<p><a href="https://www.winterparkresort.com/" target="_blank" title="Opens in a new window">Winter Park Resort</a> 
+			is an alpine ski resort in the western United States, in the Rocky Mountains of Colorado at Winter Park. Located in Grand County just off U.S. Highway 40, the resort is about a ninety-minute drive from Denver. <i>Source: Wikipedia</i> 
+		</p><a href="https://www.ikonpass.com/"><img src="../resources/img/map/Ikon.png" alt="Ikon Pass Logo" width="100" height="46.133"></a>
+	</div>
+	<div class="card-bg c1" id="eldora_info">
+		<h3>Eldora Mountain Resort</h3>
+		<p><a href="https://www.eldora.com/" target="_blank" title="Opens in a new window">Eldora Mountain Resort</a> 
+			is a ski area in the southwest corner of Boulder County, Colorado, near the unincorporated community of Eldora and 3 miles west of the town of Nederland. <i>Source: Wikipedia</i> 
+		</p><a href="https://www.ikonpass.com/"><img src="../resources/img/map/Ikon.png" alt="Ikon Pass Logo" width="100" height="46.133"></a>
+	</div>
+	<div class="card-bg c1" id="beaver_info">
+		<h3>Beaver Creek Resort</h3>
+		<p><a href="https://www.beavercreek.com/" target="_blank" title="Opens in a new window">Beaver Creek Resort</a>  
+			is a major ski resort in the western United States, near Avon, Colorado. The resort comprises three villages, the main Beaver Creek Village, Bachelor Gulch, and Arrowhead to the west. <i>Source: Wikipedia</i> </p>
+			<a href="https://www.epicpass.com/"><img src="../resources/img/map/epic.png" alt="Epic Pass Logo" width="100" height="60"></a>
+	</div>
+	<div class="card-bg c1" id="sun_info">
+		<h3>Sunlight Mountain Resort</h3>
+		<p><a href="https://sunlightmtn.com/" target="_blank" title="Opens in a new window">Sunlight Mountain Resort</a> 
+			caters to local skiers and large groups. The area has three chairlifts and a vertical drop exceeding 2,000 feet (610 m). Operations began in December 1966 with one chairlift and a second was added in 1973 <i>Source: Wikipedia</i> </p>
+	</div>
+	<div class="card-bg c1" id="powder_info">
+		<h3>Powderhorn Mountain Resort</h3>
+		<p><a href="https://www.powderhorn.com/" target="_blank" title="Opens in a new window">Powderhorn Mountain Resort</a> 
+			is one of the most family-friendly resorts you’ll find anywhere in the West. Tucked alongside the northern edge of Western Colorados beautiful Grand Mesa – the world’s largest flattop mountain – we offer breathtaking views and over 1,600 acres of mountain terrain. <i>Source: Podwerhorn.com</i> </p>
+	</div>
+	<div class="card-bg c1" id="steam_info">
+		<h3>Steamboat Ski Resort</h3>
+		<p><a href="https://www.steamboat.com/" target="_blank" title="Opens in a new window">Steamboat Ski Resort</a> 
+			is a major ski area in the western United States, located in northwestern Colorado at Steamboat Springs. Operated by the Steamboat Ski & Resort Corporation, it is located on Mount Werner, a mountain in the Park Range in the Routt National Forest. <i>Source: Wikipedia</i> 
+		</p><a href="https://www.ikonpass.com/"><img src="../resources/img/map/Ikon.png" alt="Ikon Pass Logo" width="100" height="46.133"></a>
+	</div>
+	<div class="card-bg c1" id="howel_info">
+		<h3>Howelsen Hill Ski Area</h3>
+		<p><a href="https://steamboatsprings.net/131/Howelsen-Hill-Ski-Area" target="_blank" title="Opens in a new window">Howelsen Hill Ski Area</a>  
+			is a small ski area located on Howelsen Hill in Steamboat Springs, Colorado. It is not a typical alpine ski area, as it includes a series of ski jumps, the largest with HS127. <i>Source: Wikipedia</i> </p>
+	</div>
+	<div class="card-bg c1" id="cooper_info">
+		<h3>Ski Cooper</h3>
+		<p><a href="https://www.skicooper.com/" target="_blank" title="Opens in a new window">Ski Cooper</a> 
+			is an alpine ski resort in Colorado, one of the oldest in the state. Opened as Cooper Hill Ski Area 79 years ago in 1942, the ski area served as the training site for the 10th Mountain Division, based at nearby Camp Hale during World War II. <i>Source: Wikipedia</i> </p>
+	</div>
+	<div class="card-bg c1" id="snow_info">
+		<h3>Aspen Snowmass</h3>
+		<p><a href="https://www.aspensnowmass.com/" target="_blank" title="Opens in a new window">Aspen Snowmass</a> 
+			is a ski resort located in the town of Snowmass Village near Aspen, Colorado. The ski area is owned and operated by the Aspen Skiing Company as part of the Aspen/Snowmass complex. It was opened on December 17, 1967 . Snowmass is the largest of the four Aspen/Snowmass mountains, comprising 3,362 acres. <i>Source: Wikipedia</i> 
+		</p><a href="https://www.ikonpass.com/"><img src="../resources/img/map/Ikon.png" alt="Ikon Pass Logo" width="100" height="46.133"></a>
+	</div>
+	<div class="card-bg c1" id="ajax_info">
+		<h3>Aspen Ajax</h3>
+		<p><a href="https://www.aspensnowmass.com/four-mountains/aspen-mountain" target="_blank" title="Opens in a new window">Aspen Ajax</a> 
+			offers quad-burning groomers and steep, gladed runs all leading to the heart of Aspen—where local and global culture merge in unexpected ways and the après scene is always on. <i>Source: aspensnowmass.com</i> 
+		</p><a href="https://www.ikonpass.com/"><img src="../resources/img/map/Ikon.png" alt="Ikon Pass Logo" width="100" height="46.133"></a>
+	</div>
+	<div class="card-bg c1" id="high_info">
+		<h3>Aspen Highlands Ski Resort</h3>
+		<p><a href="https://www.aspensnowmass.com/four-mountains/aspen-highlands" target="_blank" title="Opens in a new window">Aspen Highlands </a> 
+			is a place to push hard and play hard, whether you’re carving new lines on expert terrain, hiking the Bowl, or reaching new heights of revelry at Cloud Nine.<i>Source: aspensnowmass.com</i> </p>
+			<a href="https://www.ikonpass.com/"><img src="../resources/img/map/Ikon.png" alt="Ikon Pass Logo" width="100" height="46.133"></a>
+	</div>
+	<div class="card-bg c1" id="butter_info">
+		<h3>Buttermilk Ski Resort</h3>
+		<p><a href="https://www.aspensnowmass.com/four-mountains/buttermilk" target="_blank" title="Opens in a new window">Buttermilk Ski Resort </a> 
+			is the perfect playground for kids and kids at heart to learn the basics, master the terrain park, skin uphill, or watch the world’s best freestylers in the X Games. All are welcome, all winter long.<i>Source: aspensnowmass.com</i> 
+		</p><a href="https://www.ikonpass.com/"><img src="../resources/img/map/Ikon.png" alt="Ikon Pass Logo" width="100" height="46.133"></a>
+	</div>
+	<div class="card-bg c1" id="butte_info">
+		<h3>Crested Butte Ski Resort</h3>
+		<p><a href="https://www.skicb.com/" target="_blank" title="Opens in a new window">Crested Butte Mountain Resort </a> 
+			opened in 1960 when two men—Fred Rice and Dick Eflin—purchased a ranch on Mt. Crested Butte.[1] An operating permit enabling the resort to be built was approved by the United States Forest Service the following year.<i>Source: Wikipedia</i> 
+		</p><a href="https://www.epicpass.com/"><img src="../resources/img/map/epic.png" alt="Epic Pass Logo" width="100" height="60"></a>
+	</div>
+	<div class="card-bg c1" id="monarch_info">
+		<h3>Monarch Mountain</h3>
+		<p><a href="https://www.skimonarch.com/" target="_blank" title="Opens in a new window">Monarch Ski and Snowboard Area </a> 
+			is a ski resort located in the state of Colorado. It is twenty miles west of Salida, Colorado, on U.S. Highway 50. The resort is situated on Monarch Pass at the continental divide. It has 54 trails, two terrain parks, and an extreme terrain area called Mirkwood. <i>Source: Wikipedia</i> </p>
+	</div>
+	<div class="card-bg c1" id="wolf_info">
+		<h3>Wolf Creek Ski Area</h3>
+		<p><a href="https://wolfcreekski.com/" target="_blank" title="Opens in a new window">Wolf Creek Ski Area</a>  
+			is a ski area in southwest Colorado, located on the Wolf Creek Pass between Pagosa Springs and South Fork. It is best known for receiving more average annual snowfall than any other resort in Colorado, at about 430 inches per year. <i>Source: Wikipedia</i> </p>
+	</div>
+	<div class="card-bg c1" id="purgatory_info">
+		<h3>Purgatory Resort</h3>
+		<p><a href="https://www.purgatory.ski/" target="_blank" title="Opens in a new window">Purgatory Resort</a>  
+			is a ski resort located in the San Juan Mountains of Southwest Colorado, 25 miles (42 km) north of the town of Durango. Established in 1965, Purgatory offers 105 trails, including 5 terrain parks, over 1,500 skiable acres, and 12 lifts, including one six-person and two high speed quad lift. <i>Source: Wikipedia</i> </p>
+	</div>
+	<div class="card-bg c1" id="silverton_info">
+		<h3>Silverton Mountain Ski Area</h3>
+		<p><a href="https://silvertonmountain.com/" target="_blank" title="Opens in a new window">Silverton Mountain Ski Area</a>  
+			is a ski area near Silverton, Colorado USA that opened on January 19, 2002. Popular with skiers and snowboarders, Silverton Mountain has one chairlift that carries visitors into its terrain, which is for advanced and expert skiers or riders. <i>Source: Wikipedia</i> </p>
+	</div>
+	<div class="card-bg c1" id="telluride_info">
+		<h3>Telluride Ski Resort</h3>
+		<p><a href="https://tellurideskiresort.com/" target="_blank" title="Opens in a new window">Telluride Ski Resort</a>  
+			is a ski resort located in Mountain Village, Colorado right next to the Town of Telluride. The Telluride Ski Resort is a year-round destination located in the southwest corner of Colorado. <i>Source: Wikipedia</i>
+		</p><a href="https://www.epicpass.com/"><img src="../resources/img/map/epic.png" alt="Epic Pass Logo" width="100" height="60"></a>
+	</div>
+</div>
 <div id="map"></div>
 <br>
-<div id='jumps' class="container">
+<!-- <div id='reset_fly' class="container">
 	<table>
 		<tr>
 			<th style="width:200px;">
@@ -370,135 +890,153 @@ background: #53acff00;
 		</tr>
 		<tr>
 			<th style="width:200px;">
-				<button id="breck">Breckenrdige</button>
+				<button onclick="showLocations()" id="fly">Fly Locations</button>
+			</th>
+			
+		</tr>
+	</table>
+</div> -->
+<div id='jumps' class="container" style="overflow: auto;">
+	<h5>Fly Locations</h5>
+	<table id="fly_locations">
+		<tr>
+			<th style="width:200px;">
+				<button id="reset" onclick="hideAll()">Reset</button>
 			</th>
 			
 		</tr>
 		<tr>
 			<th style="width:200px;">
-				<button id="vail">Vail</button>
+				<button id="breck" onclick="showBreck();">Breckenridge</button>
+			</th>
+			
+		</tr>
+		<tr>
+			<th style="width:200px;">
+				<button id="vail" onclick="showVail();">Vail</button>
 			</th>
 		</tr>
 		<tr>
 			<th style="width:200px;">
-				<button id="copper">Copper</button>
+				<button id="copper" onclick="showCopper();">Copper</button>
 			</th>
 		</tr>
 		<tr>
 			<th style="width:200px;">
-				<button id="keystone">Keystone</button>
+				<button id="keystone" onclick="showKeystone();">Keystone</button>
 			</th>
 		</tr>
 		<tr>
 			<th style="width:200px;">
-				<button id="A-Basin">A-Basin</button>
+				<button id="A-Basin" onclick="showAbasin();">A-Basin</button>
 			</th>
 		</tr>
 		<tr>
 			<th style="width:200px;">
-				<button id="loveland">Loveland</button>
+				<button id="loveland" onclick="showLove();">Loveland</button>
 			</th>
 		</tr>
 		<tr>
 			<th style="width:200px;">
-				<button id="winterpark">Winter Park</button>
+				<button id="winterpark" onclick="showWinter();">Winter Park</button>
 			</th>
 		</tr>
 		<tr>
 			<th style="width:200px;">
-				<button id="eldora">Eldora</button>
+				<button id="eldora" onclick="showEldora();">Eldora</button>
 			</th>
 		</tr>
 		<tr>
 			<th style="width:200px;">
-				<button id="steam">Steamboat</button>
+				<button id="steam" onclick="showSteam();">Steamboat</button>
 			</th>
 		</tr>
 		<tr>
 			<th style="width:200px;">
-				<button id="howelsen">Howelsen</button>
+				<button id="howelsen" onclick="showHowel();">Howelsen</button>
 			</th>
 		</tr>
 		<tr>
 			<th style="width:200px;">
-				<button id="beaver">Beaver Creek</button>
+				<button id="beaver" onclick="showBeaver();">Beaver Creek</button>
 			</th>
 		</tr>
 		<tr>
 			<th style="width:200px;">
-				<button id="cooper">Cooper</button>
+				<button id="cooper" onclick="showCooper();">Cooper</button>
 			</th>
 		</tr>
 		<tr>
 			<th style="width:200px;">
-				<button id="snowmass">Snowmass</button>
+				<button id="snowmass" onclick="showSnow();">Snowmass</button>
 			</th>
 		</tr>
 		<tr>
 			<th style="width:200px;">
-				<button id="ajax">Aspen Ajax</button>
+				<button id="ajax" onclick="showAjax();">Aspen Ajax</button>
 			</th>
 		</tr>
 		<tr>
 			<th style="width:200px;">
-				<button id="highland">Highlands</button>
+				<button id="highland" onclick="showHigh();">Highlands</button>
 			</th>
 		</tr>
 		<tr>
 			<th style="width:200px;">
-				<button id="buttermilk">Buttermilk</button>
+				<button id="buttermilk" onclick="showButter();">Buttermilk</button>
 			</th>
 		</tr>
 		<tr>
 			<th style="width:200px;">
-				<button id="butte">Crested Butte</button>
+				<button id="butte" onclick="showButte();">Crested Butte</button>
 			</th>
 		</tr>
 		<tr>
 			<th style="width:200px;">
-				<button id="monarch">Monarch</button>
+				<button id="monarch" onclick="showMonarch();">Monarch</button>
 			</th>
 		</tr>
 		<tr>
 			<th style="width:200px;">
-				<button id="wolf">Wolf Creek</button>
+				<button id="wolf" onclick="showWolf();">Wolf Creek</button>
 			</th>
 		</tr>
 		<tr>
 			<th style="width:200px;">
-				<button id="purgatory">Purgatory</button>
+				<button id="purgatory" onclick="showPurgatory();">Purgatory</button>
 			</th>
 		</tr>
 		<tr>
 			<th style="width:200px;">
-				<button id="silverton">Silverton</button>
+				<button id="silverton" onclick="showSilverton();">Silverton</button>
 			</th>
 		</tr>
 		<tr>
 			<th style="width:200px;">
-				<button id="telluride">Telluride</button>
+				<button id="telluride" onclick="showTelluride();">Telluride</button>
 			</th>
 		</tr>
 		<tr>
 			<th style="width:200px;">
-				<button id="powder">Powderhorn</button>
+				<button id="powder" onclick="showPowder();">Powderhorn</button>
 			</th>
 		</tr>
 		<tr>
 			<th style="width:200px;">
-				<button id="sunlight">Sunlight Mountain</button>
+				<button id="sunlight" onclick="showSun();">Sunlight Mountain</button>
 			</th>
 		</tr>
 	</table>
 </div>
 <script>
-	mapboxgl.accessToken = 'pk.eyJ1IjoidGhvci1pdW0iLCJhIjoiY2t2YjlzczVnMGM0YTJvcDYzNnh4Y2JpMiJ9.oTGrySoL8crymz2O8-usUQ';
+mapboxgl.accessToken = 'pk.eyJ1IjoidGhvci1pdW0iLCJhIjoiY2t2YjlzczVnMGM0YTJvcDYzNnh4Y2JpMiJ9.oTGrySoL8crymz2O8-usUQ';
 const map = new mapboxgl.Map({
 container: 'map',
 style: 'mapbox://styles/thor-ium/ckvc5s3b90jxg14lqeihf1r6i',
-center: [-104.711, 39.042],
-zoom: 7.27
+center: [-105.414767, 39.022141],
+zoom: 6.46
 });
+map.addControl(new mapboxgl.NavigationControl());
 // BRECKENRIDGE
 document.getElementById('breck').addEventListener('click', () => {
 // Fly to a random location by offsetting the point -74.50, 40
@@ -511,7 +1049,9 @@ center: [
 zoom: 15.02,
 pitch: 80.30,
 bearing: -118.96,
-essential: false // this animation is considered essential with respect to prefers-reduced-motion
+essential: false,
+
+ // this animation is considered essential with respect to prefers-reduced-motion
 });
 });
 
@@ -520,16 +1060,14 @@ document.getElementById('reset').addEventListener('click', () => {
 // Fly to a random location by offsetting the point -74.50, 40
 // by up to 5 degrees.
 map.flyTo({
-center: [
--104.586827,
-39.082583
-],
-zoom: 7.18,
+center: [-105.414767, 39.022141],
+zoom: 6.46,
 pitch: 0,
 bearing: 0,
 essential: false // this animation is considered essential with respect to prefers-reduced-motion
 });
 });
+
 // VAIL
 document.getElementById('vail').addEventListener('click', () => {
 // Fly to a random location by offsetting the point -74.50, 40
@@ -996,7 +1534,7 @@ map.addSource('places', {
 'type': 'Feature',
 'properties': {
 'description':
-'<strong>Beaver Creek Resort</strong><p><a href="https://www.beavercreek.com/" target="_blank" title="Opens in a new window">Beaver Creek Resort</a>  is a major ski resort in the western United States, near Avon, Colorado. The resort comprises three villages, the main Beaver Creek Village, Bachelor Gulch, and Arrowhead to the west. <i>Source: Wikipedia</i> </p>',
+'<strong>Beaver Creek Resort</strong><p><a href="https://www.beavercreek.com/" target="_blank" title="Opens in a new window">Beaver Creek Resort</a>  is a major ski resort in the western United States, near Avon, Colorado. The resort comprises three villages, the main Beaver Creek Village, Bachelor Gulch, and Arrowhead to the west. <i>Source: Wikipedia</i> </p><a href="https://www.epicpass.com/"><img src="../resources/img/map/epic.png" alt="Epic Pass Logo" width="100" height="60"></a>',
 'icon': 'skiing'
 },
 'geometry': {
