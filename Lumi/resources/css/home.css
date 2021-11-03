@@ -1,0 +1,23 @@
+.welcome {
+    background-color: rgb(154, 178, 198);
+}
+.mfs {
+    background: rgb(154, 178, 198);
+    color: white;
+    text-align: center;
+}
+.tablehead {
+    background: rgb(154, 178, 198);
+    color: white;
+    text-align: center;
+}
+.tableOff {
+    background: rgb(125, 174, 214);
+    color: white;
+    text-align: center;
+}
+.tableOn {
+    background: rgb(133, 185, 228);
+    color: white;
+    text-align: center;
+}
