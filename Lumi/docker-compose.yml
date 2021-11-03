@@ -12,5 +12,24 @@ services:
       - lumi-sql:/var/lib/postgresql/data
       - ./init_data:/app
 
+  web:
+    image: node:12
+    user: "node"                                # Use a non-root user node
+    working_dir: /home/node/app                 # with home directory /home/node/app
+    # environment:
+    #   - NODE_ENV=production                   # << Use this when deploying your application,
+    #                                           #   currently we have it off so that changes to
+    #                                           #   *.ejs are visible without restarting docker-compose.
+    depends_on:
+      - db                                      # This indicates that docker should start the database first,
+                                                # otherwise our website would have no data.
+    ports:
+        - "3000:3000"                           # Here we do need to publish the port for viewing on the host.
+    volumes:
+      - ./:/home/node/app                       # Binds the current directory (containing our source code) into the image,
+                                                #  so that changes made to the source code on the host
+                                                #  are reflected witin the container.
+    command: "npm start"       
+
 volumes:
   lumi-sql: {}

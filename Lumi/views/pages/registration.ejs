@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>registration</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../resources/css/registration.css" />
+    <script src="../resources/js/registration.js"></script>
+  </head>
+
+  <body class="center text-center">
+    <!-- <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand">LUMI</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="team_stats.html">Profile<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="player_info.html">About Us</a>
+            </li>
+          </ul>
+          <div class="form-inline my-2 my-lg-0">
+            <li class="nav-item">
+              <a class="my-2 my-sm-0" href="registration.html">Login/Registration</a>
+            </li>
+          </div>
+        </div>
+    </nav> -->
+    <%- include('../partials/navbar') %>
+
+    <br /><br /><br /><br />
+    <form class="form-signin">
+        <img class="rounded-circle" src="../resources/img/lumicar.jpeg" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <div class="checkbox mb-3">
+          <label>
+            <input type="checkbox" value="remember-me" id="remberCheck", name="rememberCheck"> Remember me | 
+          </label>
+              <a href="">Forgot Password?</a>
+        </div>
+        <button class="btn btn-lg btn-primary" type="submit">Sign in</button>
+        <a class="btn btn-lg btn-primary" href="#myModal"
+        class="btn btn-info"
+        data-toggle="modal"
+        onclick="openModal()"
+        >Sign Up</a>
+        <p class="mt-5 mb-3 text-muted">&copy; 2020-2021</p>
+    </form>
+
+    <!-- Modal HTML -->
+    
+    <div id="myModal" class="modal fade">
+      <div class="modal-dialog modal-login">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="avatar">
+              <img
+                src="../resources/img/lumicar.jpeg"
+                alt="Logo"
+                style="width: 75px; height: 75px;"
+              />
+            </div>
+              <h4 class="modal-title">Sign Up</h4>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-hidden="true"
+            >
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="/registration/add_user" method="post">
+              <div class="form-group">
+                <input type="text" class="form-control" name="firstName" id="firstName" placeholder="First Name"
+                  required="required" />
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Last Name" required="required" />
+              </div>
+              <div class="form-group">
+                <input id="psw" type="password" class="form-control" name="password" id="password" placeholder="Password"
+                  required="required" />
+              </div>
+              <div class="form-group">
+                <input id="cpsw" type="password" class="form-control" name="confirm password" id="confirm_password"
+                  placeholder="Confirm Password" required="required" />
+              </div>
+              <div class="form-group">
+                <button id="my_submit_button" class="btn btn-primary btn-block login-btn" disabled>
+                  <a href="../views/home.html"></a>
+                  Sign Up
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <div id="message" style="display: block">
+              <h3>Password must contain the following:</h3>
+              <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+              <p id="capital" class="invalid">
+                A <b>capital (uppercase)</b> letter
+              </p>
+              <p id="number" class="invalid">A <b>number</b></p>
+              <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+              <p id="match" class="invalid">
+                Password and Confirm Password Match
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br /><br /><br />
+  </body>
+</html>
