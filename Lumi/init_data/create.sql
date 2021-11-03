@@ -1,10 +1,11 @@
-DROP TABLE IF EXISTS users CASCADE;
-CREATE TABLE IF NOT EXISTS users (
-  id SERIAL PRIMARY KEY,      
-  firstName VARCHAR(30),       
-  lastName VARCHAR(30),  
-  email VARCHAR(30) NOT NULL,
-  username VARCHAR(30) NOT NULL,        
-  height INT NOT NULL,         
-  footsize INT NOT NULL        
+DROP TABLE IF EXISTS test CASCADE;
+
+CREATE TABLE test (
+  test VARCHAR(30)
+);
+
+DROP TABLE IF EXISTS test2 CASCADE;
+
+CREATE TABLE test2 (
+  test VARCHAR(30)
 );

@@ -23,7 +23,7 @@ var pgp = require('pg-promise')();
 const dbConfig = {
 	host: 'db',
 	port: 5432,
-	database: 'lumiApp_db_db',
+	database: 'lumiApp_db',
 	user: 'postgres',
 	password: 'pwd'
 };
@@ -66,6 +66,13 @@ app.get('/profile', function(req, res) {
 app.get('/registration', function(req, res) {
 	res.render('pages/registration',{
 		my_title:"Profile Page"
+	});
+});
+
+// Survey page
+app.get('/survey', function(req, res) {
+	res.render('pages/survey',{
+		my_title:"Survey Page"
 	});
 });
 
