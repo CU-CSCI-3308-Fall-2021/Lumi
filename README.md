@@ -5,4 +5,6 @@
 LUMI is designed to help snowboarders / ski enthusiasts ensure their safety and best experience while havimg fun. We provide information of weather predictions and snow levels of different ski resorts that will be shown towards users. In addition, new users will be given a quick survey in order to assign them a certain level of snowboarding experience which then allows them to be recommended to ski resorts that complies with their experience. Not to mention, we'd provide users reviews and ticket links to help them get easy access towards ski resorts and their information.
 
 ## Application Architecture
-LUMI will be designed using HTML and CSS for the frontend and will use Javascript as their backend. The database of the users will be stored using MongoDB and to deploy, we will be using Heroku as our provider.
+Lumi's front-end is designed using EJS, CSS, and Javascript in which it is coded using the Bootstrap framework. In addition, API calls and information will be dealt through Javascript files.
+The backend is structured using NodeJS for server-side calls while using the Express framework. In addition, it uses the npm package manager in order to download and use dependencies throughout the website.
+The database of Lumi will be connected through PostGreSQL in which it will be runned through Docker in order to create a container for the database to run.
