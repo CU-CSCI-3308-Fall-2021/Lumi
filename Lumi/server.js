@@ -70,7 +70,12 @@ app.get('/registration', function(req, res) {
 });
 
 //login registration
-app.get('/registration/login', function(req, res) {
+
+//login sign up
+app.post('/registration/signup', function(req, res) {
+	var firstName = req.body.firstName;
+	var lastName = req.body.lastName;
+	var password = req.body.pwd;
 	res.render('pages/survey',{
 		my_title:"Login Page"
 	});
