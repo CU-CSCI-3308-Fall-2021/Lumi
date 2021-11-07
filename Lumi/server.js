@@ -69,24 +69,65 @@ app.get('/registration', function(req, res) {
 	});
 });
 
-//login registration
-
 //login sign up
+// Still having problems here since global variable doesn't want to update every time I access inside a function
+var idTest = 0;
 app.post('/registration/signup', function(req, res) {
 	var firstName = req.body.firstName;
 	var lastName = req.body.lastName;
-	var password = req.body.pwd;
-	res.render('pages/survey',{
-		my_title:"Login Page"
+	var email = req.body.email;
+	var password = req.body.password;
+	var insert_statement = 'INSERT INTO users (firstName, lastName, email, password) VALUES (\'' + firstName + '\', \'' + lastName + '\', \'' + email + '\', \'' + password + '\');'; // Insert into table
+	var getIDNumber = 'Select id from users where firstName = \'' + firstName +'\';';
+
+	db.task('get-everything', task => {
+        return task.batch([
+            task.any(insert_statement),
+            task.any(getIDNumber)
+        ]);
+    })
+
+	// This is weird since it only changes the value of a number inside the info function but doesn't affect the outside function
+    .then(info => {
+		var x = function() {
+			idTest = 3;
+		};
+		x();
+    	res.render('pages/survey',{
+				my_title: "Home Page" 
+			})
+    })
+    .catch(err => {
+            console.log('error', err);
+            res.render('pages/home', {
+                my_title: 'Home Page'
+            })
+    });
+});
+console.log("idTest outside of route " + idTest);
+
+
+// Survey registration
+app.post('/', function(req, res) {
+	var years = req.body.yearsSkied;
+	var days = req.body.daysSeason;
+	var height = req.body.inputHeight;
+	var weight = req.body.inputWeight;
+	var shoeSize = req.body.inputShoe;
+	var insert_statement = 'INSERT INTO users (yearExp, dayExp, height, weight, shoeSize, skier, snowboarder) VALUES (\'' + firstName + '\', \'' + lastName + '\', \'' + email + '\', \'' + password + '\');';
+
+	res.render('pages/home',{
+		my_title:"Home Page"
 	});
 });
 
-// Survey page
 app.get('/survey', function(req, res) {
 	res.render('pages/survey',{
 		my_title:"Survey Page"
 	});
 });
+
+
 
 
 app.listen(3000);
