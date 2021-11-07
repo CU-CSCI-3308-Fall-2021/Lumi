@@ -62,6 +62,34 @@ app.get('/profile', function(req, res) {
 	});
 });
 
+// login route
+// Can't update global variables still
+app.get('/profile/user', function (req, res) {
+	var email = req.query.inputEmail;
+	var password = req.query.inputPassword;
+	var userInformation = 'select * from users where email = \'' + email + '\' and ( password = \'' + password + '\');'; // Query to check if email and password are matching
+	db.any(userInformation)
+		.then(info => {
+			if(info[0] == " "){
+				res.render('pages/home', {
+					my_title: "Home Page"
+				})
+			} else {
+				res.render('pages/profile', {
+					my_title: "Profile Page",
+					information: info[0]
+				})
+			}
+		})
+		.catch(err => {
+			console.log('err', err);
+			res.render('pages/registration', {
+				my_title: 'Home Page'
+			})
+		});
+
+});
+
 // registration page
 app.get('/registration', function(req, res) {
 	res.render('pages/registration',{
@@ -69,7 +97,7 @@ app.get('/registration', function(req, res) {
 	});
 });
 
-//login sign up
+//sign up route
 // Still having problems here since global variable doesn't want to update every time I access inside a function
 var idTest = 0;
 app.post('/registration/signup', function(req, res) {
@@ -104,10 +132,10 @@ app.post('/registration/signup', function(req, res) {
             })
     });
 });
-console.log("idTest outside of route " + idTest);
+// console.log("idTest outside of route " + idTest);
 
 
-// Survey registration
+// Survey route
 app.post('/', function(req, res) {
 	var years = req.body.yearsSkied;
 	var days = req.body.daysSeason;

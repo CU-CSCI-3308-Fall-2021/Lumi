@@ -14,6 +14,6 @@ CREATE TABLE users (
     snowboarder INT
 );
 
-INSERT INTO users(firstName, lastName, email, password)
-VALUES('Rayner', 'Susanto', 'Rayner.Susanto@colorado.edu', '1234'),
+INSERT INTO users(firstName, lastName, email, password, yearExp, dayExp, height, weight, shoeSize, skier, snowboarder)
+VALUES('Rayner', 'Susanto', 'Rayner.Susanto@colorado.edu', '1234', 3, 20, 170, 180, 9.5, 1, 0),
 ('Thor', 'Breece', 'Thor.Breece@colorado.edu', '6789');
