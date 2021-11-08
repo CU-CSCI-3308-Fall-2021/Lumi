@@ -106,7 +106,7 @@ app.post('/registration/signup', function(req, res) {
 	var email = req.body.email;
 	var password = req.body.password;
 	var insert_statement = 'INSERT INTO users (firstName, lastName, email, password) VALUES (\'' + firstName + '\', \'' + lastName + '\', \'' + email + '\', \'' + password + '\');'; // Insert into table
-	var getIDNumber = 'Select id from users where firstName = \'' + firstName +'\';';
+	//var getIDNumber = 'Select id from users where firstName = \'' + firstName +'\';';
 
 	db.task('get-everything', task => {
         return task.batch([
@@ -117,10 +117,6 @@ app.post('/registration/signup', function(req, res) {
 
 	// This is weird since it only changes the value of a number inside the info function but doesn't affect the outside function
     .then(info => {
-		var x = function() {
-			idTest = 3;
-		};
-		x();
     	res.render('pages/survey',{
 				my_title: "Home Page" 
 			})
@@ -140,9 +136,27 @@ app.post('/', function(req, res) {
 	var years = req.body.yearsSkied;
 	var days = req.body.daysSeason;
 	var height = req.body.inputHeight;
+	var shoesize = 0;
+	var boardsize = height * 0.88;
+	var level = 0;
+	var skier = req.body.isSkier;
+	var snowboarder = req.body.isSnowboarder;
+
+	if(years < 3){
+		level = 1;
+	} else if (years >= 3 && years < 10){
+		level = 2;
+	} else if(years > 10){
+		level = 3;
+	}
+
+	console.log("skier value = " + skier);
+	console.log("snowboarder value = " + snowboarder);
+
+	
 	var weight = req.body.inputWeight;
 	var shoeSize = req.body.inputShoe;
-	var insert_statement = 'INSERT INTO users (yearExp, dayExp, height, weight, shoeSize, skier, snowboarder) VALUES (\'' + firstName + '\', \'' + lastName + '\', \'' + email + '\', \'' + password + '\');';
+	// var insert_statement = 'INSERT INTO users (level, snowboardsize, shoeSize, skier, snowboarder) VALUES (\'' + level + '\', \'' + boardsize + '\', \'' + shoesize + '\', \'' + password + '\') WHERE ID = 3;';
 
 	res.render('pages/home',{
 		my_title:"Home Page"
@@ -154,9 +168,6 @@ app.get('/survey', function(req, res) {
 		my_title:"Survey Page"
 	});
 });
-
-
-
 
 app.listen(3000);
 console.log('3000 is the magic port');
