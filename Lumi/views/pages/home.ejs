@@ -1,0 +1,196 @@
+<!-- Home Page -->
+<!doctype html>
+<html lang="en">
+<script src=../resources/js/home.js></script>
+<!-- <script src=../resources/js/weatherApi.js></script> -->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Landing Page</title>
+  <link rel='icon' href='../resources/img/favicon.ico' type='image/x-icon' />
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link href="../resources/css/my_style.css" rel="stylesheet">
+  <!-- <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand"><img src="../resources/img/lumilogo.png" width=75 height=auto></a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="home.html">Home</a>
+        </li>
+        <li class="nav-item"> <a class="nav-link" href="profile.html">Profile<span class="sr-only">(current)</span>
+          </a>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About Us<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="maptest.html">Map<span class="sr-only">(current)</span></a>
+          </li>
+      </ul>
+      <div class="form-inline my-2 my-lg-0">
+        <li class="nav-item"><a class="my-2 my-sm-0" href="registration.html">Login/Registration</a> </li>
+      </div>
+    </div>
+  </nav> -->
+
+</head>
+
+<body onload="isUser();">
+  <%- include('../partials/menu') %> <!-- Navbar partials -->
+
+  <div class="container">
+    <div class="jumbotron" style="background-color:lightcyan">
+      <h2>Welcome to LUMI</h2>
+      <p>This site is used to show the current weather and snow conditions of various areas of Colorado.</p>
+      <h4 style="font-family:Papyrus">Showing the path to Snow</h4>
+      <hr class="my-1">
+    </div>
+    <hr class="my-4">
+    <div class="card-deck">
+      <div class="card">
+        <div class="card-header">
+          <h5>Most Fresh Snow</h5>
+        </div>
+        <img src="SNOWIMG.JPG" class="card-img-top" alt="Location w most fresh snow">
+        <div class="card-body">
+          <p class="card-text">Info about location w most fresh snow (js)</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h5>Most Famous Ski Resort Reprt</h5>
+        </div>
+        <img src="SKI RESORT.JPG(js to change most famous)" class="card-img-top" alt="Image of SKI RESORT">
+        <div class="card-body">
+          <p class="card-text">Breckenridge</p>
+          <div id="temp">
+            <p><img id="temp-icon" src="" alt="Getting weather icon..."><span id="temp-value">25</span><span id="temp-unit">&#x2109</span></p>
+        </div>
+          <div id="humidity-val">
+            <p><span">Humidity: </span><span id="humidity">60</span><span id="humidity-unit">%</span></p>
+          </div>
+          <div id="wind-speed-val">
+            <p><span>Wind Speed: </span><span id="wind-speed">60</span><span id="windSpeed-unit"> mph</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h5>Recent News</h5>
+        </div>
+        <div class="card-body">
+          <p class="card-text">Recent News HERE</p>
+        </div>
+      </div>
+    </div>
+    <hr class="my-4">
+
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover table-striped" id="weather-table">
+        <thead>
+          <tr>
+            <th class="align-bottom" id="Location_h">Location</th>
+            <th class="align-bottom" id="Current Weather_h">Current Weather</th>
+            <th class="align-bottom" id="Snow Pack_h">Snow pack</th>
+            <th class="align-bottom" id="Recommended_h">Recommended</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Row 1: Breckenridge -->
+          <tr>
+            <td><span id="Breckenridge"></span>Breckenridge</td>
+            <td><img id="Breck-icon" src="" alt="Getting weather icon..."><span id="Breck-weather">20</span><span>&#x2109</span><br>
+            <span>Humidity: </span><span id="Breck-humidity">30</span><span>%</span><br><span>Wind Speed: </span><span id="Breck-windSpeed">69</span> mph</td> 
+            <td><span id="Snow Pack"></span>SNOW PACK OF LOCAL</td>
+            <td><span id="Recommended"></span>RECOMMENDED TO USER/NON USER</td>
+          </tr>
+          <!-- Row 2: Vail -->
+          <tr>
+            <td><span id="Vail"></span>Vail</td>
+            <td><img id="Vail-icon" src="" alt="Getting weather icon..."><span id="Vail-weather">20</span><span>&#x2109</span><br>
+            <span>Humidity: </span><span id="Vail-humidity">30</span><span>%</span><br><span>Wind Speed: </span><span id="Vail-windSpeed">69</span> mph</td> 
+            <td><span id="Snow Pack"></span>SNOW PACK OF LOCAL</td>
+            <td><span id="Recommended"></span>RECOMMENDED TO USER/NON USER</td>
+          </tr>
+          <!-- Row 3: Aspen -->
+          <tr>
+            <td><span id="Aspen"></span>Aspen Snowmass</td>
+            <td><img id="Aspen-icon" src="" alt="Getting weather icon..."><span id="Aspen-weather">20</span><span>&#x2109</span><br>
+            <span>Humidity: </span><span id="Aspen-humidity">30</span><span>%</span><br><span>Wind Speed: </span><span id="Aspen-windSpeed">69</span> mph</td> 
+            <td><span id="Snow Pack"></span>SNOW PACK OF LOCAL</td>
+            <td><span id="Recommended"></span>RECOMMENDED TO USER/NON USER</td>
+          </tr>
+          <!-- Row 4: WinterPark -->
+          <tr>
+            <td><span id="WinterPark"></span>WinterPark</td>
+            <td><img id="WinterPark-icon" src="" alt="Getting weather icon..."><span id="WinterPark-weather">20</span><span>&#x2109</span><br>
+            <span>Humidity: </span><span id="WinterPark-humidity">30</span><span>%</span><br><span>Wind Speed: </span><span id="WinterPark-windSpeed">69</span> mph</td> 
+            <td><span id="Snow Pack"></span>SNOW PACK OF LOCAL</td>
+            <td><span id="Recommended"></span>RECOMMENDED TO USER/NON USER</td>
+          </tr>
+          <!-- Row 5: Beaver Creek -->
+          <tr>
+            <td><span id="BeaverCreek"></span>Beaver Creek</td>
+            <td><img id="BeaverCreek-icon" src="" alt="Getting weather icon..."><span id="BeaverCreek-weather">20</span><span>&#x2109</span><br>
+            <span>Humidity: </span><span id="BeaverCreek-humidity">30</span><span>%</span><br><span>Wind Speed: </span><span id="BeaverCreek-windSpeed">69</span> mph</td> 
+            <td><span id="Snow Pack"></span>SNOW PACK OF LOCAL</td>
+            <td><span id="Recommended"></span>RECOMMENDED TO USER/NON USER</td>
+          </tr>
+          <!-- Row 6: Keystone -->
+          <tr>
+            <td><span id="Keystone"></span>Keystone</td>
+            <td><img id="Keystone-icon" src="" alt="Getting weather icon..."><span id="Keystone-weather">20</span><span>&#x2109</span><br>
+            <span>Humidity: </span><span id="Keystone-humidity">30</span><span>%</span><br><span>Wind Speed: </span><span id="Keystone-windSpeed">69</span> mph</td> 
+            <td><span id="Snow Pack"></span>SNOW PACK OF LOCAL</td>
+            <td><span id="Recommended"></span>RECOMMENDED TO USER/NON USER</td>
+          </tr>
+          <!-- Row 7: Steamboat -->
+          <tr>
+            <td><span id="Steamboat"></span>Steamboat Springs</td>
+            <td><img id="Steamboat-icon" src="" alt="Getting weather icon..."><span id="Steamboat-weather">20</span><span>&#x2109</span><br>
+            <span>Humidity: </span><span id="Steamboat-humidity">30</span><span>%</span><br><span>Wind Speed: </span><span id="Steamboat-windSpeed">69</span> mph</td> 
+            <td><span id="Snow Pack"></span>SNOW PACK OF LOCAL</td>
+            <td><span id="Recommended"></span>RECOMMENDED TO USER/NON USER</td>
+          </tr>
+          <!-- Row 8: Telluride -->
+          <tr>
+            <td><span id="Telluride"></span>Telluride</td>
+            <td><img id="Telluride-icon" src="" alt="Getting weather icon..."><span id="Telluride-weather">20</span><span>&#x2109</span><br>
+            <span>Humidity: </span><span id="Telluride-humidity">30</span><span>%</span><br><span>Wind Speed: </span><span id="Telluride-windSpeed">69</span> mph</td> 
+            <td><span id="Snow Pack"></span>SNOW PACK OF LOCAL</td>
+            <td><span id="Recommended"></span>RECOMMENDED TO USER/NON USER</td>
+          </tr>
+          <!-- Row 9: Copper Mountain -->
+          <tr>
+            <td><span id="CopperMountain"></span>Copper Mountain</td>
+            <td><img id="Copper-icon" src="" alt="Getting weather icon..."><span id="Copper-weather">20</span><span>&#x2109</span><br>
+            <span>Humidity: </span><span id="Copper-humidity">30</span><span>%</span><br><span>Wind Speed: </span><span id="Copper-windSpeed">69</span> mph</td> 
+            <td><span id="Snow Pack"></span>SNOW PACK OF LOCAL</td>
+            <td><span id="Recommended"></span>RECOMMENDED TO USER/NON USER</td>
+          </tr>
+          <!-- Row 10: Araphaoe Basin -->
+          <tr>
+            <td><span id="AraphaoeBasin"></span>Araphaoe Basin</td>
+            <td><img id="Araphaoe-icon" src="" alt="Getting weather icon..."><span id="Araphaoe-weather">20</span><span>&#x2109</span><br>
+            <span>Humidity: </span><span id="Araphaoe-humidity">30</span><span>%</span><br><span>Wind Speed: </span><span id="Araphaoe-windSpeed">69</span> mph</td> 
+            <td><span id="Snow Pack"></span>SNOW PACK OF LOCAL</td>
+            <td><span id="Recommended"></span>RECOMMENDED TO USER/NON USER</td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="button" onclick="toggleTable();" class="btn btn-info">Toggle table/map</button>
+      <div class="container" id="map_preview">
+        <p>map goes here</p>
+      </div>
+    </div>
+    <footer class="footer">&copy; Copyright CSCI-3308 MacroHard Fall 2021</footer>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</body>
+
+</html>
