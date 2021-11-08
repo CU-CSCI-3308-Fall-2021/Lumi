@@ -12,7 +12,7 @@ function openModal() {
       var lowerCaseLetters = /[a-z]/g;
       var upperCaseLetters = /[A-Z]/g; 
       var numbers = /[0-9]/g; 
-      var minLength = 6; 
+      var minLength = 8; 
       if (myInput.value.match(lowerCaseLetters)) {
         letter.classList.remove("invalid");
         letter.classList.add("valid");
@@ -74,6 +74,3 @@ function openModal() {
     };
   };
   
-  function onClickFunction() {
-    window.location.href = "/survey";
-  };
