@@ -38,7 +38,6 @@ function openModal() {
         number.classList.add("invalid");
       }
   
-
       if (myInput.value.length >= minLength) {
         length.classList.remove("invalid");
         length.classList.add("valid");
@@ -51,7 +50,9 @@ function openModal() {
     console.log(letter.classList);
 
     confirmMyInput.onkeyup = function () {
-      var passEqualsConfPass = (myInput == confirmMyInput) ? false:true; 
+      // Switched the positions of true false, and used .value as attribute to fix the modal
+      // In addition, changed the values that are being compared
+      var passEqualsConfPass = (myInput.value == confirmMyInput.value && myInput.value != "" && confirmMyInput.value != "") ? true:false;
       if (passEqualsConfPass) {
         match.classList.remove("invalid");
         match.classList.add("valid");
@@ -61,17 +62,18 @@ function openModal() {
       }
       enableButton(letter, capital, number, length, match);
     };
-  }
+  };
   
   function enableButton(letter, capital, number, length, match) {
     var button = document.getElementById("my_submit_button");
-    var condition = (letter && capital && number && match && length) ? true:false;
-    
+    // Changed the condition statement
+    var condition = (letter.classList.value === "valid" && capital.classList.value === "valid" && capital.classList.value === "valid" && length.classList.value === "valid" && match.classList.value === "valid") ? true:false;
+
     if (condition) {
       button.disabled = false;
-    }
-  }
+    };
+  };
   
   function onClickFunction() {
     window.location.href = "/survey";
-  }
+  };
