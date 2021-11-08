@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg">
+    <!-- <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand"><img src="../resources/img/lumilogo.png" width=75 height=auto></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,72 +42,75 @@
                 </li>
             </div>
         </div>
-    </nav>
+    </nav> -->
+   
+    <%- include('../partials/menu') %>
 
     <img src="../resources/img/lumilogo.png" class="img-fluid" alt="logo" id="logoImg">
     <br>
     <br>
     <div class="container">
-        <form action="home.html">
+        <form action="/" method="post">
 
             <div class="form-group">
                 <label for="yearsSkied">How long many years have you skied?</label>
-                <input type="text" class="form-control" id="yearsSkied" placeholder="Years">
+                <input type="text" class="form-control" name="yearsSkied" id="yearsSkied" placeholder="Years">
             </div>
             <div class="form-group">
                 <label for="daysSeason">How many days a season do you ski?</label>
-                <input type="text" class="form-control" id="daysSeason" placeholder="Days">
+                <input type="text" class="form-control" name="daysSeason" id="daysSeason" placeholder="Days">
             </div>
             <div class="form-row">
                 <div class="col">
                     <label for="inputCity">Height</label>
-                    <input type="text" class="form-control" id="inputHeight" placeholder="Ie. 70in">
+                    <input type="text" class="form-control" name="inputHeight" id="inputHeight" placeholder="Ie. 170meters">
                 </div>
                 <div class="col">
-                    <label for="inputCity">Weight</label>
-                    <input type="text" class="form-control" id="inputWeight" placeholder="Ie. 160lb">
+                    <!-- Changed the for attribute from inputCity to inputWeight -->
+                    <label for="inputWeight">Weight</label>
+                    <input type="text" class="form-control" name="inputWeight" id="inputWeight" placeholder="Ie. 160lb">
                 </div>
                 <div class="col">
                     <label for="inputShoe">Shoe Size</label>
-                    <select id="inputShoe" class="form-control">
+                    <select name="inputShoe" id="inputShoe" class="form-control">
                         <option selected>Size</option>
-                        <option>4</option>
-                        <option>4.5</option>
-                        <option>5</option>
-                        <option>5.5</option>
-                        <option>6</option>
-                        <option>6.5</option>
-                        <option>7</option>
-                        <option>7.5</option>
-                        <option>8</option>
-                        <option>8.5</option>
-                        <option>9</option>
-                        <option>9.5</option>
-                        <option>10</option>
-                        <option>10.5</option>
-                        <option>11</option>
-                        <option>11.5</option>
-                        <option>12</option>
-                        <option>12.5</option>
-                        <option>13</option>
+                        <option value=4>4</option>
+                        <option value=4.5>4.5</option>
+                        <option value=5>5</option>
+                        <option value=5.5>5.5</option>
+                        <option value=6>6</option>
+                        <option value=6.5>6.5</option>
+                        <option value=7>7</option>
+                        <option value=7.5>7.5</option>
+                        <option value=8>8</option>
+                        <option value=8.5>8.5</option>
+                        <option value=9>9</option>
+                        <option value=9.5>9.5</option>
+                        <option value=10>10</option>
+                        <option value=10.5>10.5</option>
+                        <option value=11>11</option>
+                        <option value=11.5>11.5</option>
+                        <option value=12>12</option>
+                        <option value=12.5>12.5</option>
+                        <option value=13>13</option>
                     </select>
                 </div>
             </div>
             <br>
             <label id="sportChoice">Are you a:</label>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="isSkier" value="skier">
+                <input class="form-check-input" type="radio" name="isSkier" id="isSkier" value="1">
                 <label class="form-check-label" for="inlineRadio1">Skier</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="isSnowboarder"
-                    value="snowboarder">
+                <input class="form-check-input" type="radio" name="isSnowboarder" id="isSnowboarder"
+                    value="1">
                 <label class="form-check-label" for="inlineRadio2">Snowboarder</label>
             </div>
             <input type="submit" value="Submit" class="btn btn-primary btn-block" id="submitBtn">
         </form>
     </div>
-    <footer class="footer">&copy; Copyright CSCI-3308 MacroHard Fall 2021</footer>
+    <%- include('../partials/footer') %>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

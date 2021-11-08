@@ -38,16 +38,16 @@
     <%- include('../partials/menu') %>
 
     <br /><br /><br /><br />
-    <form class="form-signin" action="/registration/login">
+    <form class="form-signin" action="/profile/user" method="get">
         <img src="../resources/img/lumilogo.png" alt="logo" width="auto" height="75">
         <h2>Please sign in</h2>
         <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <input type="email" name="inputEmail" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <input type="password" name="inputPassword" id="inputPassword" class="form-control" placeholder="Password" required>
         <div class="checkbox mb-3">
           <label>
-            <input type="checkbox" value="remember-me" id="remberCheck", name="rememberCheck"> Remember me | 
+            <input type="checkbox" value="remember-me" id="rememberCheck", name="rememberCheck"> Remember me | 
           </label>
               <a href="">Forgot Password?</a>
         </div>
@@ -82,7 +82,7 @@
             </button>
           </div>
         <div class="modal-body">
-            <form action="/registration/login" method="post">
+            <form action="/registration/signup" method="post">
                 <div class="form-group">
                     <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" required="required" />
                 </div>
@@ -90,9 +90,10 @@
                     <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" required="required" />
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="email" name="email" placeholder="Email" required="required" />
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" required="required" />
                 </div>
-                <div class="form-group">
+                <!-- Changed id from psw to password -->
+                <div class="form-group"> 
                     <input id="psw" type="password" class="form-control" name="password" placeholder="Password"
                         required="required" />
                 </div>
@@ -124,6 +125,6 @@
         </div>
       </div>
     </div>
-    <footer class="footer">&copy; Copyright CSCI-3308 MacroHard Fall 2021</footer>
   </body>
+  <%- include('../partials/footer') %>
 </html>
