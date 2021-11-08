@@ -74,6 +74,3 @@ function openModal() {
     };
   };
   
-  function onClickFunction() {
-    window.location.href = "/survey";
-  };
