@@ -1,0 +1,11 @@
+div{
+    width: 80%;
+    background:lightcyan;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    margin-top: 20%;
+    margin-bottom: 20%;
+}
