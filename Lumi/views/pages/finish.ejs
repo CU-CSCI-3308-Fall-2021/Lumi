@@ -21,10 +21,38 @@
 </head>
 
 <body>
-    <div>
-        <h2> THANK YOU FOR REGISTERING, PLEASE RETURN TO THE HOMEPAGE</h2>
-        <button><a href="/">Return home here</a></button>
+    <%- include('../partials/menu') %> 
+    <div class="container" id="thankYou">
+        <div class="jumbotron jumbo1 text-center" id="thankYou">
+            <h1>Thank you for registering!</h1>
+            <p>"Showing the path to Snow"</p>
+        </div>
     </div>
+    <div class="container p-3" id="randomInfo">
+        <div class="card-deck">
+            <div class="card">
+              <div class="card-header" id="confirmation"><h5>Confirmation</h5></div>
+              <div class="card-body">
+                <p class="card-text">You should receive your confirmation email within a few minutes, you do not need 
+                    to do anything but it includes reccomendations just for you!
+                </p>
+              </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="welcome"><h5>Welcome!</h5></div>
+                <div class="card-body">
+                  <p class="card-text">Lumi aims to provide some of the most up to date and useful information compared to
+                      any other winter-sports based weather app. Along with that, we provide an ad-free experience to ensure
+                      nothing distracts you when looking at juicy fresh snow!
+                  </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footerFinish">
+        <%- include('../partials/footer') %>
+    </div>
+    
 </body>
 
 </html>
