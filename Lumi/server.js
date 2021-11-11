@@ -8,6 +8,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 var pgp = require('pg-promise')();
 
 
+
 /**********************
   Database Connection information
   host: This defines the ip address of the server hosting our database.
@@ -58,7 +59,6 @@ app.get('/maptest', function(req, res) {
 
 // profile page
 app.get('/profile', function(req, res) {
-
 	if(loggedInId == 0){
 		res.render('pages/registration', {
 			my_title: "Registration Page"
@@ -70,26 +70,6 @@ app.get('/profile', function(req, res) {
 				task.any(userInformation)
 			]);
 		})
-	}
-	res.render('pages/profile',{
-		my_title:"Profile Page"
-	});
-});
-
-//finish page
-app.get('/finish', function(req, res) {
-	res.render('pages/finish',{
-		my_title:"Welcome"
-	});
-});
-
-// login route
-// Can't update global variables still
-app.get('/profile/user', function (req, res) {
-	var email = req.query.inputEmail;
-	var password = req.query.inputPassword;
-	var userInformation = 'select * from users where email = \'' + email + '\' and ( password = \'' + password + '\');'; // Query to check if email and password are matching
-	db.any(userInformation)
 		.then(info => {
 			loggedInFirstName = info[0][0].firstname; // Remembers the login user information for getting information and updates
 			loggedInLastName = info[0][0].lastname; // Remembers the login user information for getting information and updates
@@ -212,8 +192,6 @@ app.post('/profile/updated', function(req, res) {
         res.redirect('/')
     });
 });
-
-//error page
 app.get('/error', function(req, res) {
 	res.render('pages/error',{
 		my_title:"Error"
@@ -312,7 +290,6 @@ app.get('/survey', function(req, res) {
 		my_title:"Survey Page"
 	});
 });
-
 
 app.listen(3000);
 console.log('3000 is the magic port');
