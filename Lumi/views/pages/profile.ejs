@@ -22,42 +22,42 @@
                 <div class="card border-0 bg-light p-4">
                     <div class=" image d-flex flex-column justify-content-center align-items-center"> <img
                             src="../resources/img/temp_image.svg" class="rounded-circle" height="200" width="200">
-                        <span class="mt-3 display-4"> <%- information.firstname %> <%- information.lastname %> </span>
-                        <span class="display-4"> <%- information.email %> </span>
-                        <div class="d-flex flex-row justify-content-center align-items-center mt-3 display-4">
-                            <% if(information.yearexp < 3){ %>
-                                Starter
-                            <% } %>
-
-                            <% if(information.yearexp > 4 && information.yearexp < 10 ){ %>
-                                Medium
-                            <% } %>
-
-                            <% if(information.yearexp > 10){ %>
+                        <span class="mt-3 display-4"> <%- data[0].firstname %> <%- data[0].lastname %> </span>
+                        <span class="display-4"> <%- data[0].email %> </span>
+                        <span class="display-4"> 
+                            <% if(data[0].level == 1){ %>
+                                Beginner
+                            <% } else if(data[0].level == 2) { %>
+                                Intermediate
+                            <% } else if(data[0].level == 3) { %>
                                 Professional
-                            <% } %> 
-                        </div>
-                        <div class=" px-2 rounded mt-4 date display-4">
-                            <span class="join">Joined May,2021</span>
-                        </div>
+                            <% } %>
+                        </span>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row justify-content-center mt-5 bg-light p-3">
             <div class="col-12">
-                <form action="home.html">
+                <form action="/profile/updated" method="post">
                     <div class="form-group row">
-                        <label for="fullName" class="col-sm-2 col-form-label">Full Name</label>
+                        <label for="firstName" class="col-sm-2 col-form-label">First Name</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="fullName" placeholder="Joe Smith">
+                            <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Joe">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="lastName" class="col-sm-2 col-form-label">Last Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Smith">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="inputEmail" class="col-sm-2 col-form-label">Email Address</label>
                         <div class="col-sm-10">
-                            <input type="email" class="form-control" id="inputEmail"
+                            <input type="email" class="form-control" name="email" id="email"
                                 placeholder="Joe.smith@hotfire.com">
                         </div>
                     </div>
@@ -65,7 +65,7 @@
                     <div class="form-group row">
                         <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
                         <div class="col-sm-10">
-                            <input type="password" class="form-control" id="inputPassword">
+                            <input type="password" class="form-control" name="password" id="password">
                         </div>
                     </div>
 
@@ -77,55 +77,16 @@
                     </div>
 
                     <div class="form-group row justify-content-between">
-                        <label for="inputHeight" class="col-sm-2 col-form-label">Height</label>
+                        <label for="inputHeight" class="col-sm-2 col-form-label">Snowboard Size</label>
                         <div class="col-4">
-                            <input type="number" class="form-control" id="inputHeight" min=>
+                            <input type="number" class="form-control" name="snowboardsize" id="snowboardsize" min=>
                         </div>
 
-                        <label for="inputWEight" class="col-sm-2 col-form-label text-right">Weight</label>
+                        <label for="inputWeight" class="col-sm-2 col-form-label text-right">Shoe Size</label>
                         <div class="col-4">
-                            <input type="number" class="form-control" id="inputWeight" min="0">
+                            <input type="number" class="form-control" name="shoesize" id="shoesize" min="0">
                         </div>
                     </div>
-
-                    <!-- <fieldset class="form-group">
-            <div class="row">
-              <legend class="col-form-label col-sm-2 pt-0">Student Status</legend>
-              <div class="col-sm-10">
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="CU_Undergrad" id="CU_Undergrad" value="yes" checked>
-                  <label class="form-check-label" for="CU_Undergrad">
-                    Undergrad
-                  </label>
-                  
-                  <select class="form-control form-control-sm" name="Undergrad Status">
-                    <option selected>Pick an Option</option>
-                    <option value="Freshman">Freshman</option>
-                    <option value="Sophomore">Sophomore</option>
-                    <option value="Junior">Junior</option>
-                    <option value="Senior">Senior</option>
-                  </select>
-    
-                </div>
-          
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="CU_Undergrad" id="CU_Grad" value="option2">
-                  <label class="form-check-label" for="CU_Grad">
-                    Graduate
-                  </label>
-    
-                  <select class="form-control form-control-sm" name="Graduate Status">
-                    <option selected>Pick an Option</option>
-                    <option value="MA">MA</option>
-                    <option value="MBA">MBA</option>
-                    <option value="PhD">PhD</option>
-                  </select>
-    
-                </div>
-          
-              </div>
-            </div>
-          </fieldset> -->
 
                     <input type="submit" value="Submit" class="btn btn-primary col btn-block">
             </div>
@@ -167,15 +128,11 @@
             <table class="table">
                 <tr>
                     <th scope="row"> Snowboard Length</th>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th scope="row">Ski Pole Length</th>
-                    <td>Inch</td>
+                    <td><%- data[0].snowboardsize %> CM</td>
                 </tr>
                 <tr>
                     <th scope="row">Type of Boots</th>
-                    <td>Size</td>
+                    <td><%- data[0].shoesize %></td>
                 </tr>
             </table>
             <section class="check-list">
