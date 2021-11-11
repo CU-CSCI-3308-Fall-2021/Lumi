@@ -21,3 +21,41 @@
     color: white;
     text-align: center;
 }
+/* .jumbo1 {
+    background: url(../img/aboutProfiles/jumbobg.jpg);
+    -webkit-background-size: auto auto;
+    -moz-background-size: auto auto;
+    -o-background-size: auto auto;
+    background-size: 100% 200%;
+    color: lightblue;
+    text-align: center;
+    z-index: 1;
+} */
+
+.shadow_disp {  /* shado_disp used to add shadow foreground effect to jumbotrons. */
+    background-color: #30303062;
+    z-index: 10;
+    max-width: 70%
+}
+
+.front {
+    z-index: 100;
+}
+
+.home_backimg {
+    position: absolute;
+    z-index: 1;
+}
+
+.backimg_cont {
+    background-color: #30303062;
+    max-height: 10%;
+    position: absolute;
+}
+
+#map_preview {
+    position: relative;
+    height: 600px;
+    width: 600px;
+    border-radius: 5px;
+}

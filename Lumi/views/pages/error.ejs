@@ -16,9 +16,15 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../resources/css/error.css" />
 </head>
 <body>
     <%- include('../partials/menu') %> 
-    <h1> YOU FOUND AN ERROR </h1>
+    <div class="container" id="errorMsg">
+        <div class="jumbotron jumbo1 text-center" id="error">
+            <h1><strong>YOU ENCOUNTERED AN ERROR</strong></h1>
+        </div>
+    </div>
+    
 </body>
 </html>

@@ -89,8 +89,6 @@ app.get('/profile', function(req, res) {
 					data:''
 				})
 		});
-	}
-
 });
 
 // login route

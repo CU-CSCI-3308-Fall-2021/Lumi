@@ -12,17 +12,8 @@
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.js"></script>
 
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
-        #map {
-            position: absolute;
-            top: 5%;
-            bottom: 0;
-            width: 100%;
-        }
+        body { margin: 0; padding: 0; }
+        #map { position: absolute; top: 5%; bottom: 0; width: 100%; }
     </style>
     
 </head>
@@ -30,423 +21,7 @@
 
 <body>
     <%- include('../partials/menu') %> <!-- Navbar partials -->
-    <style>
-        .mapboxgl-popup {
-            max-width: 400px;
-            font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-        }
-
-        #breck {
-            display: list-item;
-            position: relative;
-            margin: 0px;
-            width: 100%;
-            height: 30px;
-            border: none;
-            border-radius: 3px;
-            font-size: 12px;
-            text-align: center;
-            color: #fff;
-            background: #0b82a7;
-        }
-
-        #vail {
-            display: list-item;
-            position: relative;
-            margin: 0px;
-            width: 100%;
-            height: 30px;
-            border: none;
-            border-radius: 3px;
-            font-size: 12px;
-            text-align: center;
-            color: #fff;
-            background: #0b82a7;
-        }
-
-        #copper {
-            display: list-item;
-            position: relative;
-            margin: 0px;
-            width: 100%;
-            height: 30px;
-            border: none;
-            border-radius: 3px;
-            font-size: 12px;
-            text-align: center;
-            color: #fff;
-            background: #0b82a7;
-        }
-
-        #keystone {
-            display: list-item;
-            position: relative;
-            margin: 0px;
-            width: 100%;
-            height: 30px;
-            border: none;
-            border-radius: 3px;
-            font-size: 12px;
-            text-align: center;
-            color: #fff;
-            background: #0b82a7;
-        }
-
-        #A-Basin {
-            display: list-item;
-            position: relative;
-            margin: 0px;
-            width: 100%;
-            height: 30px;
-            border: none;
-            border-radius: 3px;
-            font-size: 12px;
-            text-align: center;
-            color: #fff;
-            background: #0b82a7;
-        }
-
-        #loveland {
-            display: list-item;
-            position: relative;
-            margin: 0px;
-            width: 100%;
-            height: 30px;
-            border: none;
-            border-radius: 3px;
-            font-size: 12px;
-            text-align: center;
-            color: #fff;
-            background: #0b82a7;
-        }
-
-        #winterpark {
-            display: list-item;
-            position: relative;
-            margin: 0px;
-            width: 100%;
-            height: 30px;
-            border: none;
-            border-radius: 3px;
-            font-size: 12px;
-            text-align: center;
-            color: #fff;
-            background: #0b82a7;
-        }
-
-        #eldora {
-            display: list-item;
-            position: relative;
-            margin: 0px;
-            width: 100%;
-            height: 30px;
-            border: none;
-            border-radius: 3px;
-            font-size: 12px;
-            text-align: center;
-            color: #fff;
-            background: #0b82a7;
-        }
-
-        #steam {
-            display: list-item;
-            position: relative;
-            margin: 0px;
-            width: 100%;
-            height: 30px;
-            border: none;
-            border-radius: 3px;
-            font-size: 12px;
-            text-align: center;
-            color: #fff;
-            background: #0b82a7;
-        }
-
-        #howelsen {
-            display: list-item;
-            position: relative;
-            margin: 0px;
-            width: 100%;
-            height: 30px;
-            border: none;
-            border-radius: 3px;
-            font-size: 12px;
-            text-align: center;
-            color: #fff;
-            background: #0b82a7;
-        }
-
-        #beaver {
-            display: list-item;
-            position: relative;
-            margin: 0px;
-            width: 100%;
-            height: 30px;
-            border: none;
-            border-radius: 3px;
-            font-size: 12px;
-            text-align: center;
-            color: #fff;
-            background: #0b82a7;
-        }
-
-        #cooper {
-            display: list-item;
-            position: relative;
-            margin: 0px;
-            width: 100%;
-            height: 30px;
-            border: none;
-            border-radius: 3px;
-            font-size: 12px;
-            text-align: center;
-            color: #fff;
-            background: #0b82a7;
-        }
-
-        #snowmass {
-            display: list-item;
-            position: relative;
-            margin: 0px;
-            width: 100%;
-            height: 30px;
-            border: none;
-            border-radius: 3px;
-            font-size: 12px;
-            text-align: center;
-            color: #fff;
-            background: #0b82a7;
-        }
-
-        #ajax {
-            display: list-item;
-            position: relative;
-            margin: 0px;
-            width: 100%;
-            height: 30px;
-            border: none;
-            border-radius: 3px;
-            font-size: 12px;
-            text-align: center;
-            color: #fff;
-            background: #0b82a7;
-        }
-
-        #highland {
-            display: list-item;
-            position: relative;
-            margin: 0px;
-            width: 100%;
-            height: 30px;
-            border: none;
-            border-radius: 3px;
-            font-size: 12px;
-            text-align: center;
-            color: #fff;
-            background: #0b82a7;
-        }
-
-        #buttermilk {
-            display: list-item;
-            position: relative;
-            margin: 0px;
-            width: 100%;
-            height: 30px;
-            border: none;
-            border-radius: 3px;
-            font-size: 12px;
-            text-align: center;
-            color: #fff;
-            background: #0b82a7;
-        }
-
-        #butte {
-            display: list-item;
-            position: relative;
-            margin: 0px;
-            width: 100%;
-            height: 30px;
-            border: none;
-            border-radius: 3px;
-            font-size: 12px;
-            text-align: center;
-            color: #fff;
-            background: #0b82a7;
-        }
-
-        #monarch {
-            display: list-item;
-            position: relative;
-            margin: 0px;
-            width: 100%;
-            height: 30px;
-            border: none;
-            border-radius: 3px;
-            font-size: 12px;
-            text-align: center;
-            color: #fff;
-            background: #0b82a7;
-        }
-
-        #wolf {
-            display: list-item;
-            position: relative;
-            margin: 0px;
-            width: 100%;
-            height: 30px;
-            border: none;
-            border-radius: 3px;
-            font-size: 12px;
-            text-align: center;
-            color: #fff;
-            background: #0b82a7;
-        }
-
-        #purgatory {
-            display: list-item;
-            position: relative;
-            margin: 0px;
-            width: 100%;
-            height: 30px;
-            border: none;
-            border-radius: 3px;
-            font-size: 12px;
-            text-align: center;
-            color: #fff;
-            background: #0b82a7;
-        }
-
-        #silverton {
-            display: list-item;
-            position: relative;
-            margin: 0px;
-            width: 100%;
-            height: 30px;
-            border: none;
-            border-radius: 3px;
-            font-size: 12px;
-            text-align: center;
-            color: #fff;
-            background: #0b82a7;
-        }
-
-        #telluride {
-            display: list-item;
-            position: relative;
-            margin: 0px;
-            width: 100%;
-            height: 30px;
-            border: none;
-            border-radius: 3px;
-            font-size: 12px;
-            text-align: center;
-            color: #fff;
-            background: #0b82a7;
-        }
-
-        #powder {
-            display: list-item;
-            position: relative;
-            margin: 0px;
-            width: 100%;
-            height: 30px;
-            border: none;
-            border-radius: 3px;
-            font-size: 12px;
-            text-align: center;
-            color: #fff;
-            background: #0b82a7;
-        }
-
-        #sunlight {
-            display: list-item;
-            position: relative;
-            margin: 0px;
-            width: 100%;
-            height: 35px;
-            border: none;
-            border-radius: 3px;
-            font-size: 12px;
-            text-align: center;
-            color: #fff;
-            background: #0b82a7;
-        }
-
-        #fly {
-            display: list-item;
-            position: relative;
-            margin: 0px;
-            width: 100px;
-            height: 30px;
-            border: none;
-            border-radius: 3px;
-            font-size: 12px;
-            text-align: center;
-            color: #fff;
-            background: #0b82a7;
-        }
-
-        #reset {
-            display: block;
-            position: relative;
-            margin: 0px;
-            width: 100%;
-            height: 20px;
-            border: none;
-            border-radius: 3px;
-            font-size: 12px;
-            text-align: center;
-            color: #fff;
-            background: #ff5353;
-        }
-
-        #jumps {
-            display: block;
-            position: relative;
-            top: 0;
-            left: 10px;
-            margin: 0px;
-            width: 150px;
-            height: 500px;
-            padding-left: 10px;
-            padding-bottom: 10px;
-            border: none;
-            border-radius: 3px;
-            font-size: 12px;
-            text-align: center;
-            color: #fff;
-            background: #30303062;
-
-        }
-
-        #fly_locations {
-            position: relative;
-            top: 0%;
-        }
-
-        #jumps::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        #reset_fly {
-            display: block;
-            position: relative;
-            top: 0;
-            left: 0;
-            margin: 0px;
-            width: 100%;
-            height: 40px;
-            padding-left: 10px;
-            padding-bottom: 10px;
-            border: none;
-            border-radius: 3px;
-            font-size: 12px;
-            text-align: center;
-            color: #fff;
-            background: #53acff00;
-        }
-    </style>
-    <script>
+    <script> 
         function hideAll() {
             var breck = document.getElementById("breck_info");
             breck.style.display = 'none';
@@ -715,9 +290,216 @@
                 x.style.display = "none";
             }
         }
-    </script>
-    <div class="container" ; id=legend style="position: absolute; left:10px; bottom:10%; z-index: 100; background:#30303062; color:#fff; max-width: 300px;
-">
+        function showAll(){
+            var breck = document.getElementById("breck");
+            breck.style.display = "block";
+            var vail = document.getElementById("vail");
+            vail.style.display = "block";
+            var copper = document.getElementById("copper");
+            copper.style.display = "block";
+            var keystone = document.getElementById("keystone");
+            keystone.style.display = "block";
+            var abasin = document.getElementById("A-Basin");
+            abasin.style.display = "block";
+            var loveland = document.getElementById("loveland");
+            loveland.style.display = "block";
+            var winterpark = document.getElementById("winterpark");
+            winterpark.style.display = "block";
+            var eldora = document.getElementById("eldora");
+            eldora.style.display = "block";
+            var steam = document.getElementById("steam");
+            steam.style.display = "block";
+            var howelsen = document.getElementById("howelsen");
+            howelsen.style.display = "block";
+            var beaver = document.getElementById("beaver");
+            beaver.style.display = "block";
+            var cooper = document.getElementById("cooper");
+            cooper.style.display = "block";
+            var snowmass = document.getElementById("snowmass");
+            snowmass.style.display = "block";
+            var ajax = document.getElementById("ajax");
+            ajax.style.display = "block";
+            var highland = document.getElementById("highland");
+            highland.style.display = "block";
+            var buttermilk = document.getElementById("buttermilk");
+            buttermilk.style.display = "block";
+            var butte = document.getElementById("butte");
+            butte.style.display = "block";
+            var monarch = document.getElementById("monarch");
+            monarch.style.display = "block";
+            var wolf = document.getElementById("wolf");
+            wolf.style.display = "block";
+            var purgatory = document.getElementById("purgatory");
+            purgatory.style.display = "block";
+            var telluride = document.getElementById("telluride");
+            telluride.style.display = "block";
+            var powder = document.getElementById("powder");
+            powder.style.display = "block";
+            var sunlight = document.getElementById("sunlight");
+            sunlight.style.display = "block";
+            var silverton = document.getElementById("silverton");
+            silverton.style.display = "block";
+            var cont = document.getElementById("jumps");
+            cont.style.maxHeight = "500px";
+        }
+        function showEpic() {
+            var breck = document.getElementById("breck");
+            breck.style.display = "block";
+            var vail = document.getElementById("vail");
+            vail.style.display = "block";
+            var copper = document.getElementById("copper");
+            copper.style.display = "none";
+            var keystone = document.getElementById("keystone");
+            keystone.style.display = "block";
+            var abasin = document.getElementById("A-Basin");
+            abasin.style.display = "none";
+            var loveland = document.getElementById("loveland");
+            loveland.style.display = "none";
+            var winterpark = document.getElementById("winterpark");
+            winterpark.style.display = "none";
+            var eldora = document.getElementById("eldora");
+            eldora.style.display = "none";
+            var steam = document.getElementById("steam");
+            steam.style.display = "none";
+            var howelsen = document.getElementById("howelsen");
+            howelsen.style.display = "none";
+            var beaver = document.getElementById("beaver");
+            beaver.style.display = "block";
+            var cooper = document.getElementById("cooper");
+            cooper.style.display = "none";
+            var snowmass = document.getElementById("snowmass");
+            snowmass.style.display = "none";
+            var ajax = document.getElementById("ajax");
+            ajax.style.display = "none";
+            var highland = document.getElementById("highland");
+            highland.style.display = "none";
+            var buttermilk = document.getElementById("buttermilk");
+            buttermilk.style.display = "none";
+            var butte = document.getElementById("butte");
+            butte.style.display = "block";
+            var monarch = document.getElementById("monarch");
+            monarch.style.display = "none";
+            var wolf = document.getElementById("wolf");
+            wolf.style.display = "none";
+            var purgatory = document.getElementById("purgatory");
+            purgatory.style.display = "none";
+            var telluride = document.getElementById("telluride");
+            telluride.style.display = "block";
+            var powder = document.getElementById("powder");
+            powder.style.display = "none";
+            var sunlight = document.getElementById("sunlight");
+            sunlight.style.display = "none";
+            var silverton = document.getElementById("silverton");
+            silverton.style.display = "none";
+            var cont = document.getElementById("jumps")
+            cont.style.maxHeight = "260px";
+        }
+        function showIkon() {
+            var breck = document.getElementById("breck");
+            breck.style.display = "none";
+            var vail = document.getElementById("vail");
+            vail.style.display = "none";
+            var copper = document.getElementById("copper");
+            copper.style.display = "block";
+            var keystone = document.getElementById("keystone");
+            keystone.style.display = "none";
+            var abasin = document.getElementById("A-Basin");
+            abasin.style.display = "block";
+            var loveland = document.getElementById("loveland");
+            loveland.style.display = "none";
+            var winterpark = document.getElementById("winterpark");
+            winterpark.style.display = "block";
+            var eldora = document.getElementById("eldora");
+            eldora.style.display = "block";
+            var steam = document.getElementById("steam");
+            steam.style.display = "block";
+            var howelsen = document.getElementById("howelsen");
+            howelsen.style.display = "none";
+            var beaver = document.getElementById("beaver");
+            beaver.style.display = "none";
+            var cooper = document.getElementById("cooper");
+            cooper.style.display = "none";
+            var snowmass = document.getElementById("snowmass");
+            snowmass.style.display = "block";
+            var ajax = document.getElementById("ajax");
+            ajax.style.display = "block";
+            var highland = document.getElementById("highland");
+            highland.style.display = "block";
+            var buttermilk = document.getElementById("buttermilk");
+            buttermilk.style.display = "block";
+            var butte = document.getElementById("butte");
+            butte.style.display = "none";
+            var monarch = document.getElementById("monarch");
+            monarch.style.display = "none";
+            var wolf = document.getElementById("wolf");
+            wolf.style.display = "none";
+            var purgatory = document.getElementById("purgatory");
+            purgatory.style.display = "none";
+            var telluride = document.getElementById("telluride");
+            telluride.style.display = "none";
+            var powder = document.getElementById("powder");
+            powder.style.display = "none";
+            var sunlight = document.getElementById("sunlight");
+            sunlight.style.display = "none";
+            var silverton = document.getElementById("silverton");
+            silverton.style.display = "none";
+            var cont = document.getElementById("jumps")
+            cont.style.maxHeight = "340px";
+        }
+        function showLocal() {
+            var breck = document.getElementById("breck");
+            breck.style.display = "none";
+            var vail = document.getElementById("vail");
+            vail.style.display = "none";
+            var copper = document.getElementById("copper");
+            copper.style.display = "none";
+            var keystone = document.getElementById("keystone");
+            keystone.style.display = "none";
+            var abasin = document.getElementById("A-Basin");
+            abasin.style.display = "none";
+            var loveland = document.getElementById("loveland");
+            loveland.style.display = "block";
+            var winterpark = document.getElementById("winterpark");
+            winterpark.style.display = "none";
+            var eldora = document.getElementById("eldora");
+            eldora.style.display = "none";
+            var steam = document.getElementById("steam");
+            steam.style.display = "none";
+            var howelsen = document.getElementById("howelsen");
+            howelsen.style.display = "block";
+            var beaver = document.getElementById("beaver");
+            beaver.style.display = "none";
+            var cooper = document.getElementById("cooper");
+            cooper.style.display = "block";
+            var snowmass = document.getElementById("snowmass");
+            snowmass.style.display = "none";
+            var ajax = document.getElementById("ajax");
+            ajax.style.display = "none";
+            var highland = document.getElementById("highland");
+            highland.style.display = "none";
+            var buttermilk = document.getElementById("buttermilk");
+            buttermilk.style.display = "none";
+            var butte = document.getElementById("butte");
+            butte.style.display = "none";
+            var monarch = document.getElementById("monarch");
+            monarch.style.display = "block";
+            var wolf = document.getElementById("wolf");
+            wolf.style.display = "block";
+            var purgatory = document.getElementById("purgatory");
+            purgatory.style.display = "block";
+            var telluride = document.getElementById("telluride");
+            telluride.style.display = "none";
+            var powder = document.getElementById("powder");
+            powder.style.display = "block";
+            var sunlight = document.getElementById("sunlight");
+            sunlight.style.display = "block";
+            var silverton = document.getElementById("silverton");
+            silverton.style.display = "block";
+            var cont = document.getElementById("jumps")
+            cont.style.maxHeight = "360px";
+        }
+</script>
+    <div class="container" id=legend style="border-radius:5px; position: absolute; right:50px; top:98px; z-index: 100; background:#30303062; color:#fff; max-width: 300px;">
         <table id="legend">
             <tr>
                 <th>
@@ -757,232 +539,515 @@
 
         </table>
     </div>
-    <div class="container" ; id="all" style="position: absolute; 
-left:75%; top:50%; 
+    <div class="container"; id="all" style=
+"position: absolute; 
+right:75px; bottom:200px; 
 background: #30303000;
 max-width: 300px;
 color:#fff; 
 z-index: 100;
 
 ">
-        <div class="card-bg c1" id="breck_info">
-            <h3>Breckenridge Ski Resort</h3>
-            <p>
-                <a href="https://www.breckenridge.com/" target="_blank" title="Opens in a new window">Breckenrdige ski
-                    Resort</a>
-                is an alpine ski resort in the western United States, in Breckenridge, Colorado. Just west of the
-                Continental Divide in Summit County, it is perennially one of the most visited ski resorts in the
-                western hemisphere. <i>Source: Wikipedia</i>
-            </p>
-            <a href="https://www.epicpass.com/"><img src="../resources/img/map/epic.png" alt="Epic Pass Logo"
-                    width="100" height="60"></a>
 
-        </div>
-        <div class="card-bg c1" id="vail_info">
-            <h3>Vail Ski Resort</h3>
-            <p><a href="https://www.vail.com/" target="_blank" title="Opens in a new window">Vail Resort</a>
-                is a major ski area in the western United States, located in northwestern Colorado at Steamboat Springs.
-                Operated by the Steamboat Ski & Resort Corporation, it is located on Mount Werner, a mountain in the
-                Park Range in the Routt National Forest. <i>Source: Wikipedia</i>
-            </p><a href="https://www.epicpass.com/"><img src="../resources/img/map/epic.png" alt="Epic Pass Logo"
-                    width="100" height="60"></a>
+	<div class="card-bg c1" id="breck_info">
+		<h3>Breckenridge Ski Resort</h3>
+		<div class="card-bg c2" id="breck_w">
+			<table >
+				<tr>
+					<td>
+						<img id="breck_weather" src='' alt='breck_weather' height="100px">
+					</td>
+					<td style="padding-right: 33px;">
+						<span id="breck_temp">404</span><span id="temp-unit">&#x2109</span>
+					</td>
+					<td style="text-align: center;">
+						<span id="breck_snow">0</span><span id="snow-unit"> in</span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<p>
+			<a href="https://www.breckenridge.com/" target="_blank" title="Opens in a new window">Breckenrdige ski Resort</a>
+				is an alpine ski resort in the western United States, in Breckenridge, Colorado. Just west of the Continental Divide in Summit County, it is perennially one of the most visited ski resorts in the western hemisphere. <i>Source: Wikipedia</i> </p>
+				<a href="https://www.epicpass.com/"><img src="../resources/img/map/epic.png" alt="Epic Pass Logo" width="100" height="60"></a>
 
-        </div>
-        <div class="card-bg c1" id="copper_info">
-            <h3>Copper Mountain</h3>
-            <p><a href="https://www.coppercolorado.com/" target="_blank" title="Opens in a new window">Copper
-                    Mountain</a>
-                is a mountain and ski resort located in Summit County, Colorado, about 75 miles (120 km) west of Denver
-                on Interstate 70. The resort has 2,465 acres (3.9 sq mi; 10.0 km2) of in-bounds terrain under lease from
-                the U.S. Forest Service, White River National Forest, Dillon Ranger District. <i>Source: Wikipedia</i>
-            </p><a href="https://www.ikonpass.com/"><img src="../resources/img/map/Ikon.png" alt="Ikon Pass Logo"
-                    width="100" height="46.133"></a>
-        </div>
-        <div class="card-bg c1" id="keystone_info">
-            <h3>Keystone Resort</h3>
-            <p><a href="https://www.keystoneresort.com/" target="_blank" title="Opens in a new window">Keystone
-                    Resort</a>
-                is a ski resort located in Keystone, Colorado, United States. Since 1997 the resort has been owned and
-                operated by Vail Resorts. It consists of three mountains – Dercum Mountain, North Peak, the Outback –
-                and five Bowls offering skiing at all levels. <i>Source: Wikipedia</i>
-            </p><a href="https://www.epicpass.com/"><img src="../resources/img/map/epic.png" alt="Epic Pass Logo"
-                    width="100" height="60"></a>
-        </div>
-        <div class="card-bg c1" id="abasin_info">
-            <h3>Arapahoe Basin</h3>
-            <p><a href="https://www.arapahoebasin.com/" target="_blank" title="Opens in a new window">Arapahoe Basin</a>
-                often shortened to A-Basin, or simply The Basin is an alpine ski area in the Rocky Mountains of the
-                United States, in the Arapaho National Forest of Colorado. <i>Source: Wikipedia</i>
-            </p><a href="https://www.ikonpass.com/"><img src="../resources/img/map/Ikon.png" alt="Ikon Pass Logo"
-                    width="100" height="46.133"></a>
-        </div>
-        <div class="card-bg c1" id="love_info">
-            <h3>Loveland Ski Area</h3>
-            <p><a href="https://skiloveland.com/" target="_blank" title="Opens in a new window">Loveland Ski Area</a>
-                is a ski area in the western United States, located near the town of Georgetown, Colorado. Located at
-                the eastern portal of the Eisenhower Tunnel, Loveland is within the Arapahoe National Forest. <i>Source:
-                    Wikipedia</i> </p>
-        </div>
-        <div class="card-bg c1" id="winter_info">
-            <h3>Winter Park Resort</h3>
-            <p><a href="https://www.winterparkresort.com/" target="_blank" title="Opens in a new window">Winter Park
-                    Resort</a>
-                is an alpine ski resort in the western United States, in the Rocky Mountains of Colorado at Winter Park.
-                Located in Grand County just off U.S. Highway 40, the resort is about a ninety-minute drive from Denver.
-                <i>Source: Wikipedia</i>
-            </p><a href="https://www.ikonpass.com/"><img src="../resources/img/map/Ikon.png" alt="Ikon Pass Logo"
-                    width="100" height="46.133"></a>
-        </div>
-        <div class="card-bg c1" id="eldora_info">
-            <h3>Eldora Mountain Resort</h3>
-            <p><a href="https://www.eldora.com/" target="_blank" title="Opens in a new window">Eldora Mountain
-                    Resort</a>
-                is a ski area in the southwest corner of Boulder County, Colorado, near the unincorporated community of
-                Eldora and 3 miles west of the town of Nederland. <i>Source: Wikipedia</i>
-            </p><a href="https://www.ikonpass.com/"><img src="../resources/img/map/Ikon.png" alt="Ikon Pass Logo"
-                    width="100" height="46.133"></a>
-        </div>
-        <div class="card-bg c1" id="beaver_info">
-            <h3>Beaver Creek Resort</h3>
-            <p><a href="https://www.beavercreek.com/" target="_blank" title="Opens in a new window">Beaver Creek
-                    Resort</a>
-                is a major ski resort in the western United States, near Avon, Colorado. The resort comprises three
-                villages, the main Beaver Creek Village, Bachelor Gulch, and Arrowhead to the west. <i>Source:
-                    Wikipedia</i> </p>
-            <a href="https://www.epicpass.com/"><img src="../resources/img/map/epic.png" alt="Epic Pass Logo"
-                    width="100" height="60"></a>
-        </div>
-        <div class="card-bg c1" id="sun_info">
-            <h3>Sunlight Mountain Resort</h3>
-            <p><a href="https://sunlightmtn.com/" target="_blank" title="Opens in a new window">Sunlight Mountain
-                    Resort</a>
-                caters to local skiers and large groups. The area has three chairlifts and a vertical drop exceeding
-                2,000 feet (610 m). Operations began in December 1966 with one chairlift and a second was added in 1973
-                <i>Source: Wikipedia</i> </p>
-        </div>
-        <div class="card-bg c1" id="powder_info">
-            <h3>Powderhorn Mountain Resort</h3>
-            <p><a href="https://www.powderhorn.com/" target="_blank" title="Opens in a new window">Powderhorn Mountain
-                    Resort</a>
-                is one of the most family-friendly resorts you’ll find anywhere in the West. Tucked alongside the
-                northern edge of Western Colorados beautiful Grand Mesa – the world’s largest flattop mountain – we
-                offer breathtaking views and over 1,600 acres of mountain terrain. <i>Source: Podwerhorn.com</i> </p>
-        </div>
-        <div class="card-bg c1" id="steam_info">
-            <h3>Steamboat Ski Resort</h3>
-            <p><a href="https://www.steamboat.com/" target="_blank" title="Opens in a new window">Steamboat Ski
-                    Resort</a>
-                is a major ski area in the western United States, located in northwestern Colorado at Steamboat Springs.
-                Operated by the Steamboat Ski & Resort Corporation, it is located on Mount Werner, a mountain in the
-                Park Range in the Routt National Forest. <i>Source: Wikipedia</i>
-            </p><a href="https://www.ikonpass.com/"><img src="../resources/img/map/Ikon.png" alt="Ikon Pass Logo"
-                    width="100" height="46.133"></a>
-        </div>
-        <div class="card-bg c1" id="howel_info">
-            <h3>Howelsen Hill Ski Area</h3>
-            <p><a href="https://steamboatsprings.net/131/Howelsen-Hill-Ski-Area" target="_blank"
-                    title="Opens in a new window">Howelsen Hill Ski Area</a>
-                is a small ski area located on Howelsen Hill in Steamboat Springs, Colorado. It is not a typical alpine
-                ski area, as it includes a series of ski jumps, the largest with HS127. <i>Source: Wikipedia</i> </p>
-        </div>
-        <div class="card-bg c1" id="cooper_info">
-            <h3>Ski Cooper</h3>
-            <p><a href="https://www.skicooper.com/" target="_blank" title="Opens in a new window">Ski Cooper</a>
-                is an alpine ski resort in Colorado, one of the oldest in the state. Opened as Cooper Hill Ski Area 79
-                years ago in 1942, the ski area served as the training site for the 10th Mountain Division, based at
-                nearby Camp Hale during World War II. <i>Source: Wikipedia</i> </p>
-        </div>
-        <div class="card-bg c1" id="snow_info">
-            <h3>Aspen Snowmass</h3>
-            <p><a href="https://www.aspensnowmass.com/" target="_blank" title="Opens in a new window">Aspen Snowmass</a>
-                is a ski resort located in the town of Snowmass Village near Aspen, Colorado. The ski area is owned and
-                operated by the Aspen Skiing Company as part of the Aspen/Snowmass complex. It was opened on December
-                17, 1967 . Snowmass is the largest of the four Aspen/Snowmass mountains, comprising 3,362 acres.
-                <i>Source: Wikipedia</i>
-            </p><a href="https://www.ikonpass.com/"><img src="../resources/img/map/Ikon.png" alt="Ikon Pass Logo"
-                    width="100" height="46.133"></a>
-        </div>
-        <div class="card-bg c1" id="ajax_info">
-            <h3>Aspen Ajax</h3>
-            <p><a href="https://www.aspensnowmass.com/four-mountains/aspen-mountain" target="_blank"
-                    title="Opens in a new window">Aspen Ajax</a>
-                offers quad-burning groomers and steep, gladed runs all leading to the heart of Aspen—where local and
-                global culture merge in unexpected ways and the après scene is always on. <i>Source:
-                    aspensnowmass.com</i>
-            </p><a href="https://www.ikonpass.com/"><img src="../resources/img/map/Ikon.png" alt="Ikon Pass Logo"
-                    width="100" height="46.133"></a>
-        </div>
-        <div class="card-bg c1" id="high_info">
-            <h3>Aspen Highlands Ski Resort</h3>
-            <p><a href="https://www.aspensnowmass.com/four-mountains/aspen-highlands" target="_blank"
-                    title="Opens in a new window">Aspen Highlands </a>
-                is a place to push hard and play hard, whether you’re carving new lines on expert terrain, hiking the
-                Bowl, or reaching new heights of revelry at Cloud Nine.<i>Source: aspensnowmass.com</i> </p>
-            <a href="https://www.ikonpass.com/"><img src="../resources/img/map/Ikon.png" alt="Ikon Pass Logo"
-                    width="100" height="46.133"></a>
-        </div>
-        <div class="card-bg c1" id="butter_info">
-            <h3>Buttermilk Ski Resort</h3>
-            <p><a href="https://www.aspensnowmass.com/four-mountains/buttermilk" target="_blank"
-                    title="Opens in a new window">Buttermilk Ski Resort </a>
-                is the perfect playground for kids and kids at heart to learn the basics, master the terrain park, skin
-                uphill, or watch the world’s best freestylers in the X Games. All are welcome, all winter
-                long.<i>Source: aspensnowmass.com</i>
-            </p><a href="https://www.ikonpass.com/"><img src="../resources/img/map/Ikon.png" alt="Ikon Pass Logo"
-                    width="100" height="46.133"></a>
-        </div>
-        <div class="card-bg c1" id="butte_info">
-            <h3>Crested Butte Ski Resort</h3>
-            <p><a href="https://www.skicb.com/" target="_blank" title="Opens in a new window">Crested Butte Mountain
-                    Resort </a>
-                opened in 1960 when two men—Fred Rice and Dick Eflin—purchased a ranch on Mt. Crested Butte.[1] An
-                operating permit enabling the resort to be built was approved by the United States Forest Service the
-                following year.<i>Source: Wikipedia</i>
-            </p><a href="https://www.epicpass.com/"><img src="../resources/img/map/epic.png" alt="Epic Pass Logo"
-                    width="100" height="60"></a>
-        </div>
-        <div class="card-bg c1" id="monarch_info">
-            <h3>Monarch Mountain</h3>
-            <p><a href="https://www.skimonarch.com/" target="_blank" title="Opens in a new window">Monarch Ski and
-                    Snowboard Area </a>
-                is a ski resort located in the state of Colorado. It is twenty miles west of Salida, Colorado, on U.S.
-                Highway 50. The resort is situated on Monarch Pass at the continental divide. It has 54 trails, two
-                terrain parks, and an extreme terrain area called Mirkwood. <i>Source: Wikipedia</i> </p>
-        </div>
-        <div class="card-bg c1" id="wolf_info">
-            <h3>Wolf Creek Ski Area</h3>
-            <p><a href="https://wolfcreekski.com/" target="_blank" title="Opens in a new window">Wolf Creek Ski Area</a>
-                is a ski area in southwest Colorado, located on the Wolf Creek Pass between Pagosa Springs and South
-                Fork. It is best known for receiving more average annual snowfall than any other resort in Colorado, at
-                about 430 inches per year. <i>Source: Wikipedia</i> </p>
-        </div>
-        <div class="card-bg c1" id="purgatory_info">
-            <h3>Purgatory Resort</h3>
-            <p><a href="https://www.purgatory.ski/" target="_blank" title="Opens in a new window">Purgatory Resort</a>
-                is a ski resort located in the San Juan Mountains of Southwest Colorado, 25 miles (42 km) north of the
-                town of Durango. Established in 1965, Purgatory offers 105 trails, including 5 terrain parks, over 1,500
-                skiable acres, and 12 lifts, including one six-person and two high speed quad lift. <i>Source:
-                    Wikipedia</i> </p>
-        </div>
-        <div class="card-bg c1" id="silverton_info">
-            <h3>Silverton Mountain Ski Area</h3>
-            <p><a href="https://silvertonmountain.com/" target="_blank" title="Opens in a new window">Silverton Mountain
-                    Ski Area</a>
-                is a ski area near Silverton, Colorado USA that opened on January 19, 2002. Popular with skiers and
-                snowboarders, Silverton Mountain has one chairlift that carries visitors into its terrain, which is for
-                advanced and expert skiers or riders. <i>Source: Wikipedia</i> </p>
-        </div>
-        <div class="card-bg c1" id="telluride_info">
-            <h3>Telluride Ski Resort</h3>
-            <p><a href="https://tellurideskiresort.com/" target="_blank" title="Opens in a new window">Telluride Ski
-                    Resort</a>
-                is a ski resort located in Mountain Village, Colorado right next to the Town of Telluride. The Telluride
-                Ski Resort is a year-round destination located in the southwest corner of Colorado. <i>Source:
-                    Wikipedia</i>
-            </p><a href="https://www.epicpass.com/"><img src="../resources/img/map/epic.png" alt="Epic Pass Logo"
-                    width="100" height="60"></a>
-        </div>
-    </div>
+	</div>
+	<div class="card-bg c1" id="vail_info">
+		<h3>Vail Ski Resort</h3>
+		<div class="card-bg c2" id="vail_w">
+			<table >
+				<tr>
+					<td>
+						<img id="vail_weather" src='' alt='vail_weather' height="100px">
+					</td>
+					<td style="padding-right: 33px;">
+						<span id="vail_temp">404</span><span id="temp-unit">&#x2109</span>
+					</td>
+					<td style="text-align: center;">
+						<span id="vail_snow">0</span><span id="snow-unit"> in</span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<p><a href="https://www.vail.com/" target="_blank" title="Opens in a new window">Vail Resort</a>
+				is a major ski area in the western United States, located in northwestern Colorado at Steamboat Springs. Operated by the Steamboat Ski & Resort Corporation, it is located on Mount Werner, a mountain in the Park Range in the Routt National Forest. <i>Source: Wikipedia</i> 
+			</p><a href="https://www.epicpass.com/"><img src="../resources/img/map/epic.png" alt="Epic Pass Logo" width="100" height="60"></a>
+
+	</div>
+	<div class="card-bg c1" id="copper_info">
+		<h3>Copper Mountain</h3>
+		<div class="card-bg c2" id="copper_w">
+			<table >
+				<tr>
+					<td>
+						<img id="copper_weather" src='' alt='copper_weather' height="100px">
+					</td>
+					<td style="padding-right: 33px;">
+						<span id="copper_temp">404</span><span id="temp-unit">&#x2109</span>
+					</td>
+					<td style="text-align: center;">
+						<span id="copper_snow">0</span><span id="snow-unit"> in</span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<p><a href="https://www.coppercolorado.com/" target="_blank" title="Opens in a new window">Copper Mountain</a> 
+			is a mountain and ski resort located in Summit County, Colorado, about 75 miles (120 km) west of Denver on Interstate 70. The resort has 2,465 acres (3.9 sq mi; 10.0 km2) of in-bounds terrain under lease from the U.S. Forest Service, White River National Forest, Dillon Ranger District. <i>Source: Wikipedia</i> 
+		</p><a href="https://www.ikonpass.com/"><img src="../resources/img/map/Ikon.png" alt="Ikon Pass Logo" width="100" height="46.133"></a>
+	</div>
+	<div class="card-bg c1" id="keystone_info">
+		<h3>Keystone Resort</h3>
+		<div class="card-bg c2" id="keystone_w">
+			<table >
+				<tr>
+					<td>
+						<img id="keystone_weather" src='' alt='keystone_weather' height="100px">
+					</td>
+					<td style="padding-right: 33px;">
+						<span id="keystone_temp">404</span><span id="temp-unit">&#x2109</span>
+					</td>
+					<td style="text-align: center;">
+						<span id="keystone_snow">0</span><span id="snow-unit"> in</span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<p><a href="https://www.keystoneresort.com/" target="_blank" title="Opens in a new window">Keystone Resort</a> 
+			is a ski resort located in Keystone, Colorado, United States. Since 1997 the resort has been owned and operated by Vail Resorts. It consists of three mountains – Dercum Mountain, North Peak, the Outback – and five Bowls offering skiing at all levels. <i>Source: Wikipedia</i> 
+		</p><a href="https://www.epicpass.com/"><img src="../resources/img/map/epic.png" alt="Epic Pass Logo" width="100" height="60"></a>
+	</div>
+	<div class="card-bg c1" id="abasin_info">
+		<h3>Arapahoe Basin</h3>
+		<div class="card-bg c2" id="abasin_w">
+			<table >
+				<tr>
+					<td>
+						<img id="abasin_weather" src='' alt='abasin_weather' height="100px">
+					</td>
+					<td style="padding-right: 33px;">
+						<span id="abasin_temp">404</span><span id="temp-unit">&#x2109</span>
+					</td>
+					<td style="text-align: center;">
+						<span id="abasin_snow">0</span><span id="snow-unit"> in</span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<p><a href="https://www.arapahoebasin.com/" target="_blank" title="Opens in a new window">Arapahoe Basin</a> 
+			often shortened to A-Basin, or simply The Basin is an alpine ski area in the Rocky Mountains of the United States, in the Arapaho National Forest of Colorado. <i>Source: Wikipedia</i> 
+		</p><a href="https://www.ikonpass.com/"><img src="../resources/img/map/Ikon.png" alt="Ikon Pass Logo" width="100" height="46.133"></a>
+	</div>
+	<div class="card-bg c1" id="love_info">
+		<h3>Loveland Ski Area</h3>
+		<div class="card-bg c2" id="love_w">
+			<table >
+				<tr>
+					<td>
+						<img id="love_weather" src='' alt='love_weather' height="100px">
+					</td>
+					<td style="padding-right: 33px;">
+						<span id="love_temp">404</span><span id="temp-unit">&#x2109</span>
+					</td>
+					<td style="text-align: center;">
+						<span id="love_snow">0</span><span id="snow-unit"> in</span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<p><a href="https://skiloveland.com/" target="_blank" title="Opens in a new window">Loveland Ski Area</a>
+			 is a ski area in the western United States, located near the town of Georgetown, Colorado. Located at the eastern portal of the Eisenhower Tunnel, Loveland is within the Arapahoe National Forest. <i>Source: Wikipedia</i> </p>
+	</div>
+	<div class="card-bg c1" id="winter_info">
+		<h3>Winter Park Resort</h3>
+		<div class="card-bg c2" id="winter_w">
+			<table >
+				<tr>
+					<td>
+						<img id="winter_weather" src='' alt='winter_weather' height="100px">
+					</td>
+					<td style="padding-right: 33px;">
+						<span id="winter_temp">404</span><span id="temp-unit">&#x2109</span>
+					</td>
+					<td style="text-align: center;">
+						<span id="winter_snow">0</span><span id="snow-unit"> in</span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<p><a href="https://www.winterparkresort.com/" target="_blank" title="Opens in a new window">Winter Park Resort</a> 
+			is an alpine ski resort in the western United States, in the Rocky Mountains of Colorado at Winter Park. Located in Grand County just off U.S. Highway 40, the resort is about a ninety-minute drive from Denver. <i>Source: Wikipedia</i> 
+		</p><a href="https://www.ikonpass.com/"><img src="../resources/img/map/Ikon.png" alt="Ikon Pass Logo" width="100" height="46.133"></a>
+	</div>
+	<div class="card-bg c1" id="eldora_info">
+		<h3>Eldora Mountain Resort</h3>
+		<div class="card-bg c2" id="eldora_w">
+			<table >
+				<tr>
+					<td>
+						<img id="eldora_weather" src='' alt='eldora_weather' height="100px">
+					</td>
+					<td style="padding-right: 33px;">
+						<span id="eldora_temp">404</span><span id="temp-unit">&#x2109</span>
+					</td>
+					<td style="text-align: center;">
+						<span id="eldora_snow">0</span><span id="snow-unit"> in</span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<p><a href="https://www.eldora.com/" target="_blank" title="Opens in a new window">Eldora Mountain Resort</a> 
+			is a ski area in the southwest corner of Boulder County, Colorado, near the unincorporated community of Eldora and 3 miles west of the town of Nederland. <i>Source: Wikipedia</i> 
+		</p><a href="https://www.ikonpass.com/"><img src="../resources/img/map/Ikon.png" alt="Ikon Pass Logo" width="100" height="46.133"></a>
+	</div>
+	<div class="card-bg c1" id="beaver_info">
+		<h3>Beaver Creek Resort</h3>
+		<div class="card-bg c2" id="beaver_w">
+			<table >
+				<tr>
+					<td>
+						<img id="beaver_weather" src='' alt='beaver_weather' height="100px">
+					</td>
+					<td style="padding-right: 33px;">
+						<span id="beaver_temp">404</span><span id="temp-unit">&#x2109</span>
+					</td>
+					<td style="text-align: center;">
+						<span id="beaver_snow">0</span><span id="snow-unit"> in</span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<p><a href="https://www.beavercreek.com/" target="_blank" title="Opens in a new window">Beaver Creek Resort</a>  
+			is a major ski resort in the western United States, near Avon, Colorado. The resort comprises three villages, the main Beaver Creek Village, Bachelor Gulch, and Arrowhead to the west. <i>Source: Wikipedia</i> </p>
+			<a href="https://www.epicpass.com/"><img src="../resources/img/map/epic.png" alt="Epic Pass Logo" width="100" height="60"></a>
+	</div>
+	<div class="card-bg c1" id="sun_info">
+		<h3>Sunlight Mountain Resort</h3>
+		<div class="card-bg c2" id="sun_w">
+			<table >
+				<tr>
+					<td>
+						<img id="sun_weather" src='' alt='sun_weather' height="100px">
+					</td>
+					<td style="padding-right: 33px;">
+						<span id="sun_temp">404</span><span id="temp-unit">&#x2109</span>
+					</td>
+					<td style="text-align: center;">
+						<span id="sun_snow">0</span><span id="snow-unit"> in</span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<p><a href="https://sunlightmtn.com/" target="_blank" title="Opens in a new window">Sunlight Mountain Resort</a> 
+			caters to local skiers and large groups. The area has three chairlifts and a vertical drop exceeding 2,000 feet (610 m). Operations began in December 1966 with one chairlift and a second was added in 1973 <i>Source: Wikipedia</i> </p>
+	</div>
+	<div class="card-bg c1" id="powder_info">
+		<h3>Powderhorn Mountain Resort</h3>
+		<div class="card-bg c2" id="powder_w">
+			<table >
+				<tr>
+					<td>
+						<img id="powder_weather" src='' alt='powder_weather' height="100px">
+					</td>
+					<td style="padding-right: 33px;">
+						<span id="powder_temp">404</span><span id="temp-unit">&#x2109</span>
+					</td>
+					<td style="text-align: center;">
+						<span id="powder_snow">0</span><span id="snow-unit"> in</span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<p><a href="https://www.powderhorn.com/" target="_blank" title="Opens in a new window">Powderhorn Mountain Resort</a> 
+			is one of the most family-friendly resorts you’ll find anywhere in the West. Tucked alongside the northern edge of Western Colorados beautiful Grand Mesa – the world’s largest flattop mountain – we offer breathtaking views and over 1,600 acres of mountain terrain. <i>Source: Podwerhorn.com</i> </p>
+	</div>
+	<div class="card-bg c1" id="steam_info">
+		<h3>Steamboat Ski Resort</h3>
+		<div class="card-bg c2" id="steam_w">
+			<table >
+				<tr>
+					<td>
+						<img id="steam_weather" src='' alt='steam_weather' height="100px">
+					</td>
+					<td style="padding-right: 33px;">
+						<span id="steam_temp">404</span><span id="temp-unit">&#x2109</span>
+					</td>
+					<td style="text-align: center;">
+						<span id="steam_snow">0</span><span id="snow-unit"> in</span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<p><a href="https://www.steamboat.com/" target="_blank" title="Opens in a new window">Steamboat Ski Resort</a> 
+			is a major ski area in the western United States, located in northwestern Colorado at Steamboat Springs. Operated by the Steamboat Ski & Resort Corporation, it is located on Mount Werner, a mountain in the Park Range in the Routt National Forest. <i>Source: Wikipedia</i> 
+		</p><a href="https://www.ikonpass.com/"><img src="../resources/img/map/Ikon.png" alt="Ikon Pass Logo" width="100" height="46.133"></a>
+	</div>
+	<div class="card-bg c1" id="howel_info">
+		<h3>Howelsen Hill Ski Area</h3>
+		<div class="card-bg c2" id="howelsen_w">
+			<table >
+				<tr>
+					<td>
+						<img id="howelsen_weather" src='' alt='howelsen_weather' height="100px">
+					</td>
+					<td style="padding-right: 33px;">
+						<span id="howelsen_temp">404</span><span id="temp-unit">&#x2109</span>
+					</td>
+					<td style="text-align: center;">
+						<span id="howelsen_snow">0</span><span id="snow-unit"> in</span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<p><a href="https://steamboatsprings.net/131/Howelsen-Hill-Ski-Area" target="_blank" title="Opens in a new window">Howelsen Hill Ski Area</a>  
+			is a small ski area located on Howelsen Hill in Steamboat Springs, Colorado. It is not a typical alpine ski area, as it includes a series of ski jumps, the largest with HS127. <i>Source: Wikipedia</i> </p>
+	</div>
+	<div class="card-bg c1" id="cooper_info">
+		<h3>Ski Cooper</h3>
+		<div class="card-bg c2" id="cooper_w">
+			<table >
+				<tr>
+					<td>
+						<img id="cooper_weather" src='' alt='cooper_weather' height="100px">
+					</td>
+					<td style="padding-right: 33px;">
+						<span id="cooper_temp">404</span><span id="temp-unit">&#x2109</span>
+					</td>
+					<td style="text-align: center;">
+						<span id="cooper_snow">0</span><span id="snow-unit"> in</span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<p><a href="https://www.skicooper.com/" target="_blank" title="Opens in a new window">Ski Cooper</a> 
+			is an alpine ski resort in Colorado, one of the oldest in the state. Opened as Cooper Hill Ski Area 79 years ago in 1942, the ski area served as the training site for the 10th Mountain Division, based at nearby Camp Hale during World War II. <i>Source: Wikipedia</i> </p>
+	</div>
+	<div class="card-bg c1" id="snow_info">
+		<h3>Aspen Snowmass</h3>
+		<div class="card-bg c2" id="snow_w">
+			<table >
+				<tr>
+					<td>
+						<img id="snow_weather" src='' alt='snow_weather' height="100px">
+					</td>
+					<td style="padding-right: 33px;">
+						<span id="snow_temp">404</span><span id="temp-unit">&#x2109</span>
+					</td>
+					<td style="text-align: center;">
+						<span id="snow_snow">0</span><span id="snow-unit"> in</span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<p><a href="https://www.aspensnowmass.com/" target="_blank" title="Opens in a new window">Aspen Snowmass</a> 
+			is a ski resort located in the town of Snowmass Village near Aspen, Colorado. The ski area is owned and operated by the Aspen Skiing Company as part of the Aspen/Snowmass complex. It was opened on December 17, 1967 . Snowmass is the largest of the four Aspen/Snowmass mountains, comprising 3,362 acres. <i>Source: Wikipedia</i> 
+		</p><a href="https://www.ikonpass.com/"><img src="../resources/img/map/Ikon.png" alt="Ikon Pass Logo" width="100" height="46.133"></a>
+	</div>
+	<div class="card-bg c1" id="ajax_info">
+		<h3>Aspen Ajax</h3>
+		<div class="card-bg c2" id="ajax_w">
+			<table >
+				<tr>
+					<td>
+						<img id="ajax_weather" src='' alt='_weather' height="100px">
+					</td>
+					<td style="padding-right: 33px;">
+						<span id="ajax_temp">404</span><span id="temp-unit">&#x2109</span>
+					</td>
+					<td style="text-align: center;">
+						<span id="ajax_snow">0</span><span id="snow-unit"> in</span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<p><a href="https://www.aspensnowmass.com/four-mountains/aspen-mountain" target="_blank" title="Opens in a new window">Aspen Ajax</a> 
+			offers quad-burning groomers and steep, gladed runs all leading to the heart of Aspen—where local and global culture merge in unexpected ways and the après scene is always on. <i>Source: aspensnowmass.com</i> 
+		</p><a href="https://www.ikonpass.com/"><img src="../resources/img/map/Ikon.png" alt="Ikon Pass Logo" width="100" height="46.133"></a>
+	</div>
+	<div class="card-bg c1" id="high_info">
+		<h3>Aspen Highlands Ski Resort</h3>
+		<div class="card-bg c2" id="high_w">
+			<table >
+				<tr>
+					<td>
+						<img id="high_weather" src='' alt='high_weather' height="100px">
+					</td>
+					<td style="padding-right: 33px;">
+						<span id="high_temp">404</span><span id="temp-unit">&#x2109</span>
+					</td>
+					<td style="text-align: center;">
+						<span id="high_snow">0</span><span id="snow-unit"> in</span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<p><a href="https://www.aspensnowmass.com/four-mountains/aspen-highlands" target="_blank" title="Opens in a new window">Aspen Highlands </a> 
+			is a place to push hard and play hard, whether you’re carving new lines on expert terrain, hiking the Bowl, or reaching new heights of revelry at Cloud Nine.<i>Source: aspensnowmass.com</i> </p>
+			<a href="https://www.ikonpass.com/"><img src="../resources/img/map/Ikon.png" alt="Ikon Pass Logo" width="100" height="46.133"></a>
+	</div>
+	<div class="card-bg c1" id="butter_info">
+		<h3>Buttermilk Ski Resort</h3>
+		<div class="card-bg c2" id="butter_w">
+			<table >
+				<tr>
+					<td>
+						<img id="butter_weather" src='' alt='_weather' height="100px">
+					</td>
+					<td style="padding-right: 33px;">
+						<span id="butter_temp">404</span><span id="temp-unit">&#x2109</span>
+					</td>
+					<td style="text-align: center;">
+						<span id="butter_snow">0</span><span id="snow-unit"> in</span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<p><a href="https://www.aspensnowmass.com/four-mountains/buttermilk" target="_blank" title="Opens in a new window">Buttermilk Ski Resort </a> 
+			is the perfect playground for kids and kids at heart to learn the basics, master the terrain park, skin uphill, or watch the world’s best freestylers in the X Games. All are welcome, all winter long.<i>Source: aspensnowmass.com</i> 
+		</p><a href="https://www.ikonpass.com/"><img src="../resources/img/map/Ikon.png" alt="Ikon Pass Logo" width="100" height="46.133"></a>
+	</div>
+	<div class="card-bg c1" id="butte_info">
+		<h3>Crested Butte Ski Resort</h3>
+		<div class="card-bg c2" id="butte_w">
+			<table >
+				<tr>
+					<td>
+						<img id="butte_weather" src='' alt='_weather' height="100px">
+					</td>
+					<td style="padding-right: 33px;">
+						<span id="butte_temp">404</span><span id="temp-unit">&#x2109</span>
+					</td>
+					<td style="text-align: center;">
+						<span id="butte_snow">0</span><span id="snow-unit"> in</span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<p><a href="https://www.skicb.com/" target="_blank" title="Opens in a new window">Crested Butte Mountain Resort </a> 
+			opened in 1960 when two men—Fred Rice and Dick Eflin—purchased a ranch on Mt. Crested Butte.[1] An operating permit enabling the resort to be built was approved by the United States Forest Service the following year.<i>Source: Wikipedia</i> 
+		</p><a href="https://www.epicpass.com/"><img src="../resources/img/map/epic.png" alt="Epic Pass Logo" width="100" height="60"></a>
+	</div>
+	<div class="card-bg c1" id="monarch_info">
+		<h3>Monarch Mountain</h3>
+		<div class="card-bg c2" id="monarch_w">
+			<table >
+				<tr>
+					<td>
+						<img id="monarch_weather" src='' alt='monarch_weather' height="100px">
+					</td>
+					<td style="padding-right: 33px;">
+						<span id="monarch_temp">404</span><span id="temp-unit">&#x2109</span>
+					</td>
+					<td style="text-align: center;">
+						<span id="monarch_snow">0</span><span id="snow-unit"> in</span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<p><a href="https://www.skimonarch.com/" target="_blank" title="Opens in a new window">Monarch Ski and Snowboard Area </a> 
+			is a ski resort located in the state of Colorado. It is twenty miles west of Salida, Colorado, on U.S. Highway 50. The resort is situated on Monarch Pass at the continental divide. It has 54 trails, two terrain parks, and an extreme terrain area called Mirkwood. <i>Source: Wikipedia</i> </p>
+	</div>
+	<div class="card-bg c1" id="wolf_info">
+		<h3>Wolf Creek Ski Area</h3>
+		<div class="card-bg c2" id="wolf_w">
+			<table >
+				<tr>
+					<td>
+						<img id="wolf_weather" src='' alt='wolf_weather' height="100px">
+					</td>
+					<td style="padding-right: 33px;">
+						<span id="wolf_temp">404</span><span id="temp-unit">&#x2109</span>
+					</td>
+					<td style="text-align: center;">
+						<span id="wolf_snow">0</span><span id="snow-unit"> in</span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<p><a href="https://wolfcreekski.com/" target="_blank" title="Opens in a new window">Wolf Creek Ski Area</a>  
+			is a ski area in southwest Colorado, located on the Wolf Creek Pass between Pagosa Springs and South Fork. It is best known for receiving more average annual snowfall than any other resort in Colorado, at about 430 inches per year. <i>Source: Wikipedia</i> </p>
+	</div>
+	<div class="card-bg c1" id="purgatory_info">
+		<h3>Purgatory Resort</h3>
+		<div class="card-bg c2" id="purgatory_w">
+			<table >
+				<tr>
+					<td>
+						<img id="purgatory_weather" src='' alt='purgatory_weather' height="100px">
+					</td>
+					<td style="padding-right: 33px;">
+						<span id="purgatory_temp">404</span><span id="temp-unit">&#x2109</span>
+					</td>
+					<td style="text-align: center;">
+						<span id="purgatory_snow">0</span><span id="snow-unit"> in</span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<p><a href="https://www.purgatory.ski/" target="_blank" title="Opens in a new window">Purgatory Resort</a>  
+			is a ski resort located in the San Juan Mountains of Southwest Colorado, 25 miles (42 km) north of the town of Durango. Established in 1965, Purgatory offers 105 trails, including 5 terrain parks, over 1,500 skiable acres, and 12 lifts, including one six-person and two high speed quad lift. <i>Source: Wikipedia</i> </p>
+	</div>
+	<div class="card-bg c1" id="silverton_info">
+		<h3>Silverton Mountain Ski Area</h3>
+		<div class="card-bg c2" id="silver_w">
+			<table >
+				<tr>
+					<td>
+						<img id="silver_weather" src='' alt='silver_weather' height="100px">
+					</td>
+					<td style="padding-right: 33px;">
+						<span id="silver_temp">404</span><span id="temp-unit">&#x2109</span>
+					</td>
+					<td style="text-align: center;">
+						<span id="silver_snow">0</span><span id="snow-unit"> in</span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<p><a href="https://silvertonmountain.com/" target="_blank" title="Opens in a new window">Silverton Mountain Ski Area</a>  
+			is a ski area near Silverton, Colorado USA that opened on January 19, 2002. Popular with skiers and snowboarders, Silverton Mountain has one chairlift that carries visitors into its terrain, which is for advanced and expert skiers or riders. <i>Source: Wikipedia</i> </p>
+	</div>
+	<div class="card-bg c1" id="telluride_info">
+		<h3>Telluride Ski Resort</h3>
+		<div class="card-bg c2" id="telluride_w">
+			<table >
+				<tr>
+					<td>
+						<img id="telluride_weather" src='' alt='telluride_weather' height="100px">
+					</td>
+					<td style="padding-right: 33px;">
+						<span id="telluride_temp">404</span><span id="temp-unit">&#x2109</span>
+					</td>
+					<td style="text-align: center;">
+						<span id="telluride_snow">0</span><span id="snow-unit"> in</span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<p><a href="https://tellurideskiresort.com/" target="_blank" title="Opens in a new window">Telluride Ski Resort</a>  
+			is a ski resort located in Mountain Village, Colorado right next to the Town of Telluride. The Telluride Ski Resort is a year-round destination located in the southwest corner of Colorado. <i>Source: Wikipedia</i>
+		</p><a href="https://www.epicpass.com/"><img src="../resources/img/map/epic.png" alt="Epic Pass Logo" width="100" height="60"></a>
+	</div>
+</div>
     <div id="map"></div>
     <br>
     <!-- <div id='reset_fly' class="container">
@@ -1001,524 +1066,535 @@ z-index: 100;
 		</tr>
 	</table>
 </div> -->
-    <div id='jumps' class="container" style="overflow: auto;">
-        <h5>Fly Locations</h5>
-        <table id="fly_locations">
-            <tr>
-                <th style="width:200px;">
-                    <button id="reset" onclick="hideAll()">Reset</button>
-                </th>
-
-            </tr>
-            <tr>
-                <th style="width:200px;">
-                    <button id="breck" onclick="showBreck();">Breckenridge</button>
-                </th>
-
-            </tr>
-            <tr>
-                <th style="width:200px;">
-                    <button id="vail" onclick="showVail();">Vail</button>
-                </th>
-            </tr>
-            <tr>
-                <th style="width:200px;">
-                    <button id="copper" onclick="showCopper();">Copper</button>
-                </th>
-            </tr>
-            <tr>
-                <th style="width:200px;">
-                    <button id="keystone" onclick="showKeystone();">Keystone</button>
-                </th>
-            </tr>
-            <tr>
-                <th style="width:200px;">
-                    <button id="A-Basin" onclick="showAbasin();">A-Basin</button>
-                </th>
-            </tr>
-            <tr>
-                <th style="width:200px;">
-                    <button id="loveland" onclick="showLove();">Loveland</button>
-                </th>
-            </tr>
-            <tr>
-                <th style="width:200px;">
-                    <button id="winterpark" onclick="showWinter();">Winter Park</button>
-                </th>
-            </tr>
-            <tr>
-                <th style="width:200px;">
-                    <button id="eldora" onclick="showEldora();">Eldora</button>
-                </th>
-            </tr>
-            <tr>
-                <th style="width:200px;">
-                    <button id="steam" onclick="showSteam();">Steamboat</button>
-                </th>
-            </tr>
-            <tr>
-                <th style="width:200px;">
-                    <button id="howelsen" onclick="showHowel();">Howelsen</button>
-                </th>
-            </tr>
-            <tr>
-                <th style="width:200px;">
-                    <button id="beaver" onclick="showBeaver();">Beaver Creek</button>
-                </th>
-            </tr>
-            <tr>
-                <th style="width:200px;">
-                    <button id="cooper" onclick="showCooper();">Cooper</button>
-                </th>
-            </tr>
-            <tr>
-                <th style="width:200px;">
-                    <button id="snowmass" onclick="showSnow();">Snowmass</button>
-                </th>
-            </tr>
-            <tr>
-                <th style="width:200px;">
-                    <button id="ajax" onclick="showAjax();">Aspen Ajax</button>
-                </th>
-            </tr>
-            <tr>
-                <th style="width:200px;">
-                    <button id="highland" onclick="showHigh();">Highlands</button>
-                </th>
-            </tr>
-            <tr>
-                <th style="width:200px;">
-                    <button id="buttermilk" onclick="showButter();">Buttermilk</button>
-                </th>
-            </tr>
-            <tr>
-                <th style="width:200px;">
-                    <button id="butte" onclick="showButte();">Crested Butte</button>
-                </th>
-            </tr>
-            <tr>
-                <th style="width:200px;">
-                    <button id="monarch" onclick="showMonarch();">Monarch</button>
-                </th>
-            </tr>
-            <tr>
-                <th style="width:200px;">
-                    <button id="wolf" onclick="showWolf();">Wolf Creek</button>
-                </th>
-            </tr>
-            <tr>
-                <th style="width:200px;">
-                    <button id="purgatory" onclick="showPurgatory();">Purgatory</button>
-                </th>
-            </tr>
-            <tr>
-                <th style="width:200px;">
-                    <button id="silverton" onclick="showSilverton();">Silverton</button>
-                </th>
-            </tr>
-            <tr>
-                <th style="width:200px;">
-                    <button id="telluride" onclick="showTelluride();">Telluride</button>
-                </th>
-            </tr>
-            <tr>
-                <th style="width:200px;">
-                    <button id="powder" onclick="showPowder();">Powderhorn</button>
-                </th>
-            </tr>
-            <tr>
-                <th style="width:200px;">
-                    <button id="sunlight" onclick="showSun();">Sunlight Mountain</button>
-                </th>
-            </tr>
-        </table>
-    </div>
+<div id="filter_cont" class="container con1">
+	<h5 style="color:white">Fly Locations</h5>
+	<div class="dropdown">
+		<button class="dropbtn" id="filter">Filter By</button>
+		<div class="dropdown-content">
+		  <a id="showAll" onclick="showAll();">Show All</a>
+		  <a id="ShowEpic" onclick="showEpic();">Epic Pass</a>
+		  <a id="ShowIkon" onclick="showIkon();">Ikon Pass</a>
+		  <a id="ShowNoPass" onclick="showLocal()">Local Pass</a>
+		</div>
+	  </div>
+</div>
+<div id='jumps' class="container" style="overflow: auto;">
+	<table id="fly_locations">
+		<tr>
+			<th style="width:200px;">
+				<button id="reset" onclick="hideAll(); showAll();">Reset</button>
+			</th>
+			
+		</tr>
+		<tr>
+			<th style="width:200px;">
+				<button id="breck" onclick="showBreck();">Breckenridge</button>
+			</th>
+			
+		</tr>
+		<tr>
+			<th style="width:200px;">
+				<button id="vail" onclick="showVail();">Vail</button>
+			</th>
+		</tr>
+		<tr>
+			<th style="width:200px;">
+				<button id="copper" onclick="showCopper();">Copper</button>
+			</th>
+		</tr>
+		<tr>
+			<th style="width:200px;">
+				<button id="keystone" onclick="showKeystone();">Keystone</button>
+			</th>
+		</tr>
+		<tr>
+			<th style="width:200px;">
+				<button id="A-Basin" onclick="showAbasin();">A-Basin</button>
+			</th>
+		</tr>
+		<tr>
+			<th style="width:200px;">
+				<button id="loveland" onclick="showLove();">Loveland</button>
+			</th>
+		</tr>
+		<tr>
+			<th style="width:200px;">
+				<button id="winterpark" onclick="showWinter();">Winter Park</button>
+			</th>
+		</tr>
+		<tr>
+			<th style="width:200px;">
+				<button id="eldora" onclick="showEldora();">Eldora</button>
+			</th>
+		</tr>
+		<tr>
+			<th style="width:200px;">
+				<button id="steam" onclick="showSteam();">Steamboat</button>
+			</th>
+		</tr>
+		<tr>
+			<th style="width:200px;">
+				<button id="howelsen" onclick="showHowel();">Howelsen</button>
+			</th>
+		</tr>
+		<tr>
+			<th style="width:200px;">
+				<button id="beaver" onclick="showBeaver();">Beaver Creek</button>
+			</th>
+		</tr>
+		<tr>
+			<th style="width:200px;">
+				<button id="cooper" onclick="showCooper();">Cooper</button>
+			</th>
+		</tr>
+		<tr>
+			<th style="width:200px;">
+				<button id="snowmass" onclick="showSnow();">Snowmass</button>
+			</th>
+		</tr>
+		<tr>
+			<th style="width:200px;">
+				<button id="ajax" onclick="showAjax();">Aspen Ajax</button>
+			</th>
+		</tr>
+		<tr>
+			<th style="width:200px;">
+				<button id="highland" onclick="showHigh();">Highlands</button>
+			</th>
+		</tr>
+		<tr>
+			<th style="width:200px;">
+				<button id="buttermilk" onclick="showButter();">Buttermilk</button>
+			</th>
+		</tr>
+		<tr>
+			<th style="width:200px;">
+				<button id="butte" onclick="showButte();">Crested Butte</button>
+			</th>
+		</tr>
+		<tr>
+			<th style="width:200px;">
+				<button id="monarch" onclick="showMonarch();">Monarch</button>
+			</th>
+		</tr>
+		<tr>
+			<th style="width:200px;">
+				<button id="wolf" onclick="showWolf();">Wolf Creek</button>
+			</th>
+		</tr>
+		<tr>
+			<th style="width:200px;">
+				<button id="purgatory" onclick="showPurgatory();">Purgatory</button>
+			</th>
+		</tr>
+		<tr>
+			<th style="width:200px;">
+				<button id="silverton" onclick="showSilverton();">Silverton</button>
+			</th>
+		</tr>
+		<tr>
+			<th style="width:200px;">
+				<button id="telluride" onclick="showTelluride();">Telluride</button>
+			</th>
+		</tr>
+		<tr>
+			<th style="width:200px;">
+				<button id="powder" onclick="showPowder();">Powderhorn</button>
+			</th>
+		</tr>
+		<tr>
+			<th style="width:200px;">
+				<button id="sunlight" onclick="showSun();">Sunlight Mountain</button>
+			</th>
+		</tr>
+	</table>
+</div>
     <script>
         mapboxgl.accessToken = 'pk.eyJ1IjoidGhvci1pdW0iLCJhIjoiY2t2YjlzczVnMGM0YTJvcDYzNnh4Y2JpMiJ9.oTGrySoL8crymz2O8-usUQ';
-        const map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/thor-ium/ckvc5s3b90jxg14lqeihf1r6i',
-            center: [-105.414767, 39.022141],
-            zoom: 6.46
-        });
-        map.addControl(new mapboxgl.NavigationControl());
-        // BRECKENRIDGE
-        document.getElementById('breck').addEventListener('click', () => {
-            // Fly to a random location by offsetting the point -74.50, 40
-            // by up to 5 degrees.
-            map.flyTo({
-                center: [
-                    -106.059,
-                    39.485
-                ],
-                zoom: 15.02,
-                pitch: 80.30,
-                bearing: -118.96,
-                essential: false,
+const map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/thor-ium/ckvc5s3b90jxg14lqeihf1r6i',
+center: [-105.414767, 39.022141],
+zoom: 6.46
+});
+map.addControl(new mapboxgl.NavigationControl());
+// BRECKENRIDGE
+document.getElementById('breck').addEventListener('click', () => {
+// Fly to a random location by offsetting the point -74.50, 40
+// by up to 5 degrees.
+map.flyTo({
+center: [
+-106.059,
+39.485
+],
+zoom: 15.02,
+pitch: 80.30,
+bearing: -118.96,
+essential: false,
 
-                // this animation is considered essential with respect to prefers-reduced-motion
-            });
-        });
+ // this animation is considered essential with respect to prefers-reduced-motion
+});
+});
 
-        // RESET
-        document.getElementById('reset').addEventListener('click', () => {
-            // Fly to a random location by offsetting the point -74.50, 40
-            // by up to 5 degrees.
-            map.flyTo({
-                center: [-105.414767, 39.022141],
-                zoom: 6.46,
-                pitch: 0,
-                bearing: 0,
-                essential: false // this animation is considered essential with respect to prefers-reduced-motion
-            });
-        });
+// RESET
+document.getElementById('reset').addEventListener('click', () => {
+// Fly to a random location by offsetting the point -74.50, 40
+// by up to 5 degrees.
+map.flyTo({
+center: [-105.414767, 39.022141],
+zoom: 6.46,
+pitch: 0,
+bearing: 0,
+essential: false // this animation is considered essential with respect to prefers-reduced-motion
+});
+});
 
-        // VAIL
-        document.getElementById('vail').addEventListener('click', () => {
-            // Fly to a random location by offsetting the point -74.50, 40
-            // by up to 5 degrees.
-            map.flyTo({
-                center: [
-                    -106.379,
-                    39.630
-                ],
-                zoom: 15.01,
-                pitch: 82,
-                bearing: 162.5,
-                essential: false // this animation is considered essential with respect to prefers-reduced-motion
-            });
-        });
+// VAIL
+document.getElementById('vail').addEventListener('click', () => {
+// Fly to a random location by offsetting the point -74.50, 40
+// by up to 5 degrees.
+map.flyTo({
+center: [
+-106.379,
+39.630
+],
+zoom: 15.01,
+pitch: 82,
+bearing: 162.5,
+essential: false // this animation is considered essential with respect to prefers-reduced-motion
+});
+});
 
-        // COPPER
-        document.getElementById('copper').addEventListener('click', () => {
-            // Fly to a random location by offsetting the point -74.50, 40
-            // by up to 5 degrees.
-            map.flyTo({
-                center: [
-                    -106.161,
-                    39.494
-                ],
-                zoom: 16.19,
-                pitch: 85,
-                bearing: -167.4,
-                essential: false // this animation is considered essential with respect to prefers-reduced-motion
-            });
-        });
-        // KEYSTONE
-        document.getElementById('keystone').addEventListener('click', () => {
-            // Fly to a random location by offsetting the point -74.50, 40
-            // by up to 5 degrees.
-            map.flyTo({
-                center: [
-                    -105.953,
-                    39.602
-                ],
-                zoom: 15.70,
-                pitch: 78,
-                bearing: -179.5,
-                essential: false // this animation is considered essential with respect to prefers-reduced-motion
-            });
-        });
-        // A-BASIN
-        document.getElementById('A-Basin').addEventListener('click', () => {
-            // Fly to a random location by offsetting the point -74.50, 40
-            // by up to 5 degrees.
-            map.flyTo({
-                center: [
-                    -105.874,
-                    39.637
-                ],
-                zoom: 15.76,
-                pitch: 73,
-                bearing: -174.2,
-                essential: false // this animation is considered essential with respect to prefers-reduced-motion
-            });
-        });
-        // LOVELAND
-        document.getElementById('loveland').addEventListener('click', () => {
-            // Fly to a random location by offsetting the point -74.50, 40
-            // by up to 5 degrees.
-            map.flyTo({
-                center: [
-                    -105.899,
-                    39.679
-                ],
-                zoom: 16.37,
-                pitch: 85,
-                bearing: -109.6,
-                essential: false // this animation is considered essential with respect to prefers-reduced-motion
-            });
-        });
-        // WINTER PARK
-        document.getElementById('winterpark').addEventListener('click', () => {
-            // Fly to a random location by offsetting the point -74.50, 40
-            // by up to 5 degrees.
-            map.flyTo({
-                center: [
-                    -105.770,
-                    39.888
-                ],
-                zoom: 16.81,
-                pitch: 84,
-                bearing: -168.2,
-                essential: false // this animation is considered essential with respect to prefers-reduced-motion
-            });
-        });
-        // ELDORA
-        document.getElementById('eldora').addEventListener('click', () => {
-            // Fly to a random location by offsetting the point -74.50, 40
-            // by up to 5 degrees.
-            map.flyTo({
-                center: [
-                    -105.584,
-                    39.936
-                ],
-                zoom: 17.50,
-                pitch: 83,
-                bearing: -101,
-                essential: false // this animation is considered essential with respect to prefers-reduced-motion
-            });
-        });
-        // STEAMBOAT SPRINGS
-        document.getElementById('steam').addEventListener('click', () => {
-            // Fly to a random location by offsetting the point -74.50, 40
-            // by up to 5 degrees.
-            map.flyTo({
-                center: [
-                    -106.786,
-                    40.462
-                ],
-                zoom: 15.90,
-                pitch: 85,
-                bearing: 104,
-                essential: false // this animation is considered essential with respect to prefers-reduced-motion
-            });
-        });
-        // HOWELSEN
-        document.getElementById('howelsen').addEventListener('click', () => {
-            // Fly to a random location by offsetting the point -74.50, 40
-            // by up to 5 degrees.
-            map.flyTo({
-                center: [
-                    -106.835,
-                    40.480
-                ],
-                zoom: 17.62,
-                pitch: 85,
-                bearing: -112.6,
-                essential: false // this animation is considered essential with respect to prefers-reduced-motion
-            });
-        });
-        // BEAVER CREEK
-        document.getElementById('beaver').addEventListener('click', () => {
-            // Fly to a random location by offsetting the point -74.50, 40
-            // by up to 5 degrees.
-            map.flyTo({
-                center: [
-                    -106.519,
-                    39.603
-                ],
-                zoom: 15.83,
-                pitch: 85,
-                bearing: 174.3,
-                essential: false // this animation is considered essential with respect to prefers-reduced-motion
-            });
-        });
-        // COOPER
-        document.getElementById('cooper').addEventListener('click', () => {
-            // Fly to a random location by offsetting the point -74.50, 40
-            // by up to 5 degrees.
-            map.flyTo({
-                center: [
-                    -106.300,
-                    39.360
-                ],
-                zoom: 17.64,
-                pitch: 82,
-                bearing: 114.5,
-                essential: false // this animation is considered essential with respect to prefers-reduced-motion
-            });
-        });
-        // SNOWMASS
-        document.getElementById('snowmass').addEventListener('click', () => {
-            // Fly to a random location by offsetting the point -74.50, 40
-            // by up to 5 degrees.
-            map.flyTo({
-                center: [
-                    -106.946,
-                    39.206
-                ],
-                zoom: 15.93,
-                pitch: 85,
-                bearing: -161.6,
-                essential: false // this animation is considered essential with respect to prefers-reduced-motion
-            });
-        });
-        // AJAX
-        document.getElementById('ajax').addEventListener('click', () => {
-            // Fly to a random location by offsetting the point -74.50, 40
-            // by up to 5 degrees.
-            map.flyTo({
-                center: [
-                    -106.825,
-                    39.185
-                ],
-                zoom: 15.94,
-                pitch: 85,
-                bearing: -168.6,
-                essential: false // this animation is considered essential with respect to prefers-reduced-motion
-            });
-        });
-        // HIGHLAND
-        document.getElementById('highland').addEventListener('click', () => {
-            // Fly to a random location by offsetting the point -74.50, 40
-            // by up to 5 degrees.
-            map.flyTo({
-                center: [
-                    -106.858,
-                    39.176
-                ],
-                zoom: 15.54,
-                pitch: 85,
-                bearing: -163,
-                essential: false // this animation is considered essential with respect to prefers-reduced-motion
-            });
-        });
-        // BUTTERMILK
-        document.getElementById('buttermilk').addEventListener('click', () => {
-            // Fly to a random location by offsetting the point -74.50, 40
-            // by up to 5 degrees.
-            map.flyTo({
-                center: [
-                    -106.861,
-                    39.194
-                ],
-                zoom: 16.34,
-                pitch: 85,
-                bearing: -123.8,
-                essential: false // this animation is considered essential with respect to prefers-reduced-motion
-            });
-        });
-        // CRESTED BUTTE
-        document.getElementById('butte').addEventListener('click', () => {
-            // Fly to a random location by offsetting the point -74.50, 40
-            // by up to 5 degrees.
-            map.flyTo({
-                center: [
-                    -106.963,
-                    38.897
-                ],
-                zoom: 15.16,
-                pitch: 85,
-                bearing: 149,
-                essential: false // this animation is considered essential with respect to prefers-reduced-motion
-            });
-        });
-        // MONARCH
-        document.getElementById('monarch').addEventListener('click', () => {
-            // Fly to a random location by offsetting the point -74.50, 40
-            // by up to 5 degrees.
-            map.flyTo({
-                center: [
-                    -106.334,
-                    38.514
-                ],
-                zoom: 16.17,
-                pitch: 78,
-                bearing: -92.9,
-                essential: false // this animation is considered essential with respect to prefers-reduced-motion
-            });
-        });
-        // WOLF CREEK
-        document.getElementById('wolf').addEventListener('click', () => {
-            // Fly to a random location by offsetting the point -74.50, 40
-            // by up to 5 degrees.
-            map.flyTo({
-                center: [
-                    -106.790,
-                    37.469
-                ],
-                zoom: 16.18,
-                pitch: 85,
-                bearing: -124.8,
-                essential: false // this animation is considered essential with respect to prefers-reduced-motion
-            });
-        });
-        // PURGATORY
-        document.getElementById('purgatory').addEventListener('click', () => {
-            // Fly to a random location by offsetting the point -74.50, 40
-            // by up to 5 degrees.
-            map.flyTo({
-                center: [
-                    -107.847,
-                    37.630
-                ],
-                zoom: 16.07,
-                pitch: 77,
-                bearing: 168.9,
-                essential: false // this animation is considered essential with respect to prefers-reduced-motion
-            });
-        });
-        // SILVERTON
-        document.getElementById('silverton').addEventListener('click', () => {
-            // Fly to a random location by offsetting the point -74.50, 40
-            // by up to 5 degrees.
-            map.flyTo({
-                center: [
-                    -107.658,
-                    37.875
-                ],
-                zoom: 15.08,
-                pitch: 85,
-                bearing: 128.8,
-                essential: false // this animation is considered essential with respect to prefers-reduced-motion
-            });
-        });
-        // TELLURIDE
-        document.getElementById('telluride').addEventListener('click', () => {
-            // Fly to a random location by offsetting the point -74.50, 40
-            // by up to 5 degrees.
-            map.flyTo({
-                center: [
-                    -107.841,
-                    37.924
-                ],
-                zoom: 15.28,
-                pitch: 85,
-                bearing: 137.1,
-                essential: false // this animation is considered essential with respect to prefers-reduced-motion
-            });
-        });
-        // POWDERHORN
-        document.getElementById('powder').addEventListener('click', () => {
-            // Fly to a random location by offsetting the point -74.50, 40
-            // by up to 5 degrees.
-            map.flyTo({
-                center: [
-                    -108.154,
-                    39.065
-                ],
-                zoom: 16.21,
-                pitch: 84,
-                bearing: 174.9,
-                essential: false // this animation is considered essential with respect to prefers-reduced-motion
-            });
-        });
-        document.getElementById('sunlight').addEventListener('click', () => {
-            // Fly to a random location by offsetting the point -74.50, 40
-            // by up to 5 degrees.
-            map.flyTo({
-                center: [
-                    -107.338,
-                    39.394
-                ],
-                zoom: 16,
-                pitch: 81,
-                bearing: -163.5,
-                essential: false // this animation is considered essential with respect to prefers-reduced-motion
-            });
-        });
-        map.on('load', () => {
+// COPPER
+document.getElementById('copper').addEventListener('click', () => {
+// Fly to a random location by offsetting the point -74.50, 40
+// by up to 5 degrees.
+map.flyTo({
+center: [
+-106.161,
+39.494
+],
+zoom: 16.19,
+pitch: 85,
+bearing: -167.4,
+essential: false // this animation is considered essential with respect to prefers-reduced-motion
+});
+});
+// KEYSTONE
+document.getElementById('keystone').addEventListener('click', () => {
+// Fly to a random location by offsetting the point -74.50, 40
+// by up to 5 degrees.
+map.flyTo({
+center: [
+-105.953,
+39.602
+],
+zoom: 15.70,
+pitch: 78,
+bearing: -179.5,
+essential: false // this animation is considered essential with respect to prefers-reduced-motion
+});
+});
+// A-BASIN
+document.getElementById('A-Basin').addEventListener('click', () => {
+// Fly to a random location by offsetting the point -74.50, 40
+// by up to 5 degrees.
+map.flyTo({
+center: [
+-105.874,
+39.637
+],
+zoom: 15.76,
+pitch: 73,
+bearing: -174.2,
+essential: false // this animation is considered essential with respect to prefers-reduced-motion
+});
+});
+// LOVELAND
+document.getElementById('loveland').addEventListener('click', () => {
+// Fly to a random location by offsetting the point -74.50, 40
+// by up to 5 degrees.
+map.flyTo({
+center: [
+-105.899,
+39.679
+],
+zoom: 16.37,
+pitch: 85,
+bearing: -109.6,
+essential: false // this animation is considered essential with respect to prefers-reduced-motion
+});
+});
+// WINTER PARK
+document.getElementById('winterpark').addEventListener('click', () => {
+// Fly to a random location by offsetting the point -74.50, 40
+// by up to 5 degrees.
+map.flyTo({
+center: [
+-105.770,
+39.888
+],
+zoom: 16.81,
+pitch: 84,
+bearing: -168.2,
+essential: false // this animation is considered essential with respect to prefers-reduced-motion
+});
+});
+// ELDORA
+document.getElementById('eldora').addEventListener('click', () => {
+// Fly to a random location by offsetting the point -74.50, 40
+// by up to 5 degrees.
+map.flyTo({
+center: [
+-105.584,
+39.936
+],
+zoom: 17.50,
+pitch: 83,
+bearing: -101,
+essential: false // this animation is considered essential with respect to prefers-reduced-motion
+});
+});
+// STEAMBOAT SPRINGS
+document.getElementById('steam').addEventListener('click', () => {
+// Fly to a random location by offsetting the point -74.50, 40
+// by up to 5 degrees.
+map.flyTo({
+center: [
+-106.786,
+40.462
+],
+zoom: 15.90,
+pitch: 85,
+bearing: 104,
+essential: false // this animation is considered essential with respect to prefers-reduced-motion
+});
+});
+// HOWELSEN
+document.getElementById('howelsen').addEventListener('click', () => {
+// Fly to a random location by offsetting the point -74.50, 40
+// by up to 5 degrees.
+map.flyTo({
+center: [
+-106.835,
+40.480
+],
+zoom: 17.62,
+pitch: 85,
+bearing: -112.6,
+essential: false // this animation is considered essential with respect to prefers-reduced-motion
+});
+});
+// BEAVER CREEK
+document.getElementById('beaver').addEventListener('click', () => {
+// Fly to a random location by offsetting the point -74.50, 40
+// by up to 5 degrees.
+map.flyTo({
+center: [
+-106.519,
+39.603
+],
+zoom: 15.83,
+pitch: 85,
+bearing: 174.3,
+essential: false // this animation is considered essential with respect to prefers-reduced-motion
+});
+});
+// COOPER
+document.getElementById('cooper').addEventListener('click', () => {
+// Fly to a random location by offsetting the point -74.50, 40
+// by up to 5 degrees.
+map.flyTo({
+center: [
+-106.300,
+39.360
+],
+zoom: 17.64,
+pitch: 82,
+bearing: 114.5,
+essential: false // this animation is considered essential with respect to prefers-reduced-motion
+});
+});
+// SNOWMASS
+document.getElementById('snowmass').addEventListener('click', () => {
+// Fly to a random location by offsetting the point -74.50, 40
+// by up to 5 degrees.
+map.flyTo({
+center: [
+-106.946,
+39.206
+],
+zoom: 15.93,
+pitch: 85,
+bearing: -161.6,
+essential: false // this animation is considered essential with respect to prefers-reduced-motion
+});
+});
+// AJAX
+document.getElementById('ajax').addEventListener('click', () => {
+// Fly to a random location by offsetting the point -74.50, 40
+// by up to 5 degrees.
+map.flyTo({
+center: [
+-106.825,
+39.185
+],
+zoom: 15.94,
+pitch: 85,
+bearing: -168.6,
+essential: false // this animation is considered essential with respect to prefers-reduced-motion
+});
+});
+// HIGHLAND
+document.getElementById('highland').addEventListener('click', () => {
+// Fly to a random location by offsetting the point -74.50, 40
+// by up to 5 degrees.
+map.flyTo({
+center: [
+-106.858,
+39.176
+],
+zoom: 15.54,
+pitch: 85,
+bearing: -163,
+essential: false // this animation is considered essential with respect to prefers-reduced-motion
+});
+});
+// BUTTERMILK
+document.getElementById('buttermilk').addEventListener('click', () => {
+// Fly to a random location by offsetting the point -74.50, 40
+// by up to 5 degrees.
+map.flyTo({
+center: [
+-106.861,
+39.194
+],
+zoom: 16.34,
+pitch: 85,
+bearing: -123.8,
+essential: false // this animation is considered essential with respect to prefers-reduced-motion
+});
+});
+// CRESTED BUTTE
+document.getElementById('butte').addEventListener('click', () => {
+// Fly to a random location by offsetting the point -74.50, 40
+// by up to 5 degrees.
+map.flyTo({
+center: [
+-106.963,
+38.897
+],
+zoom: 15.16,
+pitch: 85,
+bearing: 149,
+essential: false // this animation is considered essential with respect to prefers-reduced-motion
+});
+});
+// MONARCH
+document.getElementById('monarch').addEventListener('click', () => {
+// Fly to a random location by offsetting the point -74.50, 40
+// by up to 5 degrees.
+map.flyTo({
+center: [
+-106.334,
+38.514
+],
+zoom: 16.17,
+pitch: 78,
+bearing: -92.9,
+essential: false // this animation is considered essential with respect to prefers-reduced-motion
+});
+});
+// WOLF CREEK
+document.getElementById('wolf').addEventListener('click', () => {
+// Fly to a random location by offsetting the point -74.50, 40
+// by up to 5 degrees.
+map.flyTo({
+center: [
+-106.790,
+37.469
+],
+zoom: 16.18,
+pitch: 85,
+bearing: -124.8,
+essential: false // this animation is considered essential with respect to prefers-reduced-motion
+});
+});
+// PURGATORY
+document.getElementById('purgatory').addEventListener('click', () => {
+// Fly to a random location by offsetting the point -74.50, 40
+// by up to 5 degrees.
+map.flyTo({
+center: [
+-107.847,
+37.630
+],
+zoom: 16.07,
+pitch: 77,
+bearing: 168.9,
+essential: false // this animation is considered essential with respect to prefers-reduced-motion
+});
+});
+// SILVERTON
+document.getElementById('silverton').addEventListener('click', () => {
+// Fly to a random location by offsetting the point -74.50, 40
+// by up to 5 degrees.
+map.flyTo({
+center: [
+-107.658,
+37.875
+],
+zoom: 15.08,
+pitch: 85,
+bearing: 128.8,
+essential: false // this animation is considered essential with respect to prefers-reduced-motion
+});
+});
+// TELLURIDE
+document.getElementById('telluride').addEventListener('click', () => {
+// Fly to a random location by offsetting the point -74.50, 40
+// by up to 5 degrees.
+map.flyTo({
+center: [
+-107.841,
+37.924
+],
+zoom: 15.28,
+pitch: 85,
+bearing: 137.1,
+essential: false // this animation is considered essential with respect to prefers-reduced-motion
+});
+});
+// POWDERHORN
+document.getElementById('powder').addEventListener('click', () => {
+// Fly to a random location by offsetting the point -74.50, 40
+// by up to 5 degrees.
+map.flyTo({
+center: [
+-108.154,
+39.065
+],
+zoom: 16.21,
+pitch: 84,
+bearing: 174.9,
+essential: false // this animation is considered essential with respect to prefers-reduced-motion
+});
+});
+document.getElementById('sunlight').addEventListener('click', () => {
+// Fly to a random location by offsetting the point -74.50, 40
+// by up to 5 degrees.
+map.flyTo({
+center: [
+-107.338,
+39.394
+],
+zoom: 16,
+pitch: 81,
+bearing: -163.5,
+essential: false // this animation is considered essential with respect to prefers-reduced-motion
+});
+});
+        map.on('load',  () => {
             map.addSource('places', {
                 // This GeoJSON contains features that include an "icon"
                 // property. The value of the "icon" property corresponds
@@ -1828,7 +1904,6 @@ z-index: 100;
                     'icon-allow-overlap': true
                 }
             });
-
             // When a click event occurs on a feature in the places layer, open a popup at the
             // location of the feature, with description HTML from its properties.
             map.on('click', 'places', (e) => {
@@ -1859,6 +1934,680 @@ z-index: 100;
                 map.getCanvas().style.cursor = '';
             });
         });
+        window.addEventListener('load', () =>{
+  let iconDesc = document.getElementById('breck_weather');
+  let temperatureDesc = document.getElementById('breck_temp');
+  let snowDesc = document.getElementById('breck_snow');
+ 
+  const api = "https://api.openweathermap.org/data/2.5/weather?lat=39.478&lon=-106.077&appid=f9adf86509321f0ab829f0e75d0aa4aa"
+
+  fetch(api)
+      .then(response => {
+          return response.json();
+      })
+          .then(data => {
+            const {temp} = data.main;
+            // const {humidity} = data.main;
+            // const {speed} = data.wind;
+            const {icon} = data.weather[0];
+
+            //Set elements from API
+            temperatureDesc.innerHTML = Math.round(((temp-273.15)*1.8)+32);
+            // humidityDesc.innerHTML = humidity;
+            // windSpeedDesc.innerHTML = Math.round(speed/0.44704);
+            iconDesc.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+            //Console log API report
+			snowDesc.innerHTML = data.snow["1h"];
+          });
+});
+
+window.addEventListener('load', () =>{
+  let iconDesc = document.getElementById('vail_weather');
+  let temperatureDesc = document.getElementById('vail_temp');
+  let snowDesc = document.getElementById('vail_snow');
+ 
+  const api = "https://api.openweathermap.org/data/2.5/weather?lat=39.630&lon=-106.379&appid=f9adf86509321f0ab829f0e75d0aa4aa"
+
+  fetch(api)
+      .then(response => {
+          return response.json();
+      })
+          .then(data => {
+            const {temp} = data.main;
+            // const {humidity} = data.main;
+            // const {speed} = data.wind;
+            const {icon} = data.weather[0];
+
+            //Set elements from API
+            temperatureDesc.innerHTML = Math.round(((temp-273.15)*1.8)+32);
+            // humidityDesc.innerHTML = humidity;
+            // windSpeedDesc.innerHTML = Math.round(speed/0.44704);
+            iconDesc.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+            //Console log API report
+			snowDesc.innerHTML = data.snow["1h"];
+          });
+});
+
+window.addEventListener('load', () =>{
+  let iconDesc = document.getElementById('copper_weather');
+  let temperatureDesc = document.getElementById('copper_temp');
+  let snowDesc = document.getElementById('copper_snow');
+ 
+  const api = "https://api.openweathermap.org/data/2.5/weather?lat=39.494&lon=-106.161&appid=f9adf86509321f0ab829f0e75d0aa4aa"
+
+  fetch(api)
+      .then(response => {
+          return response.json();
+      })
+          .then(data => {
+            const {temp} = data.main;
+            // const {humidity} = data.main;
+            // const {speed} = data.wind;
+            const {icon} = data.weather[0];
+
+            //Set elements from API
+            temperatureDesc.innerHTML = Math.round(((temp-273.15)*1.8)+32);
+            // humidityDesc.innerHTML = humidity;
+            // windSpeedDesc.innerHTML = Math.round(speed/0.44704);
+            iconDesc.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+            //Console log API report
+			snowDesc.innerHTML = data.snow["1h"];
+          });
+});
+
+window.addEventListener('load', () =>{
+  let iconDesc = document.getElementById('keystone_weather');
+  let temperatureDesc = document.getElementById('keystone_temp');
+  let snowDesc = document.getElementById('keystone_snow');
+ 
+  const api = "https://api.openweathermap.org/data/2.5/weather?lat=39.494&lon=-106.161&appid=f9adf86509321f0ab829f0e75d0aa4aa"
+
+  fetch(api)
+      .then(response => {
+          return response.json();
+      })
+          .then(data => {
+            const {temp} = data.main;
+            // const {humidity} = data.main;
+            // const {speed} = data.wind;
+            const {icon} = data.weather[0];
+
+            //Set elements from API
+            temperatureDesc.innerHTML = Math.round(((temp-273.15)*1.8)+32);
+            // humidityDesc.innerHTML = humidity;
+            // windSpeedDesc.innerHTML = Math.round(speed/0.44704);
+            iconDesc.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+            //Console log API report
+			snowDesc.innerHTML = data.snow["1h"];
+          });
+});
+
+window.addEventListener('load', () =>{
+  let iconDesc = document.getElementById('abasin_weather');
+  let temperatureDesc = document.getElementById('abasin_temp');
+  let snowDesc = document.getElementById('abasin_snow');
+ 
+  const api = "https://api.openweathermap.org/data/2.5/weather?lat=39.637&lon=-105.874&appid=f9adf86509321f0ab829f0e75d0aa4aa"
+
+  fetch(api)
+      .then(response => {
+          return response.json();
+      })
+          .then(data => {
+            const {temp} = data.main;
+            // const {humidity} = data.main;
+            // const {speed} = data.wind;
+            const {icon} = data.weather[0];
+
+            //Set elements from API
+            temperatureDesc.innerHTML = Math.round(((temp-273.15)*1.8)+32);
+            // humidityDesc.innerHTML = humidity;
+            // windSpeedDesc.innerHTML = Math.round(speed/0.44704);
+            iconDesc.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+            //Console log API report
+			snowDesc.innerHTML = data.snow["1h"];
+          });
+});
+
+window.addEventListener('load', () =>{
+  let iconDesc = document.getElementById('love_weather');
+  let temperatureDesc = document.getElementById('love_temp');
+  let snowDesc = document.getElementById('love_snow');
+ 
+  const api = "https://api.openweathermap.org/data/2.5/weather?lat=39.679&lon=-105.899&appid=f9adf86509321f0ab829f0e75d0aa4aa"
+
+  fetch(api)
+      .then(response => {
+          return response.json();
+      })
+          .then(data => {
+            const {temp} = data.main;
+            // const {humidity} = data.main;
+            // const {speed} = data.wind;
+            const {icon} = data.weather[0];
+
+            //Set elements from API
+            temperatureDesc.innerHTML = Math.round(((temp-273.15)*1.8)+32);
+            // humidityDesc.innerHTML = humidity;
+            // windSpeedDesc.innerHTML = Math.round(speed/0.44704);
+            iconDesc.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+            //Console log API report
+			snowDesc.innerHTML = data.snow["1h"];
+          });
+});
+
+window.addEventListener('load', () =>{
+  let iconDesc = document.getElementById('winter_weather');
+  let temperatureDesc = document.getElementById('winter_temp');
+  let snowDesc = document.getElementById('winter_snow');
+ 
+  const api = "https://api.openweathermap.org/data/2.5/weather?lat=39.888&lon=-105.770&appid=f9adf86509321f0ab829f0e75d0aa4aa"
+
+  fetch(api)
+      .then(response => {
+          return response.json();
+      })
+          .then(data => {
+            const {temp} = data.main;
+            // const {humidity} = data.main;
+            // const {speed} = data.wind;
+            const {icon} = data.weather[0];
+
+            //Set elements from API
+            temperatureDesc.innerHTML = Math.round(((temp-273.15)*1.8)+32);
+            // humidityDesc.innerHTML = humidity;
+            // windSpeedDesc.innerHTML = Math.round(speed/0.44704);
+            iconDesc.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+            //Console log API report
+			snowDesc.innerHTML = data.snow["1h"];
+          });
+});
+
+window.addEventListener('load', () =>{
+  let iconDesc = document.getElementById('eldora_weather');
+  let temperatureDesc = document.getElementById('eldora_temp');
+  let snowDesc = document.getElementById('eldora_snow');
+ 
+  const api = "https://api.openweathermap.org/data/2.5/weather?lat=39.936&lon=-105.584&appid=f9adf86509321f0ab829f0e75d0aa4aa"
+
+  fetch(api)
+      .then(response => {
+          return response.json();
+      })
+          .then(data => {
+            const {temp} = data.main;
+            // const {humidity} = data.main;
+            // const {speed} = data.wind;
+            const {icon} = data.weather[0];
+
+            //Set elements from API
+            temperatureDesc.innerHTML = Math.round(((temp-273.15)*1.8)+32);
+            // humidityDesc.innerHTML = humidity;
+            // windSpeedDesc.innerHTML = Math.round(speed/0.44704);
+            iconDesc.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+            //Console log API report
+			snowDesc.innerHTML = data.snow["1h"];
+          });
+});
+
+window.addEventListener('load', () =>{
+  let iconDesc = document.getElementById('beaver_weather');
+  let temperatureDesc = document.getElementById('beaver_temp');
+  let snowDesc = document.getElementById('beaver_snow');
+ 
+  const api = "https://api.openweathermap.org/data/2.5/weather?lat=39.603&lon=-106.519&appid=f9adf86509321f0ab829f0e75d0aa4aa"
+
+  fetch(api)
+      .then(response => {
+          return response.json();
+      })
+          .then(data => {
+            const {temp} = data.main;
+            // const {humidity} = data.main;
+            // const {speed} = data.wind;
+            const {icon} = data.weather[0];
+
+            //Set elements from API
+            temperatureDesc.innerHTML = Math.round(((temp-273.15)*1.8)+32);
+            // humidityDesc.innerHTML = humidity;
+            // windSpeedDesc.innerHTML = Math.round(speed/0.44704);
+            iconDesc.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+            //Console log API report
+			snowDesc.innerHTML = data.snow["1h"];
+          });
+});
+
+window.addEventListener('load', () =>{
+  let iconDesc = document.getElementById('sun_weather');
+  let temperatureDesc = document.getElementById('sun_temp');
+  let snowDesc = document.getElementById('sun_snow');
+ 
+  const api = "https://api.openweathermap.org/data/2.5/weather?lat=39.394&lon=-107.338&appid=f9adf86509321f0ab829f0e75d0aa4aa"
+
+  fetch(api)
+      .then(response => {
+          return response.json();
+      })
+          .then(data => {
+            const {temp} = data.main;
+            // const {humidity} = data.main;
+            // const {speed} = data.wind;
+            const {icon} = data.weather[0];
+
+            //Set elements from API
+            temperatureDesc.innerHTML = Math.round(((temp-273.15)*1.8)+32);
+            // humidityDesc.innerHTML = humidity;
+            // windSpeedDesc.innerHTML = Math.round(speed/0.44704);
+            iconDesc.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+            //Console log API report
+			snowDesc.innerHTML = data.snow["1h"];
+          });
+});
+
+window.addEventListener('load', () =>{
+  let iconDesc = document.getElementById('powder_weather');
+  let temperatureDesc = document.getElementById('powder_temp');
+  let snowDesc = document.getElementById('powder_snow');
+ 
+  const api = "https://api.openweathermap.org/data/2.5/weather?lat=39.065&lon=-108.154&appid=f9adf86509321f0ab829f0e75d0aa4aa"
+
+  fetch(api)
+      .then(response => {
+          return response.json();
+      })
+          .then(data => {
+            const {temp} = data.main;
+            // const {humidity} = data.main;
+            // const {speed} = data.wind;
+            const {icon} = data.weather[0];
+
+            //Set elements from API
+            temperatureDesc.innerHTML = Math.round(((temp-273.15)*1.8)+32);
+            // humidityDesc.innerHTML = humidity;
+            // windSpeedDesc.innerHTML = Math.round(speed/0.44704);
+            iconDesc.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+            //Console log API report
+			snowDesc.innerHTML = data.snow["1h"];
+          });
+});
+
+window.addEventListener('load', () =>{
+  let iconDesc = document.getElementById('steam_weather');
+  let temperatureDesc = document.getElementById('steam_temp');
+  let snowDesc = document.getElementById('steam_snow');
+ 
+  const api = "https://api.openweathermap.org/data/2.5/weather?lat=40.462&lon=-106.786&appid=f9adf86509321f0ab829f0e75d0aa4aa"
+
+  fetch(api)
+      .then(response => {
+          return response.json();
+      })
+          .then(data => {
+            const {temp} = data.main;
+            // const {humidity} = data.main;
+            // const {speed} = data.wind;
+            const {icon} = data.weather[0];
+
+            //Set elements from API
+            temperatureDesc.innerHTML = Math.round(((temp-273.15)*1.8)+32);
+            // humidityDesc.innerHTML = humidity;
+            // windSpeedDesc.innerHTML = Math.round(speed/0.44704);
+            iconDesc.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+            //Console log API report
+			snowDesc.innerHTML = data.snow["1h"];
+          });
+});
+
+window.addEventListener('load', () =>{
+  let iconDesc = document.getElementById('howelsen_weather');
+  let temperatureDesc = document.getElementById('howelsen_temp');
+  let snowDesc = document.getElementById('howelsen_snow');
+ 
+  const api = "https://api.openweathermap.org/data/2.5/weather?lat=40.480&lon=-106.835&appid=f9adf86509321f0ab829f0e75d0aa4aa"
+
+  fetch(api)
+      .then(response => {
+          return response.json();
+      })
+          .then(data => {
+            const {temp} = data.main;
+            // const {humidity} = data.main;
+            // const {speed} = data.wind;
+            const {icon} = data.weather[0];
+
+            //Set elements from API
+            temperatureDesc.innerHTML = Math.round(((temp-273.15)*1.8)+32);
+            // humidityDesc.innerHTML = humidity;
+            // windSpeedDesc.innerHTML = Math.round(speed/0.44704);
+            iconDesc.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+            //Console log API report
+			snowDesc.innerHTML = data.snow["1h"];
+          });
+});
+
+window.addEventListener('load', () =>{
+  let iconDesc = document.getElementById('cooper_weather');
+  let temperatureDesc = document.getElementById('cooper_temp');
+  let snowDesc = document.getElementById('cooper_snow');
+ 
+  const api = "https://api.openweathermap.org/data/2.5/weather?lat=39.360&lon=-106.300&appid=f9adf86509321f0ab829f0e75d0aa4aa"
+
+  fetch(api)
+      .then(response => {
+          return response.json();
+      })
+          .then(data => {
+            const {temp} = data.main;
+            // const {humidity} = data.main;
+            // const {speed} = data.wind;
+            const {icon} = data.weather[0];
+
+            //Set elements from API
+            temperatureDesc.innerHTML = Math.round(((temp-273.15)*1.8)+32);
+            // humidityDesc.innerHTML = humidity;
+            // windSpeedDesc.innerHTML = Math.round(speed/0.44704);
+            iconDesc.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+            //Console log API report
+			snowDesc.innerHTML = data.snow["1h"];
+          });
+});
+
+window.addEventListener('load', () =>{
+  let iconDesc = document.getElementById('snow_weather');
+  let temperatureDesc = document.getElementById('snow_temp');
+  let snowDesc = document.getElementById('snow_snow');
+ 
+  const api = "https://api.openweathermap.org/data/2.5/weather?lat=39.206&lon=-106.946&appid=f9adf86509321f0ab829f0e75d0aa4aa"
+
+  fetch(api)
+      .then(response => {
+          return response.json();
+      })
+          .then(data => {
+            const {temp} = data.main;
+            // const {humidity} = data.main;
+            // const {speed} = data.wind;
+            const {icon} = data.weather[0];
+
+            //Set elements from API
+            temperatureDesc.innerHTML = Math.round(((temp-273.15)*1.8)+32);
+            // humidityDesc.innerHTML = humidity;
+            // windSpeedDesc.innerHTML = Math.round(speed/0.44704);
+            iconDesc.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+            //Console log API report
+			snowDesc.innerHTML = data.snow["1h"];
+          });
+});
+
+window.addEventListener('load', () =>{
+  let iconDesc = document.getElementById('high_weather');
+  let temperatureDesc = document.getElementById('high_temp');
+  let snowDesc = document.getElementById('high_snow');
+ 
+  const api = "https://api.openweathermap.org/data/2.5/weather?lat=39.176&lon=-106.858&appid=f9adf86509321f0ab829f0e75d0aa4aa"
+
+  fetch(api)
+      .then(response => {
+          return response.json();
+      })
+          .then(data => {
+            const {temp} = data.main;
+            // const {humidity} = data.main;
+            // const {speed} = data.wind;
+            const {icon} = data.weather[0];
+
+            //Set elements from API
+            temperatureDesc.innerHTML = Math.round(((temp-273.15)*1.8)+32);
+            // humidityDesc.innerHTML = humidity;
+            // windSpeedDesc.innerHTML = Math.round(speed/0.44704);
+            iconDesc.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+            //Console log API report
+			snowDesc.innerHTML = data.snow["1h"];
+          });
+});
+
+window.addEventListener('load', () =>{
+  let iconDesc = document.getElementById('ajax_weather');
+  let temperatureDesc = document.getElementById('ajax_temp');
+  let snowDesc = document.getElementById('ajax_snow');
+ 
+  const api = "https://api.openweathermap.org/data/2.5/weather?lat=39.185&lon=-106.825&appid=f9adf86509321f0ab829f0e75d0aa4aa"
+
+  fetch(api)
+      .then(response => {
+          return response.json();
+      })
+          .then(data => {
+            const {temp} = data.main;
+            // const {humidity} = data.main;
+            // const {speed} = data.wind;
+            const {icon} = data.weather[0];
+
+            //Set elements from API
+            temperatureDesc.innerHTML = Math.round(((temp-273.15)*1.8)+32);
+            // humidityDesc.innerHTML = humidity;
+            // windSpeedDesc.innerHTML = Math.round(speed/0.44704);
+            iconDesc.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+            //Console log API report
+			snowDesc.innerHTML = data.snow["1h"];
+          });
+});
+
+window.addEventListener('load', () =>{
+  let iconDesc = document.getElementById('butter_weather');
+  let temperatureDesc = document.getElementById('butter_temp');
+  let snowDesc = document.getElementById('butter_snow');
+ 
+  const api = "https://api.openweathermap.org/data/2.5/weather?lat=39.194&lon=-106.861&appid=f9adf86509321f0ab829f0e75d0aa4aa"
+
+  fetch(api)
+      .then(response => {
+          return response.json();
+      })
+          .then(data => {
+            const {temp} = data.main;
+            // const {humidity} = data.main;
+            // const {speed} = data.wind;
+            const {icon} = data.weather[0];
+
+            //Set elements from API
+            temperatureDesc.innerHTML = Math.round(((temp-273.15)*1.8)+32);
+            // humidityDesc.innerHTML = humidity;
+            // windSpeedDesc.innerHTML = Math.round(speed/0.44704);
+            iconDesc.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+            //Console log API report
+			snowDesc.innerHTML = data.snow["1h"];
+          });
+});
+
+window.addEventListener('load', () =>{
+  let iconDesc = document.getElementById('butte_weather');
+  let temperatureDesc = document.getElementById('butte_temp');
+  let snowDesc = document.getElementById('butte_snow');
+ 
+  const api = "https://api.openweathermap.org/data/2.5/weather?lat=38.897&lon=-106.963&appid=f9adf86509321f0ab829f0e75d0aa4aa"
+
+  fetch(api)
+      .then(response => {
+          return response.json();
+      })
+          .then(data => {
+            const {temp} = data.main;
+            // const {humidity} = data.main;
+            // const {speed} = data.wind;
+            const {icon} = data.weather[0];
+
+            //Set elements from API
+            temperatureDesc.innerHTML = Math.round(((temp-273.15)*1.8)+32);
+            // humidityDesc.innerHTML = humidity;
+            // windSpeedDesc.innerHTML = Math.round(speed/0.44704);
+            iconDesc.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+            //Console log API report
+			snowDesc.innerHTML = data.snow["1h"];
+          });
+});
+
+window.addEventListener('load', () =>{
+  let iconDesc = document.getElementById('monarch_weather');
+  let temperatureDesc = document.getElementById('monarch_temp');
+  let snowDesc = document.getElementById('monarch_snow');
+ 
+  const api = "https://api.openweathermap.org/data/2.5/weather?lat=38.514&lon=-106.334&appid=f9adf86509321f0ab829f0e75d0aa4aa"
+
+  fetch(api)
+      .then(response => {
+          return response.json();
+      })
+          .then(data => {
+            const {temp} = data.main;
+            // const {humidity} = data.main;
+            // const {speed} = data.wind;
+            const {icon} = data.weather[0];
+
+            //Set elements from API
+            temperatureDesc.innerHTML = Math.round(((temp-273.15)*1.8)+32);
+            // humidityDesc.innerHTML = humidity;
+            // windSpeedDesc.innerHTML = Math.round(speed/0.44704);
+            iconDesc.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+            //Console log API report
+			snowDesc.innerHTML = data.snow["1h"];
+          });
+});
+
+window.addEventListener('load', () =>{
+  let iconDesc = document.getElementById('wolf_weather');
+  let temperatureDesc = document.getElementById('wolf_temp');
+  let snowDesc = document.getElementById('wolf_snow');
+ 
+  const api = "https://api.openweathermap.org/data/2.5/weather?lat=37.469&lon=-106.790&appid=f9adf86509321f0ab829f0e75d0aa4aa"
+
+  fetch(api)
+      .then(response => {
+          return response.json();
+      })
+          .then(data => {
+            const {temp} = data.main;
+            // const {humidity} = data.main;
+            // const {speed} = data.wind;
+            const {icon} = data.weather[0];
+
+            //Set elements from API
+            temperatureDesc.innerHTML = Math.round(((temp-273.15)*1.8)+32);
+            // humidityDesc.innerHTML = humidity;
+            // windSpeedDesc.innerHTML = Math.round(speed/0.44704);
+            iconDesc.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+            //Console log API report
+			snowDesc.innerHTML = data.snow["1h"];
+          });
+});
+
+window.addEventListener('load', () =>{
+  let iconDesc = document.getElementById('wolf_weather');
+  let temperatureDesc = document.getElementById('wolf_temp');
+  let snowDesc = document.getElementById('wolf_snow');
+ 
+  const api = "https://api.openweathermap.org/data/2.5/weather?lat=37.469&lon=-106.790&appid=f9adf86509321f0ab829f0e75d0aa4aa"
+
+  fetch(api)
+      .then(response => {
+          return response.json();
+      })
+          .then(data => {
+            const {temp} = data.main;
+            // const {humidity} = data.main;
+            // const {speed} = data.wind;
+            const {icon} = data.weather[0];
+
+            //Set elements from API
+            temperatureDesc.innerHTML = Math.round(((temp-273.15)*1.8)+32);
+            // humidityDesc.innerHTML = humidity;
+            // windSpeedDesc.innerHTML = Math.round(speed/0.44704);
+            iconDesc.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+            //Console log API report
+			snowDesc.innerHTML = data.snow["1h"];
+          });
+});
+
+window.addEventListener('load', () =>{
+  let iconDesc = document.getElementById('purgatory_weather');
+  let temperatureDesc = document.getElementById('purgatory_temp');
+  let snowDesc = document.getElementById('purgatory_snow');
+ 
+  const api = "https://api.openweathermap.org/data/2.5/weather?lat=37.630&lon=-107.847&appid=f9adf86509321f0ab829f0e75d0aa4aa"
+
+  fetch(api)
+      .then(response => {
+          return response.json();
+      })
+          .then(data => {
+            const {temp} = data.main;
+            // const {humidity} = data.main;
+            // const {speed} = data.wind;
+            const {icon} = data.weather[0];
+
+            //Set elements from API
+            temperatureDesc.innerHTML = Math.round(((temp-273.15)*1.8)+32);
+            // humidityDesc.innerHTML = humidity;
+            // windSpeedDesc.innerHTML = Math.round(speed/0.44704);
+            iconDesc.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+            //Console log API report
+			snowDesc.innerHTML = data.snow["1h"];
+          });
+});
+
+window.addEventListener('load', () =>{
+  let iconDesc = document.getElementById('silver_weather');
+  let temperatureDesc = document.getElementById('silver_temp');
+  let snowDesc = document.getElementById('silver_snow');
+ 
+  const api = "https://api.openweathermap.org/data/2.5/weather?lat=37.875&lon=-107.658&appid=f9adf86509321f0ab829f0e75d0aa4aa"
+
+  fetch(api)
+      .then(response => {
+          return response.json();
+      })
+          .then(data => {
+            const {temp} = data.main;
+            // const {humidity} = data.main;
+            // const {speed} = data.wind;
+            const {icon} = data.weather[0];
+
+            //Set elements from API
+            temperatureDesc.innerHTML = Math.round(((temp-273.15)*1.8)+32);
+            // humidityDesc.innerHTML = humidity;
+            // windSpeedDesc.innerHTML = Math.round(speed/0.44704);
+            iconDesc.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+            //Console log API report
+			snowDesc.innerHTML = data.snow["1h"];
+          });
+});
+
+window.addEventListener('load', () =>{
+  let iconDesc = document.getElementById('telluride_weather');
+  let temperatureDesc = document.getElementById('telluride_temp');
+  let snowDesc = document.getElementById('telluride_snow');
+ 
+  const api = "https://api.openweathermap.org/data/2.5/weather?lat=37.924&lon=-107.841&appid=f9adf86509321f0ab829f0e75d0aa4aa"
+
+  fetch(api)
+      .then(response => {
+          return response.json();
+      })
+          .then(data => {
+            const {temp} = data.main;
+            // const {humidity} = data.main;
+            // const {speed} = data.wind;
+            const {icon} = data.weather[0];
+
+            //Set elements from API
+            temperatureDesc.innerHTML = Math.round(((temp-273.15)*1.8)+32);
+            // humidityDesc.innerHTML = humidity;
+            // windSpeedDesc.innerHTML = Math.round(speed/0.44704);
+            iconDesc.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+            //Console log API report
+			snowDesc.innerHTML = data.snow["1h"];
+          });
+});
     </script>
 </body>
 <%- include('../partials/footer') %>
