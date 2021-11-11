@@ -7,6 +7,8 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 //Create Database Connection
 var pgp = require('pg-promise')();
 
+console.log("trying to merge");
+
 
 /**********************
   Database Connection information
