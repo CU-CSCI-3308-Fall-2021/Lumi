@@ -1,11 +1,30 @@
-div{
-    width: 80%;
+#thankYou{
+    width: auto;
     background:lightcyan;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     margin: auto;
-    margin-top: 20%;
-    margin-bottom: 20%;
+    margin-top: 1%;
+}
+#randomInfo{
+    width:auto;
+    display: flex;
+    margin: auto;
+}
+.card-group{
+    width:auto;
+    display: flex;
+    margin: auto;
+}
+#confirmation{
+    text-align: center;
+}
+#welcome{
+    text-align: center;
+}
+#footerFinish{
+    text-align: center;
+    margin: auto;
 }
