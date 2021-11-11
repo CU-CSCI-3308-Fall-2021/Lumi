@@ -7,6 +7,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 //Create Database Connection
 var pgp = require('pg-promise')();
 
+
 /**********************
   Database Connection information
   host: This defines the ip address of the server hosting our database.
@@ -57,44 +58,140 @@ app.get('/maptest', function(req, res) {
 
 // profile page
 app.get('/profile', function(req, res) {
-	res.render('pages/profile',{
-		my_title:"Profile Page"
-	});
+	if(loggedInId == 0){
+		res.render('pages/registration', {
+			my_title: "Registration Page"
+		});
+	} else {
+		var userInformation = 'SELECT * FROM users WHERE id = \'' + loggedInId +'\';';
+		db.task('get-everything', task => {
+			return task.batch([
+				task.any(userInformation)
+			]);
+		})
+		.then(info => {
+			loggedInFirstName = info[0][0].firstname; // Remembers the login user information for getting information and updates
+			loggedInLastName = info[0][0].lastname; // Remembers the login user information for getting information and updates
+			loggedInEmail = info[0][0].email; // Remembers the login user information for getting information and updates
+			loggedInPassword = info[0][0].password; // Remembers the login user information for getting information and updates
+			loggedInSnowboard = info[0][0].snowboardsize; // Remembers the login user information for getting information and updates
+			loggedInShoe = info[0][0].shoesize; // Remembers the login user information for getting information and updates
+				res.render('pages/profile',{
+					my_title: "Profile Page",
+					data: info[0]
+				});
+		})
+		.catch(err => {
+				console.log('error', err);
+				res.render('pages/home', {
+					my_title: 'Home Page',
+					data:''
+				})
+		});
+	}
+
 });
 
 // login route
-// Can't update global variables still
-app.get('/profile/user', function (req, res) {
+// Global Variables for a logged in person
+var loggedInId = 0;
+var loggedInFirstName;
+var loggedInLastName;
+var loggedInEmail;
+var loggedInPassword;
+var loggedInHeight;
+var loggedInWeight;
+app.get('/registration/login', function (req, res) {
 	var email = req.query.inputEmail;
 	var password = req.query.inputPassword;
-	var userInformation = 'select * from users where email = \'' + email + '\' and ( password = \'' + password + '\');'; // Query to check if email and password are matching
-	db.any(userInformation)
-		.then(info => {
-			if(info[0] == " "){
-				res.render('pages/home', {
-					my_title: "Home Page"
-				})
-			} else {
-				res.render('pages/profile', {
-					my_title: "Profile Page",
-					information: info[0]
-				})
-			}
-		})
-		.catch(err => {
-			console.log('err', err);
+	var userInformation = 'SELECT * FROM users WHERE email = \'' + email +'\' AND ( password = \'' + password +'\' );';
+	var getIDNumber = 'SELECT id, firstName FROM users WHERE email = \'' + email +'\';'; // Query to check if email and password are matching
+	db.task('get-everything', task => {
+        return task.batch([
+            task.any(userInformation),
+            task.any(getIDNumber)
+        ]);
+    })
+	.then(info => {
+		if(info[0] == ""){
 			res.render('pages/registration', {
-				my_title: 'Home Page'
-			})
-		});
-
+				my_title: "Registration Page"
+			});
+		} else {
+			loggedInId = info[1][0].id; // Remembers the login user information for getting information and updates
+			loggedInFirstName = info[0][0].firstname; // Remembers the login user information for getting information and updates
+			loggedInLastName = info[0][0].lastname; // Remembers the login user information for getting information and updates
+			loggedInEmail = info[0][0].email; // Remembers the login user information for getting information and updates
+			loggedInPassword = info[0][0].password; // Remembers the login user information for getting information and updates
+			loggedInSnowboard = info[0][0].snowboardsize; // Remembers the login user information for getting information and updates
+			loggedInShoe = info[0][0].shoesize; // Remembers the login user information for getting information and updates
+			res.redirect('/profile');
+		};
+    })
+    .catch(err => {
+            console.log('error', err);
+            res.redirect('/home');
+    });
 });
 
+
 // registration page
-app.get('/registration', function(req, res) {
+app.get('/registration', function(req, res){
 	res.render('pages/registration',{
-		my_title:"Profile Page"
+		my_title:"Registration Page"
 	});
+})
+
+// Change profile route
+app.post('/profile/updated', function(req, res) {
+	var firstName = req.body.firstName;
+	var lastName = req.body.lastName;
+	var email = req.body.email;
+	var password = req.body.password;
+	var shoesize = req.body.shoesize;
+	var snowboardsize = req.body.snowboardsize;
+	var stringInsert = "";
+
+	// This function as an insert statement creator according to the data that will be edited
+	if(firstName == "") {
+		firstName = loggedInFirstName;
+	};
+	if (lastName == "") {
+		lastName = loggedInLastName;
+	}; 
+	if (email == "") {
+		email = loggedInEmail;
+	};
+	if (password == "") {
+		password = loggedInPassword;
+	};
+	if (snowboardsize == "") {
+		snowboardsize = loggedInSnowboard;
+	};
+	if (shoesize == "") {
+		shoesize = loggedInShoe;
+	};
+
+	console.log("loggedInFirstName = " + loggedInFirstName);
+
+	var insert_statement = 'UPDATE users SET firstName =  \'' + firstName + '\', lastName =  \'' + lastName + '\', email =  \'' + email + '\', password =  \'' + password + '\', shoesize =  \'' + shoesize + '\',  snowboardsize =  \'' + snowboardsize + '\' WHERE id = \'' + loggedInId +'\';';
+	var userInformation = 'SELECT * FROM users WHERE id = \'' + loggedInId +'\';';
+	db.task('get-everything', task => {
+        return task.batch([
+            task.any(userInformation),
+            task.any(insert_statement)
+        ]);
+    })
+
+	.then(info => {
+		// Update after changes are made into the table
+		res.redirect('/profile');
+    })
+
+    .catch(err => {
+        console.log('error', err);
+        res.redirect('/')
+    });
 });
 
 //sign up route
