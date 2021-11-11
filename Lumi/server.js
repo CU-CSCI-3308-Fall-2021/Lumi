@@ -70,7 +70,7 @@ app.get('/profile', function(req, res) {
 				task.any(userInformation)
 			]);
 		})
-
+	}
 	res.render('pages/profile',{
 		my_title:"Profile Page"
 	});
@@ -90,7 +90,6 @@ app.get('/profile/user', function (req, res) {
 	var password = req.query.inputPassword;
 	var userInformation = 'select * from users where email = \'' + email + '\' and ( password = \'' + password + '\');'; // Query to check if email and password are matching
 	db.any(userInformation)
-
 		.then(info => {
 			loggedInFirstName = info[0][0].firstname; // Remembers the login user information for getting information and updates
 			loggedInLastName = info[0][0].lastname; // Remembers the login user information for getting information and updates
@@ -110,8 +109,6 @@ app.get('/profile/user', function (req, res) {
 					data:''
 				})
 		});
-	}
-
 });
 
 // login route
