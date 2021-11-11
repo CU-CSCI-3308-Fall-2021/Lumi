@@ -3,9 +3,26 @@
 	position: relative;
 	max-width: 300px;
     background: #30303062;
-	top:50%;
+	top:100px;
     border-radius: 3px;
     padding-left: 5px
+}
+
+.c2 {
+  position: relative;
+	max-width: 80px;
+
+  border-radius: 3px;
+  z-index: 100;
+}
+.cont2 {
+  position: absolute; 
+  left:25px; bottom:200px; 
+  background: #30303000;
+  max-width: 300px;
+  color:#fff; 
+  z-index: 100;
+    
 }
 
 .dropbtn {
@@ -68,3 +85,477 @@
       padding-top: 5px;
       padding-bottom: 5px
   }
+  .mapboxgl-popup {
+    max-width: 400px;
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    }
+    #breck {
+    display: list-item;
+    position: relative;
+    margin: 0px ;
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background: #0b82a7;
+    }
+    #vail {
+    display: list-item;
+    position: relative;
+    margin: 0px ;
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background: #0b82a7;
+    }
+    #copper {
+    display: list-item;
+    position: relative;
+    margin: 0px ;
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background: #0b82a7;
+    }
+    #keystone {
+    display: list-item;
+    position: relative;
+    margin: 0px ;
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background: #0b82a7;
+    }
+    #A-Basin {
+    display: list-item;
+    position: relative;
+    margin: 0px ;
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background: #0b82a7;
+    }
+    #loveland {
+    display: list-item;
+    position: relative;
+    margin: 0px ;
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background: #0b82a7;
+    }
+    #winterpark {
+    display: list-item;
+    position: relative;
+    margin: 0px;
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background: #0b82a7;
+    }
+    #eldora {
+    display: list-item;
+    position: relative;
+    margin: 0px ;
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background: #0b82a7;
+    }
+    #steam {
+    display: list-item;
+    position: relative;
+    margin: 0px ;
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background: #0b82a7;
+    }
+    #howelsen {
+    display: list-item;
+    position: relative;
+    margin: 0px ;
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background: #0b82a7;
+    }
+    #beaver {
+    display: list-item;
+    position: relative;
+    margin: 0px ;
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background: #0b82a7;
+    }
+    #cooper {
+    display: list-item;
+    position: relative;
+    margin: 0px ;
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background: #0b82a7;
+    }
+    #snowmass {
+    display: list-item;
+    position: relative;
+    margin: 0px ;
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background: #0b82a7;
+    }
+    #ajax {
+    display: list-item;
+    position: relative;
+    margin: 0px ;
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background: #0b82a7;
+    }
+    #highland {
+    display: list-item;
+    position: relative;
+    margin: 0px ;
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background: #0b82a7;
+    }
+    #buttermilk {
+    display: list-item;
+    position: relative;
+    margin: 0px ;
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background: #0b82a7;
+    }
+    #butte {
+    display: list-item;
+    position: relative;
+    margin: 0px ;
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background: #0b82a7;
+    }
+    #heat {
+      display: list-item;
+      position: relative;
+      margin: 0px ;
+      width: 100%;
+      height: 30px;
+      border: none;
+      border-radius: 3px;
+      font-size: 12px;
+      text-align: center;
+      color: #fff;
+      background: #e7692e;
+
+      }
+    #monarch {
+    display: list-item;
+    position: relative;
+    margin: 0px ;
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background: #0b82a7;
+    }
+    #wolf {
+    display: list-item;
+    position: relative;
+    margin: 0px ;
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background: #0b82a7;
+    }
+    #purgatory {
+    display: list-item;
+    position: relative;
+    margin: 0px ;
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background: #0b82a7;
+    }
+    #silverton {
+    display: list-item;
+    position: relative;
+    margin: 0px ;
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background: #0b82a7;
+    }
+    #telluride {
+    display: list-item;
+    position: relative;
+    margin: 0px ;
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background: #0b82a7;
+    }
+    #powder {
+    display: list-item;
+    position: relative;
+    margin: 0px ;
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background: #0b82a7;
+    }
+    #sunlight {
+    display: list-item;
+    position: relative;
+    margin: 0px ;
+    width: 100%;
+    height: 35px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background: #0b82a7;
+    }
+    #fly {
+    display: list-item;
+    position: relative;
+    margin: 0px ;
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background: #0b82a7;
+    }
+    #reset {
+    display: block;
+    position: relative;
+    margin: 0px;
+    width: 100%;
+    height: 20px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background: #ff5353;
+    }
+    #jumps {
+    display: block;
+    position: relative; top:98px; left:10px;
+    margin: 0px;
+    width: 150px;
+    height: 500px;
+    padding-left: 10px;
+    padding-bottom: auto;
+    border: none;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background: #30303062;
+    
+    }
+    #fly_locations {
+      position: relative; top: 0%;
+    }
+    #jumps::-webkit-scrollbar {
+      width: 10px;
+    }
+    #reset_fly {
+    display: block;
+    position: relative; top:0; left:0;
+    margin: 0px;
+    width: 100%;
+    height: 40px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background: #53acff00;
+    }
+
+    #layer_toggle{
+      display: block;
+      position: absolute; bottom:98px; left:10px;
+      margin: 0px;
+      width: 300px;
+      height: 100px;
+      padding-left: 10px;
+      padding-bottom: auto;
+      padding-top: 10px;
+      border: none;
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+      font-size: 12px;
+      text-align: left;
+      color: #fff;
+      background: #30303062;
+      z-index: 100;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+    }
+    
+    /* Hide default HTML checkbox */
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    
+    /* The slider */
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+    
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+    
+    input:checked + .slider {
+      background-color: #21f32c;
+    }
+    
+    input:focus + .slider {
+      box-shadow: 0 0 1px #2196F3;
+    }
+    
+    input:checked + .slider:before {
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px);
+    }
+    
+    /* Rounded sliders */
+    .slider.round {
+      border-radius: 34px;
+    }
+    
+    .slider.round:before {
+      border-radius: 50%;
+    }
