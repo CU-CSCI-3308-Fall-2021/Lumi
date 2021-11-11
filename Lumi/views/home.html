@@ -52,16 +52,28 @@
         <div class="card-header mfs">
           <h5>Most Fresh Snow</h5>
         </div>
-        <img src="SNOWIMG.JPG" class="card-img-top" alt="Location w most fresh snow">
+        <img src="../resources/img/ski.jpg" class="card-img-top" alt="Location w most fresh snow">
         <div class="card-body">
-          <p class="card-text">Info about location w most fresh snow (js)</p>
+          <p class="card-text">Keystone</p>
+          <div id="fresh-snow">
+            <p><img id="fresh-snow-icon" src="" alt="Getting weather icon..."><span id="fresh-snow-temp">25</span><span id="fresh-snow_unit">&#x2109</span></p>
+        </div>
+          <div id="fresh-snow-val">
+            <p><span">Humidity: </span><span id="fresh-snow-humidity">60</span><span id="fresh-snow-unit">%</span></p>
+          </div>
+          <div id="fresh-snow-speed-val">
+            <p><span>Wind Speed: </span><span id="fresh-snow-speed">60</span><span id="fresh-snow-unit"> mph</span></p>
+          </div>
+          <div id="fresh-snow-expect">
+            <p><span id="fresh-snow-expected">No</span><span> inches expected</span><br><span></span></p>
+          </div>
         </div>
       </div>
       <div class="card">
         <div class="card-header mfs">
           <h5>Most Famous Ski Resort Reprt</h5>
         </div>
-        <img src="SKI RESORT.JPG(js to change most famous)" class="card-img-top" alt="Image of SKI RESORT">
+        <img src="../resources/img/breck.jpg" class="card-img-top" alt="Image of SKI RESORT">
         <div class="card-body">
           <p class="card-text">Breckenridge</p>
           <div id="temp">
@@ -79,8 +91,11 @@
         <div class="card-header mfs">
           <h5>Recent News</h5>
         </div>
+        <img src="../resources/img/snowboard.jpg" class="card-img-top" alt="Image of SKI RESORT">
         <div class="card-body">
-          <p class="card-text">Recent News HERE</p>
+          <p class="card-text"></p>
+          <div id="temp">
+            <h4><span id="news-headline">Colorado's ski train to Winter Park returns for 2022 season</span></h4><h4<br><br><br><br><span><a id="news-url" href="https://www.axios.com/local/denver/2021/11/10/colorados-amtrak-ski-train-winter-park-returns-2022" target="_blank">Link to Article</a></span></h4>
         </div>
       </div>
     </div>
@@ -92,17 +107,17 @@
           <tr>
             <th class="align-bottom tablehead" id="Location_h">Location</th>
             <th class="align-bottom tablehead" id="Current Weather_h">Current Weather</th>
-            <th class="align-bottom tablehead" id="Snow Pack_h">Snow pack</th>
+            <th class="align-bottom tablehead" id="Snow Pack_h">Snow expected in next hour</th>
             <th class="align-bottom tablehead" id="Recommended_h">Recommended</th>
           </tr>
         </thead>
         <tbody>
-          <!-- Row 1: Breckenridge -->
-          <tr>
+           <!-- Row 1: Breckenridge -->
+           <tr>
             <td class="tableOff"><span id="Breckenridge"></span>Breckenridge</td>
             <td><img id="Breck-icon" src="" alt="Getting weather icon..."><span id="Breck-weather">20</span><span>&#x2109</span><br>
             <span>Humidity: </span><span id="Breck-humidity">30</span><span>%</span><br><span>Wind Speed: </span><span id="Breck-windSpeed">69</span> mph</td> 
-            <td><span id="Snow Pack"></span>SNOW PACK OF LOCAL</td>
+            <td><span id="Breck-snow">No</span><span> inches expected</span><br><span></span></td>
             <td><span id="Recommended"></span>RECOMMENDED TO USER/NON USER</td>
           </tr>
           <!-- Row 2: Vail -->
@@ -110,7 +125,7 @@
             <td class="tableOn"><span id="Vail"></span>Vail</td>
             <td><img id="Vail-icon" src="" alt="Getting weather icon..."><span id="Vail-weather">20</span><span>&#x2109</span><br>
             <span>Humidity: </span><span id="Vail-humidity">30</span><span>%</span><br><span>Wind Speed: </span><span id="Vail-windSpeed">69</span> mph</td> 
-            <td><span id="Snow Pack"></span>SNOW PACK OF LOCAL</td>
+            <td><span id="Vail-snow">No</span><span> inches expected</span><br><span></span></td>
             <td><span id="Recommended"></span>RECOMMENDED TO USER/NON USER</td>
           </tr>
           <!-- Row 3: Aspen -->
@@ -118,7 +133,7 @@
             <td class="tableOff"><span id="Aspen"></span>Aspen Snowmass</td>
             <td><img id="Aspen-icon" src="" alt="Getting weather icon..."><span id="Aspen-weather">20</span><span>&#x2109</span><br>
             <span>Humidity: </span><span id="Aspen-humidity">30</span><span>%</span><br><span>Wind Speed: </span><span id="Aspen-windSpeed">69</span> mph</td> 
-            <td><span id="Snow Pack"></span>SNOW PACK OF LOCAL</td>
+            <td><span id="Aspen-snow">No</span><span> inches expected</span><br><span></span></td>
             <td><span id="Recommended"></span>RECOMMENDED TO USER/NON USER</td>
           </tr>
           <!-- Row 4: WinterPark -->
@@ -126,7 +141,7 @@
             <td class="tableOn"><span id="WinterPark"></span>WinterPark</td>
             <td><img id="WinterPark-icon" src="" alt="Getting weather icon..."><span id="WinterPark-weather">20</span><span>&#x2109</span><br>
             <span>Humidity: </span><span id="WinterPark-humidity">30</span><span>%</span><br><span>Wind Speed: </span><span id="WinterPark-windSpeed">69</span> mph</td> 
-            <td><span id="Snow Pack"></span>SNOW PACK OF LOCAL</td>
+            <td><span id="WinterPark-snow">No</span><span> inches expected</span><br><span></span></td>
             <td><span id="Recommended"></span>RECOMMENDED TO USER/NON USER</td>
           </tr>
           <!-- Row 5: Beaver Creek -->
@@ -134,7 +149,7 @@
             <td class="tableOff"><span id="BeaverCreek"></span>Beaver Creek</td>
             <td><img id="BeaverCreek-icon" src="" alt="Getting weather icon..."><span id="BeaverCreek-weather">20</span><span>&#x2109</span><br>
             <span>Humidity: </span><span id="BeaverCreek-humidity">30</span><span>%</span><br><span>Wind Speed: </span><span id="BeaverCreek-windSpeed">69</span> mph</td> 
-            <td><span id="Snow Pack"></span>SNOW PACK OF LOCAL</td>
+            <td><span id="Beaver-snow">No</span><span> inches expected</span><br><span></span></td>
             <td><span id="Recommended"></span>RECOMMENDED TO USER/NON USER</td>
           </tr>
           <!-- Row 6: Keystone -->
@@ -142,7 +157,7 @@
             <td class="tableOn"><span id="Keystone"></span>Keystone</td>
             <td><img id="Keystone-icon" src="" alt="Getting weather icon..."><span id="Keystone-weather">20</span><span>&#x2109</span><br>
             <span>Humidity: </span><span id="Keystone-humidity">30</span><span>%</span><br><span>Wind Speed: </span><span id="Keystone-windSpeed">69</span> mph</td> 
-            <td><span id="Snow Pack"></span>SNOW PACK OF LOCAL</td>
+            <td><span id="Keystone-snow">No</span><span> inches expected</span><br><span></span></td>
             <td><span id="Recommended"></span>RECOMMENDED TO USER/NON USER</td>
           </tr>
           <!-- Row 7: Steamboat -->
@@ -150,7 +165,7 @@
             <td class="tableOff"><span id="Steamboat"></span>Steamboat Springs</td>
             <td><img id="Steamboat-icon" src="" alt="Getting weather icon..."><span id="Steamboat-weather">20</span><span>&#x2109</span><br>
             <span>Humidity: </span><span id="Steamboat-humidity">30</span><span>%</span><br><span>Wind Speed: </span><span id="Steamboat-windSpeed">69</span> mph</td> 
-            <td><span id="Snow Pack"></span>SNOW PACK OF LOCAL</td>
+            <td><span id="Steamboat-snow">No</span><span> inches expected</span><br><span></span></td>
             <td><span id="Recommended"></span>RECOMMENDED TO USER/NON USER</td>
           </tr>
           <!-- Row 8: Telluride -->
@@ -158,7 +173,7 @@
             <td class="tableOn"><span id="Telluride"></span>Telluride</td>
             <td><img id="Telluride-icon" src="" alt="Getting weather icon..."><span id="Telluride-weather">20</span><span>&#x2109</span><br>
             <span>Humidity: </span><span id="Telluride-humidity">30</span><span>%</span><br><span>Wind Speed: </span><span id="Telluride-windSpeed">69</span> mph</td> 
-            <td><span id="Snow Pack"></span>SNOW PACK OF LOCAL</td>
+            <td><span id="Telluride-snow">No</span><span> inches expected</span><br><span></span></td>
             <td><span id="Recommended"></span>RECOMMENDED TO USER/NON USER</td>
           </tr>
           <!-- Row 9: Copper Mountain -->
@@ -166,7 +181,7 @@
             <td class="tableOff"><span id="CopperMountain"></span>Copper Mountain</td>
             <td><img id="Copper-icon" src="" alt="Getting weather icon..."><span id="Copper-weather">20</span><span>&#x2109</span><br>
             <span>Humidity: </span><span id="Copper-humidity">30</span><span>%</span><br><span>Wind Speed: </span><span id="Copper-windSpeed">69</span> mph</td> 
-            <td><span id="Snow Pack"></span>SNOW PACK OF LOCAL</td>
+            <td><span id="Copper-snow">No</span><span> inches expected</span><br><span></span></td>
             <td><span id="Recommended"></span>RECOMMENDED TO USER/NON USER</td>
           </tr>
           <!-- Row 10: Araphaoe Basin -->
@@ -174,7 +189,7 @@
             <td class="tableOn"><span id="AraphaoeBasin"></span>Araphaoe Basin</td>
             <td><img id="Araphaoe-icon" src="" alt="Getting weather icon..."><span id="Araphaoe-weather">20</span><span>&#x2109</span><br>
             <span>Humidity: </span><span id="Araphaoe-humidity">30</span><span>%</span><br><span>Wind Speed: </span><span id="Araphaoe-windSpeed">69</span> mph</td> 
-            <td><span id="Snow Pack"></span>SNOW PACK OF LOCAL</td>
+            <td><span id="Araphaoe-snow">No</span><span> inches expected</span><br><span></span></td>
             <td><span id="Recommended"></span>RECOMMENDED TO USER/NON USER</td>
           </tr>
         </tbody>

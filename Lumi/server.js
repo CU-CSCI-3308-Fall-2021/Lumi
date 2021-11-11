@@ -58,6 +58,7 @@ app.get('/maptest', function(req, res) {
 
 // profile page
 app.get('/profile', function(req, res) {
+
 	if(loggedInId == 0){
 		res.render('pages/registration', {
 			my_title: "Registration Page"
@@ -69,6 +70,27 @@ app.get('/profile', function(req, res) {
 				task.any(userInformation)
 			]);
 		})
+
+	res.render('pages/profile',{
+		my_title:"Profile Page"
+	});
+});
+
+//finish page
+app.get('/finish', function(req, res) {
+	res.render('pages/finish',{
+		my_title:"Welcome"
+	});
+});
+
+// login route
+// Can't update global variables still
+app.get('/profile/user', function (req, res) {
+	var email = req.query.inputEmail;
+	var password = req.query.inputPassword;
+	var userInformation = 'select * from users where email = \'' + email + '\' and ( password = \'' + password + '\');'; // Query to check if email and password are matching
+	db.any(userInformation)
+
 		.then(info => {
 			loggedInFirstName = info[0][0].firstname; // Remembers the login user information for getting information and updates
 			loggedInLastName = info[0][0].lastname; // Remembers the login user information for getting information and updates
@@ -194,6 +216,13 @@ app.post('/profile/updated', function(req, res) {
     });
 });
 
+//error page
+app.get('/error', function(req, res) {
+	res.render('pages/error',{
+		my_title:"Error"
+	});
+});
+
 //sign up route
 // Still having problems here since global variable doesn't want to update every time I access inside a function
 var idTest = 0;
@@ -214,7 +243,9 @@ app.post('/registration/signup', function(req, res) {
 
 	// This is weird since it only changes the value of a number inside the info function but doesn't affect the outside function
     .then(info => {
-		idTest = info[1];
+		idTest = info[1][0].id;
+		console.log("idTest = " + idTest);
+		// console.log(info[1][0].id);
     	res.render('pages/survey',{
 				my_title: "Home Page" 
 			})
@@ -234,17 +265,23 @@ app.post('/', function(req, res) {
 	var years = req.body.yearsSkied;
 	var days = req.body.daysSeason;
 	var height = req.body.inputHeight;
-	var shoesize = 0;
-	var boardsize = height * 0.88;
+	var shoesize = req.body.inputShoe;
+	var boardsize = height * 2;
 	var level = 0;
 	var skier = req.body.isSkier;
 	var snowboarder = req.body.isSnowboarder;
+	if(skier == 1){
+		snowboarder = 0;
+	}
+	else{
+		skier = 0;
+	}
 
 	if(years < 3){
 		level = 1;
 	} else if (years >= 3 && years < 10){
 		level = 2;
-	} else if(years > 10){
+	} else if(years >= 10){
 		level = 3;
 	}
 
@@ -253,11 +290,23 @@ app.post('/', function(req, res) {
 
 	
 	var weight = req.body.inputWeight;
-	var shoeSize = req.body.inputShoe;
-	var insert_statement = 'INSERT INTO users (level, snowboardsize, shoeSize, skier, snowboarder) VALUES (\'' + level + '\', \'' + boardsize + '\', \'' + shoesize + '\', \'' + password + '\') WHERE ID = \'' + idTest + '\';';
+	var insert_statement = 'UPDATE users SET level = \''+ level +'\', snowboardsize = \''+ boardsize +'\', shoesize = \''+ shoesize +'\', skier = \''+ skier +'\', snowboarder= \''+ snowboarder +'\' WHERE id = \''+ idTest +'\';';
 
-	res.render('pages/home',{
-		my_title:"Home Page"
+	db.task('get-everything', task => {
+        return task.batch([
+            task.any(insert_statement)
+        ]);
+    })
+	.then(info => {
+    	res.render('pages/finish',{
+				my_title: "Welcome" 
+			})
+    })
+	.catch(err => {
+		console.log('error', err);
+		res.render('pages/error', {
+			my_title: 'Error'
+		})
 	});
 });
 
@@ -266,6 +315,7 @@ app.get('/survey', function(req, res) {
 		my_title:"Survey Page"
 	});
 });
+
 
 app.listen(3000);
 console.log('3000 is the magic port');
