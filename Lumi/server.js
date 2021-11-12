@@ -51,8 +51,8 @@ app.get('/about', function(req, res) {
 });
 
 // map page
-app.get('/maptest', function(req, res) {
-	res.render('pages/maptest',{
+app.get('/map', function(req, res) {
+	res.render('pages/map',{
 		my_title:"Maptest Page"
 	});
 });
