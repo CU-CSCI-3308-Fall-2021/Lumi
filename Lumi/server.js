@@ -242,7 +242,7 @@ app.post('/', function(req, res) {
 	var days = req.body.daysSeason;
 	var height = req.body.inputHeight;
 	var shoesize = req.body.inputShoe;
-	var boardsize = height * 2;
+	var boardsize = height * 0.88;
 	var level = 0;
 	var skier = req.body.isSkier;
 	var snowboarder = req.body.isSnowboarder;
