@@ -247,8 +247,12 @@ app.post('/', function(req, res) {
 	if(skier == 1){
 		snowboarder = 0;
 	}
+	else if(snowboarder == 1){
+		skier = 0;
+	}
 	else{
 		skier = 0;
+		snowboarder = 0;
 	}
 
 	if(years < 3){
