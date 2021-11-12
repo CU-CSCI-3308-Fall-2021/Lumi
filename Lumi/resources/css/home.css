@@ -12,13 +12,13 @@
     text-align: center;
 }
 .tableOff {
-    background: rgb(125, 174, 214);
-    color: white;
+    background: #a8ccff;
+    color: black;
     text-align: center;
 }
 .tableOn {
-    background: rgb(133, 185, 228);
-    color: white;
+    background: #a8ccff;
+    color: black;
     text-align: center;
 }
 /* .jumbo1 {
