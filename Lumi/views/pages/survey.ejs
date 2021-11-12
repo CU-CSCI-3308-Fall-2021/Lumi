@@ -51,11 +51,26 @@
     <br>
     <div class="container">
         <form action="/" method="post">
+            <div class="form-row" id="firstRow">
+                <div class="col">
+                    <label for="yearsSkied">How long many years have you skied?</label>
+                    <input type="text" class="form-control" name="yearsSkied" id="yearsSkied" placeholder="Years">
+                </div>
+                <div class="col">
+                    <label id="sportChoice">Are you a:  </label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="isSkier" id="isSkier" value="1">
+                        <label class="form-check-label" for="inlineRadio1">Skier</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="isSnowboarder" id="isSnowboarder"
+                            value="1">
+                        <label class="form-check-label" for="inlineRadio2">Snowboarder</label>
+                    </div>
+                </div>
 
-            <div class="form-group">
-                <label for="yearsSkied">How long many years have you skied?</label>
-                <input type="text" class="form-control" name="yearsSkied" id="yearsSkied" placeholder="Years">
             </div>
+                
             <div class="form-group">
                 <label for="daysSeason">How many days a season do you ski?</label>
                 <input type="text" class="form-control" name="daysSeason" id="daysSeason" placeholder="Days">
@@ -97,16 +112,6 @@
                 </div>
             </div>
             <br>
-            <label id="sportChoice">Are you a:</label>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="isSkier" id="isSkier" value="1">
-                <label class="form-check-label" for="inlineRadio1">Skier</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="isSnowboarder" id="isSnowboarder"
-                    value="1">
-                <label class="form-check-label" for="inlineRadio2">Snowboarder</label>
-            </div>
             <input type="submit" value="Submit" class="btn btn-primary btn-block" id="submitBtn">
         </form>
     </div>
