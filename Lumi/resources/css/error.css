@@ -1,5 +1,17 @@
+#errorHeader{
+   margin: auto;
+   text-align: center;
+   justify-content: center;
+   margin-top: 5%;
+}
+#pageNot{
+   font-weight: lighter;
+}
 #errorMsg{
    margin:auto;
-   margin-top: 15%;
-   margin-bottom: 20%; 
+   justify-content: center;
+   text-align: center;
+   margin-top: 6%;
+   background: lightgray;
+   width: fit-content;
 }

@@ -20,10 +20,13 @@
 </head>
 <body>
     <%- include('../partials/menu') %> 
+    <div class="container" id="errorHeader">
+        <h1>404</h1>
+        <h2 id="pageNot">Page Not Found</h2>
+    </div>
     <div class="container" id="errorMsg">
-        <div class="jumbotron jumbo1 text-center" id="error">
-            <h1><strong>YOU ENCOUNTERED AN ERROR</strong></h1>
-        </div>
+            <p>The page you are looking for doesn't exist or another error occured.<br>
+                Go back, or head to the home page to start over.</p>
     </div>
     
 </body>

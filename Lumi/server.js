@@ -84,8 +84,8 @@ app.get('/profile', function(req, res) {
 		})
 		.catch(err => {
 				console.log('error', err);
-				res.render('pages/home', {
-					my_title: 'Home Page',
+				res.render('pages/error', {
+					my_title: 'Error',
 					data:''
 				})
 		});
@@ -130,7 +130,7 @@ app.get('/registration/login', function (req, res) {
     })
     .catch(err => {
             console.log('error', err);
-            res.redirect('/home');
+            res.redirect('/error');
     });
 });
 
@@ -190,7 +190,7 @@ app.post('/profile/updated', function(req, res) {
 
     .catch(err => {
         console.log('error', err);
-        res.redirect('/')
+        res.redirect('/error')
     });
 });
 app.get('/error', function(req, res) {
@@ -228,9 +228,7 @@ app.post('/registration/signup', function(req, res) {
     })
     .catch(err => {
             console.log('error', err);
-            res.render('pages/home', {
-                my_title: 'Home Page'
-            })
+            res.redirect('/error')
     });
 });
 // console.log("idTest outside of route " + idTest);
@@ -242,16 +240,10 @@ app.post('/', function(req, res) {
 	var days = req.body.daysSeason;
 	var height = req.body.inputHeight;
 	var shoesize = req.body.inputShoe;
-	var boardsize = height * 2;
+	var boardsize = height * 0.88;
 	var level = 0;
 	var skier = req.body.isSkier;
 	var snowboarder = req.body.isSnowboarder;
-	if(skier == 1){
-		snowboarder = 0;
-	}
-	else{
-		skier = 0;
-	}
 
 	if(years < 3){
 		level = 1;
