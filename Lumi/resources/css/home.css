@@ -35,7 +35,7 @@
 .shadow_disp {  /* shado_disp used to add shadow foreground effect to jumbotrons. */
     background-color: #30303062;
     z-index: 10;
-    max-width: 70%
+    max-width: 70%;
 }
 
 .front {
