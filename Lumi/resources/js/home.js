@@ -545,23 +545,29 @@ window.addEventListener('load', () =>{
 
 });
 
+today = new Date();
+var year = today.getFullYear();
+var month = today.getMonth()+1;
+var day = today.getDate();
 
 //News API
 window.addEventListener('load', () =>{
   let newsDesc = document.getElementById('news-headline');
           
-  const api = `https://newsapi.org/v2/everything?q=ski&resorts&from=2021-10-08&apiKey=4c5dd332e4784f81be4d45660ea2e4e8`;
+  const api = "https://newsapi.org/v2/everything?q=ski&resorts&from=" + year + "-" + month + "-" + day + "&apiKey=4c5dd332e4784f81be4d45660ea2e4e8";
+  console.log(api);
   fetch(api)
       .then(response => {
           return response.json();
       })
           .then(data => {
-            const {title} = data.articles[1];
-            const {url} = data.articles[1];
-            console.log(title);
+            const {title} = data.articles[0];
+            const {url} = data.articles[0];
+            // console.log(title);
             //Set elements from API
             newsDesc.innerHTML = title;
-            document.getElementById("https://www.axios.com/local/denver/2021/11/10/colorados-amtrak-ski-train-winter-park-returns-2022").href = url;
+            // document.getElementById("aaa").href = url;
+            document.getElementById("news-url").href = url;
             //Console log API report
             
           });

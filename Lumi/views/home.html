@@ -40,7 +40,7 @@
 
 </head>
 
-<body onload="isUser();">
+<body onload="mapLoad();">
   <div class="container">
     <div class="jumbotron" style="background-color:lightcyan">
       <h2>Welcome to LUMI</h2>
@@ -104,13 +104,12 @@
     <hr class="my-4">
 
     <div class="table-responsive">
-      <table class="table table-bordered table-hover table-striped" id="weather-table">
+      <table style="background-color:#D1FEFF" class="table table-bordered table-hover table-striped" id="weather-table">
         <thead>
           <tr>
             <th class="align-bottom tablehead" id="Location_h">Location</th>
             <th class="align-bottom tablehead" id="Current Weather_h">Current Weather</th>
-            <th class="align-bottom tablehead" id="Snow Pack_h">Snow expected in next hour</th>
-            <th class="align-bottom tablehead" id="Recommended_h">Recommended</th>
+            <th class="align-bottom tablehead" id="Snow Pack_h">Snow expected in next hour (in) </th>
           </tr>
         </thead>
         <tbody>
@@ -119,85 +118,74 @@
             <td class="tableOff"><span id="Breckenridge"></span>Breckenridge</td>
             <td><img id="Breck-icon" src="" alt="Getting weather icon..."><span id="Breck-weather">20</span><span>&#x2109</span><br>
             <span>Humidity: </span><span id="Breck-humidity">30</span><span>%</span><br><span>Wind Speed: </span><span id="Breck-windSpeed">69</span> mph</td> 
-            <td><span id="Breck-snow">No</span><span> inches expected</span><br><span></span></td>
-            <td><span id="Recommended"></span>RECOMMENDED TO USER/NON USER</td>
+            <td><span id="Breck-snow">0</span></td>
           </tr>
           <!-- Row 2: Vail -->
           <tr>
             <td class="tableOn"><span id="Vail"></span>Vail</td>
             <td><img id="Vail-icon" src="" alt="Getting weather icon..."><span id="Vail-weather">20</span><span>&#x2109</span><br>
             <span>Humidity: </span><span id="Vail-humidity">30</span><span>%</span><br><span>Wind Speed: </span><span id="Vail-windSpeed">69</span> mph</td> 
-            <td><span id="Vail-snow">No</span><span> inches expected</span><br><span></span></td>
-            <td><span id="Recommended"></span>RECOMMENDED TO USER/NON USER</td>
+            <td><span id="Vail-snow">0</span></td>
           </tr>
           <!-- Row 3: Aspen -->
           <tr>
             <td class="tableOff"><span id="Aspen"></span>Aspen Snowmass</td>
             <td><img id="Aspen-icon" src="" alt="Getting weather icon..."><span id="Aspen-weather">20</span><span>&#x2109</span><br>
             <span>Humidity: </span><span id="Aspen-humidity">30</span><span>%</span><br><span>Wind Speed: </span><span id="Aspen-windSpeed">69</span> mph</td> 
-            <td><span id="Aspen-snow">No</span><span> inches expected</span><br><span></span></td>
-            <td><span id="Recommended"></span>RECOMMENDED TO USER/NON USER</td>
+            <td><span id="Aspen-snow">0</span></td>
           </tr>
           <!-- Row 4: WinterPark -->
           <tr>
             <td class="tableOn"><span id="WinterPark"></span>WinterPark</td>
             <td><img id="WinterPark-icon" src="" alt="Getting weather icon..."><span id="WinterPark-weather">20</span><span>&#x2109</span><br>
             <span>Humidity: </span><span id="WinterPark-humidity">30</span><span>%</span><br><span>Wind Speed: </span><span id="WinterPark-windSpeed">69</span> mph</td> 
-            <td><span id="WinterPark-snow">No</span><span> inches expected</span><br><span></span></td>
-            <td><span id="Recommended"></span>RECOMMENDED TO USER/NON USER</td>
+            <td><span id="WinterPark-snow">0</span></td>
           </tr>
           <!-- Row 5: Beaver Creek -->
           <tr>
             <td class="tableOff"><span id="BeaverCreek"></span>Beaver Creek</td>
             <td><img id="BeaverCreek-icon" src="" alt="Getting weather icon..."><span id="BeaverCreek-weather">20</span><span>&#x2109</span><br>
             <span>Humidity: </span><span id="BeaverCreek-humidity">30</span><span>%</span><br><span>Wind Speed: </span><span id="BeaverCreek-windSpeed">69</span> mph</td> 
-            <td><span id="Beaver-snow">No</span><span> inches expected</span><br><span></span></td>
-            <td><span id="Recommended"></span>RECOMMENDED TO USER/NON USER</td>
+            <td><span id="Beaver-snow">0</span></td>
           </tr>
           <!-- Row 6: Keystone -->
           <tr>
             <td class="tableOn"><span id="Keystone"></span>Keystone</td>
             <td><img id="Keystone-icon" src="" alt="Getting weather icon..."><span id="Keystone-weather">20</span><span>&#x2109</span><br>
             <span>Humidity: </span><span id="Keystone-humidity">30</span><span>%</span><br><span>Wind Speed: </span><span id="Keystone-windSpeed">69</span> mph</td> 
-            <td><span id="Keystone-snow">No</span><span> inches expected</span><br><span></span></td>
-            <td><span id="Recommended"></span>RECOMMENDED TO USER/NON USER</td>
+            <td><span id="Keystone-snow">0</span></td>
           </tr>
           <!-- Row 7: Steamboat -->
           <tr>
             <td class="tableOff"><span id="Steamboat"></span>Steamboat Springs</td>
             <td><img id="Steamboat-icon" src="" alt="Getting weather icon..."><span id="Steamboat-weather">20</span><span>&#x2109</span><br>
             <span>Humidity: </span><span id="Steamboat-humidity">30</span><span>%</span><br><span>Wind Speed: </span><span id="Steamboat-windSpeed">69</span> mph</td> 
-            <td><span id="Steamboat-snow">No</span><span> inches expected</span><br><span></span></td>
-            <td><span id="Recommended"></span>RECOMMENDED TO USER/NON USER</td>
+            <td><span id="Steamboat-snow">0</span></td>
           </tr>
           <!-- Row 8: Telluride -->
           <tr>
             <td class="tableOn"><span id="Telluride"></span>Telluride</td>
             <td><img id="Telluride-icon" src="" alt="Getting weather icon..."><span id="Telluride-weather">20</span><span>&#x2109</span><br>
             <span>Humidity: </span><span id="Telluride-humidity">30</span><span>%</span><br><span>Wind Speed: </span><span id="Telluride-windSpeed">69</span> mph</td> 
-            <td><span id="Telluride-snow">No</span><span> inches expected</span><br><span></span></td>
-            <td><span id="Recommended"></span>RECOMMENDED TO USER/NON USER</td>
+            <td><span id="Telluride-snow">0</span></td>
           </tr>
           <!-- Row 9: Copper Mountain -->
           <tr>
             <td class="tableOff"><span id="CopperMountain"></span>Copper Mountain</td>
             <td><img id="Copper-icon" src="" alt="Getting weather icon..."><span id="Copper-weather">20</span><span>&#x2109</span><br>
             <span>Humidity: </span><span id="Copper-humidity">30</span><span>%</span><br><span>Wind Speed: </span><span id="Copper-windSpeed">69</span> mph</td> 
-            <td><span id="Copper-snow">No</span><span> inches expected</span><br><span></span></td>
-            <td><span id="Recommended"></span>RECOMMENDED TO USER/NON USER</td>
+            <td><span id="Copper-snow">0</span></td>
           </tr>
           <!-- Row 10: Araphaoe Basin -->
           <tr>
             <td class="tableOn"><span id="AraphaoeBasin"></span>Araphaoe Basin</td>
             <td><img id="Araphaoe-icon" src="" alt="Getting weather icon..."><span id="Araphaoe-weather">20</span><span>&#x2109</span><br>
             <span>Humidity: </span><span id="Araphaoe-humidity">30</span><span>%</span><br><span>Wind Speed: </span><span id="Araphaoe-windSpeed">69</span> mph</td> 
-            <td><span id="Araphaoe-snow">No</span><span> inches expected</span><br><span></span></td>
-            <td><span id="Recommended"></span>RECOMMENDED TO USER/NON USER</td>
+            <td><span id="Araphaoe-snow">0</span></td>
           </tr>
         </tbody>
       </table>
-      <button type="button" onclick="toggleTable();" class="btn btn-info">Toggle table/map</button>
-      <div class="container" id="map_preview">
+              <div class="container" id="map_preview">
         <style>
           #map { position: relative; height: 600px; width:inherit; border-radius: 10px;}
         </style>
@@ -553,6 +541,7 @@
           });
         </script>
       </div>
+      <button type="button" onclick="toggleTable();" class="btn btn-info">Toggle table/map</button>
     </div>
     <footer class="footer">&copy; Copyright CSCI-3308 MacroHard Fall 2021</footer>
   </div>

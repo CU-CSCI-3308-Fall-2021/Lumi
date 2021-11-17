@@ -6,7 +6,7 @@ CREATE TABLE users (
     email VARCHAR(40),
     password VARCHAR(1000),
     level INT,
-    snowboardsize INT,
+    snowboardsize DECIMAL,
     shoeSize DECIMAL,
     skier INT,
     snowboarder INT
