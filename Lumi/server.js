@@ -4,6 +4,7 @@ var bodyParser = require('body-parser'); //Ensure our body-parser tool has been 
 app.use(bodyParser.json());              // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
+const bcrypt = require('bcrypt');
 //Create Database Connection
 var pgp = require('pg-promise')();
 
@@ -101,37 +102,65 @@ var loggedInEmail;
 var loggedInPassword;
 var loggedInHeight;
 var loggedInWeight;
-app.get('/registration/login', function (req, res) {
-	var email = req.query.inputEmail;
-	var password = req.query.inputPassword;
-	var userInformation = 'SELECT * FROM users WHERE email = \'' + email +'\' AND ( password = \'' + password +'\' );';
-	var getIDNumber = 'SELECT id, firstName FROM users WHERE email = \'' + email +'\';'; // Query to check if email and password are matching
-	db.task('get-everything', task => {
-        return task.batch([
-            task.any(userInformation),
-            task.any(getIDNumber)
-        ]);
-    })
-	.then(info => {
-		if(info[0] == ""){
+app.get('/registration/login', function (req, res){
+
+	const email = req.query.inputEmail;
+	var userPassword
+	var userPasswordQuery = 'SELECT password FROM users WHERE email = \'' + email +'\';';
+	db.task('get-password', task => {
+		return task.batch([
+			task.any(userPasswordQuery)
+		]);
+	})
+	.then(pass => {
+		if(pass[0] == ''){
 			res.render('pages/registration', {
 				my_title: "Registration Page"
 			});
-		} else {
-			loggedInId = info[1][0].id; // Remembers the login user information for getting information and updates
-			loggedInFirstName = info[0][0].firstname; // Remembers the login user information for getting information and updates
-			loggedInLastName = info[0][0].lastname; // Remembers the login user information for getting information and updates
-			loggedInEmail = info[0][0].email; // Remembers the login user information for getting information and updates
-			loggedInPassword = info[0][0].password; // Remembers the login user information for getting information and updates
-			loggedInSnowboard = info[0][0].snowboardsize; // Remembers the login user information for getting information and updates
-			loggedInShoe = info[0][0].shoesize; // Remembers the login user information for getting information and updates
-			res.redirect('/profile');
+		}
+		else{
+
+			userPassword = pass[0][0].password;
+
+			if (bcrypt.compareSync(req.query.inputPassword, userPassword)) {
+				console.log('success');
+
+				var userInformation = 'SELECT * FROM users WHERE email = \'' + email +'\';';
+				var getIDNumber = 'SELECT id, firstName FROM users WHERE email = \'' + email +'\';'; // Query to check if email and password are matching
+				db.task('get-everything', task => {
+					return task.batch([
+						task.any(userInformation),
+						task.any(getIDNumber)
+					]);
+				})
+				.then(info => {
+					if(info[0] == ""){
+						res.render('pages/registration', {
+							my_title: "Registration Page"
+						});
+					} else {
+						loggedInId = info[1][0].id; // Remembers the login user information for getting information and updates
+						loggedInFirstName = info[0][0].firstname; // Remembers the login user information for getting information and updates
+						loggedInLastName = info[0][0].lastname; // Remembers the login user information for getting information and updates
+						loggedInEmail = info[0][0].email; // Remembers the login user information for getting information and updates
+						loggedInPassword = info[0][0].password; // Remembers the login user information for getting information and updates
+						loggedInSnowboard = info[0][0].snowboardsize; // Remembers the login user information for getting information and updates
+						loggedInShoe = info[0][0].shoesize; // Remembers the login user information for getting information and updates
+						res.redirect('/profile');
+					};
+				})
+				.catch(err => {
+						console.log('error', err);
+						res.redirect('/home');
+				});
+			}
+			else {
+				console.log('Incorrect Password');
+				res.redirect('/registration');
+			}
+
 		};
-    })
-    .catch(err => {
-            console.log('error', err);
-            res.redirect('/home');
-    });
+	})
 });
 
 
@@ -202,36 +231,48 @@ app.get('/error', function(req, res) {
 //sign up route
 // Still having problems here since global variable doesn't want to update every time I access inside a function
 var idTest = 0;
-app.post('/registration/signup', function(req, res) {
-	var firstName = req.body.firstName;
-	var lastName = req.body.lastName;
-	var email = req.body.email;
-	var password = req.body.password;
-	var insert_statement = 'INSERT INTO users (firstName, lastName, email, password) VALUES (\'' + firstName + '\', \'' + lastName + '\', \'' + email + '\', \'' + password + '\');'; // Insert into table
-	var getIDNumber = 'Select id from users where firstName = \'' + firstName +'\';';
+app.post('/registration/signup', async (req, res) => {
+	
+	try {
+		const salt = await bcrypt.genSalt(10);
+		const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
-	db.task('get-everything', task => {
-        return task.batch([
-            task.any(insert_statement),
-            task.any(getIDNumber)
-        ]);
-    })
+		var firstName = req.body.firstName;
+		var lastName = req.body.lastName;
+		var email = req.body.email;
+		var insert_statement = 'INSERT INTO users (firstName, lastName, email, password) VALUES (\'' + firstName + '\', \'' + lastName + '\', \'' + email + '\', \'' + hashedPassword + '\');'; // Insert into table
+		var getIDNumber = 'Select id from users where firstName = \'' + firstName +'\';';
 
-	// This is weird since it only changes the value of a number inside the info function but doesn't affect the outside function
-    .then(info => {
-		idTest = info[1][0].id;
-		console.log("idTest = " + idTest);
-		// console.log(info[1][0].id);
-    	res.render('pages/survey',{
-				my_title: "Home Page" 
-			})
-    })
-    .catch(err => {
-            console.log('error', err);
-            res.render('pages/home', {
-                my_title: 'Home Page'
-            })
-    });
+		db.task('get-everything', task => {
+			return task.batch([
+				task.any(insert_statement),
+				task.any(getIDNumber)
+			]);
+		})
+
+		// This is weird since it only changes the value of a number inside the info function but doesn't affect the outside function
+		.then(info => {
+			idTest = info[1][0].id;
+			console.log("idTest = " + idTest);
+			// console.log(info[1][0].id);
+			res.render('pages/survey',{
+					my_title: "Home Page" 
+				})
+		})
+		.catch(err => {
+				console.log('error', err);
+				res.render('pages/home', {
+					my_title: 'Home Page'
+				})
+		});
+	}
+
+	
+	
+	catch {
+		res.status(500).send()
+	}
+
 });
 // console.log("idTest outside of route " + idTest);
 
