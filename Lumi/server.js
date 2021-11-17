@@ -281,6 +281,19 @@ app.post('/', function(req, res) {
 	var level = 0;
 	var skier = req.body.isSkier;
 	var snowboarder = req.body.isSnowboarder;
+	if(typeof skier == 'undefined'){
+		skier = 0;
+	}
+	if(typeof snowboarder == 'undefined'){
+		snowboarder = 0;
+	}
+
+	if(skier == 1){
+		snowboarder = 0;
+	}
+	if(snowboarder == 1){
+		skier = 0;
+	}
 
 	if(years < 3){
 		level = 1;
