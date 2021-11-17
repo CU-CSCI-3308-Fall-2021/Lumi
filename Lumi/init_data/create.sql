@@ -4,7 +4,7 @@ CREATE TABLE users (
     firstName VARCHAR(40),
     lastName VARCHAR(40),
     email VARCHAR(40),
-    password VARCHAR(40),
+    password VARCHAR(1000),
     level INT,
     snowboardsize DECIMAL,
     shoeSize DECIMAL,
