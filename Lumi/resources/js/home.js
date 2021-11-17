@@ -1,26 +1,13 @@
-  function toggleTable() {
+function mapLoad()
+{
+    var map=document.getElementById("map_preview");
+    map.style.display = "none";
+}
+function toggleTable() {
     var lTable = document.getElementById("weather-table");
+    var map= document.getElementById("map_preview");
     lTable.style.display = (lTable.style.display == "table") ? "none" : "table";
-  }
-  function show_hide_column() {
-    var table = document.getElementById("weather-table");
-    for (var i = 0, row; row = table.rows[i]; i++) {
-      for (var j = 0, col; col = row.cells[j]; j++) {
-        if (j==4)
-        {
-          col.style.display="none";
-        }
-      }
-    }
-    element.style.display = "none";
-  }
-  function isUser()
-  {
-    var user=false;
-    if (user!=true)
-    {
-      show_hide_column();
-    }
+    map.style.display = (lTable.style.display == "table") ? "none" : "";
   }
   //weather API stuff for breckenridge cards
 window.addEventListener('load', () =>{
