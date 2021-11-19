@@ -171,55 +171,64 @@ app.get('/registration', function(req, res){
 })
 
 // Change profile route
-app.post('/profile/updated', function(req, res) {
-	var firstName = req.body.firstName;
-	var lastName = req.body.lastName;
-	var email = req.body.email;
-	var password = req.body.password;
-	var shoesize = req.body.shoesize;
-	var snowboardsize = req.body.snowboardsize;
-	var stringInsert = "";
+app.post('/profile/updated', async (req, res) => {
+	try{
+		const salt = await bcrypt.genSalt();
+		const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
-	// This function as an insert statement creator according to the data that will be edited
-	if(firstName == "") {
-		firstName = loggedInFirstName;
-	};
-	if (lastName == "") {
-		lastName = loggedInLastName;
-	}; 
-	if (email == "") {
-		email = loggedInEmail;
-	};
-	if (password == "") {
-		password = loggedInPassword;
-	};
-	if (snowboardsize == "") {
-		snowboardsize = loggedInSnowboard;
-	};
-	if (shoesize == "") {
-		shoesize = loggedInShoe;
-	};
+		var firstName = req.body.firstName;
+		var lastName = req.body.lastName;
+		var email = req.body.email;
+		var password = req.body.password;
+		var shoesize = req.body.shoesize;
+		var snowboardsize = req.body.snowboardsize;
+		var stringInsert = "";
 
-	console.log("loggedInFirstName = " + loggedInFirstName);
+		// This function as an insert statement creator according to the data that will be edited
+		if(firstName == "") {
+			firstName = loggedInFirstName;
+		};
+		if (lastName == "") {
+			lastName = loggedInLastName;
+		}; 
+		if (email == "") {
+			email = loggedInEmail;
+		};
+		if (password == "") {
+			password = loggedInPassword;
+		};
+		if (snowboardsize == "") {
+			snowboardsize = loggedInSnowboard;
+		};
+		if (shoesize == "") {
+			shoesize = loggedInShoe;
+		};
 
-	var insert_statement = 'UPDATE users SET firstName =  \'' + firstName + '\', lastName =  \'' + lastName + '\', email =  \'' + email + '\', password =  \'' + password + '\', shoesize =  \'' + shoesize + '\',  snowboardsize =  \'' + snowboardsize + '\' WHERE id = \'' + loggedInId +'\';';
-	var userInformation = 'SELECT * FROM users WHERE id = \'' + loggedInId +'\';';
-	db.task('get-everything', task => {
-        return task.batch([
-            task.any(userInformation),
-            task.any(insert_statement)
-        ]);
-    })
+		console.log("loggedInFirstName = " + loggedInFirstName);
 
-	.then(info => {
-		// Update after changes are made into the table
-		res.redirect('/profile');
-    })
+		var insert_statement = 'UPDATE users SET firstName =  \'' + firstName + '\', lastName =  \'' + lastName + '\', email =  \'' + email + '\', password =  \'' + hashedPassword + '\', shoesize =  \'' + shoesize + '\',  snowboardsize =  \'' + snowboardsize + '\' WHERE id = \'' + loggedInId +'\';';
+		var userInformation = 'SELECT * FROM users WHERE id = \'' + loggedInId +'\';';
+		db.task('get-everything', task => {
+			return task.batch([
+				task.any(userInformation),
+				task.any(insert_statement)
+			]);
+		})
 
-    .catch(err => {
-        console.log('error', err);
-        res.redirect('/error')
-    });
+		.then(info => {
+			// Update after changes are made into the table
+			res.redirect('/profile');
+		})
+
+		.catch(err => {
+			console.log('error', err);
+			res.redirect('/error')
+		});
+	}
+
+	catch{
+		res.status(500).send()
+	}
 });
 app.get('/error', function(req, res) {
 	res.render('pages/error',{
